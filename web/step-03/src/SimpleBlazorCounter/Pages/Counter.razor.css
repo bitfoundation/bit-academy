@@ -1,0 +1,50 @@
+﻿body {
+    background-color: #fafafa;
+}
+
+.card {
+    padding: 20px;
+    margin: 200px auto;
+    width: 400px;
+    height: 400px;
+    background-color: lightskyblue;
+    box-shadow: 1px 2px 10px 0 #808080;
+}
+
+.counter {
+    margin: 50px auto;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 10px solid #2196f3;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    color: #1077c2;
+}
+
+.action {
+    text-align: center;
+}
+
+button {
+    padding: 20px 30px;
+    margin: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white
+}
+
+#increase {
+    background-color: #18cd73;
+    border: 3px solid #19a35d;
+}
+
+#decrease {
+    background-color: #ef7694;
+    border: 3px solid #b74b66;
+}
