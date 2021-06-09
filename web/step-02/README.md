@@ -10,7 +10,7 @@
   وارد محیط visual studio  شده و از قسمت Get started روی گزینه create new project به منظور ایجاد پروژه جدید کلیک می‌کنیم. 
   
   
-  <img width="500px" src="/images/img-1.png" />
+  <img width="500px" src="images/img-1.png" />
 
  در مرحله بعد مطابق تصویر زیر از لیست ارایه شده ‌Blazor WebAssembly App را انتخاب و با کلیک بر روی دکمه Next به مرحله بعدی می‌رویم.
   
