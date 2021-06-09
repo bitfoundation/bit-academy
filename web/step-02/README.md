@@ -1,3 +1,8 @@
+
+
+
+<div dir="rtl">
+
   ## جلسه سوم- پیاده سازی شمارنده با استفاده از  Blazor
   
  در این جلسه قصد داریم شمارنده جلسه پیش را با استفاده از Blazor  پیاده سازی کنیم. 
@@ -39,6 +44,9 @@
 
 توضیحات در مورد ساختار فایل‌های پروژه برای این جلسه کافی است. همان طور که گفتیم طبق نیاز تمرین این جلسه ساختار فعلی را تغییر می دهیم. بدین ترتیب از پوشه wwwroot پوشه های css، sample-data و فایل favicon.ico رو حذف کرده و کدهای مربوط به فایل index.html رو به صورت زیر تغییر می‌دهیم.
 
+
+<div dir="ltr">
+
   ```html
    
     <!DOCTYPE html>
@@ -57,32 +65,37 @@
       </body>
     </html>
   ```
+</div>
 
 از پوشه pages  هم فایل های FetchData.razor و Index.razor  را هم حذف می‌کنیم.
  و همین طور پوشه Shared را هم حذف نمایید.
 در ادامه در فایل Imports.razor_ ، به دلیل اینکه پوشه  Shared را از قبل حذف کرده ایم، خط  زیر را هم حذف می‌کنیم.
 
+<div dir="ltr">
 
-```razor
-  @using simpleCounter.Blazor.Shared
-```
+  ```razor
+    @using simpleCounter.Blazor.Shared
+  ```
+</div>
 
 کدهای داخل فایل App.razor  را هم به کد زیر تغییر می دهیم.
 
+<div dir="ltr">
 
-```razor
-  
-  <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
-      <Found Context="routeData">
-          <RouteView RouteData="@routeData"/>
-      </Found>
-      <NotFound>
-          <LayoutView>
-              <p>Sorry, there's nothing at this address.</p>
-          </LayoutView>
-      </NotFound>
-  </Router>
-```
+  ```razor
+    
+    <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData"/>
+        </Found>
+        <NotFound>
+            <LayoutView>
+                <p>Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+  ```
+</div>
 
 در کد بالا هم   DefaultLayout  و Layout را به دلیل حذف فایل های مربوطه حذف می‌کنیم.
 
@@ -98,25 +111,28 @@
 
 ابتدا به فایل Counter.razor رفته و کدهای زیر را که همان کدهای فایل HTML جلسه پیش است را جایگزین کدهای فعلی می‌کنیم.
 
-```razor
-  
-  @page "/counter"
+  <div dir="ltr">
 
-  <div class="card">
-      <div class="counter">
-          <span id="count">0</span>
-      </div>
-      <div class="action">
-          <button id="increase" onclick="Increase()">
-              Increase
-          </button>
-          <button id="decrease" onclick="Decrease()">
-              Deacrease
-          </button>
-      </div>
-  </div>
+  ```razor
+    
+    @page "/counter"
+
+    <div class="card">
+        <div class="counter">
+            <span id="count">0</span>
+        </div>
+        <div class="action">
+            <button id="increase" onclick="Increase()">
+                Increase
+            </button>
+            <button id="decrease" onclick="Decrease()">
+                Deacrease
+            </button>
+        </div>
+    </div>
 
   ```
+</div>
   
   دقت کنید که خط اول این فایل که مسیر این فایل را در مرورگر مشخص می کند همچنان بدون تغییر باقی می‌ماند.
 تغییرات را با استفاده از ctrl + s  ذخیره کرده و مجددا به مرورگر رفته و صفحه را بروزرسانی می‌کنیم.
@@ -142,6 +158,7 @@
 کدهای css کپی را از فایل css جلسه گذشته کپی و در فایل Counter.css وارد می‌کنیم. 
 
 
+<div dir="ltr">
 
 ```css
 .card {
@@ -192,6 +209,7 @@ button {
 }
 
 ```
+</div>
 
 تغییرات را مجددا ذخیره و صفحه مرورگر را refresh می‌نماییم. خروجی تغییرات در مرورگر مشابه تصویر زیر می‌باشد.
 
@@ -202,32 +220,34 @@ button {
 
 کد این فایل را به کد زیر تغییر می‌دهیم.
 
+  <div dir="ltr">
 
-```c#
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Threading.Tasks;
+  ```c#
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
-  namespace SimpleCounter.Blazor.Pages
-  {
-      public partial class Counter
-      {
-          public int currentCount = 0;
+    namespace SimpleCounter.Blazor.Pages
+    {
+        public partial class Counter
+        {
+            public int currentCount = 0;
 
-          public void Increase()
-          {
-              currentCount++;
-          }
+            public void Increase()
+            {
+                currentCount++;
+            }
 
-          public void Decrease()
-          {
-              currentCount--;
-          }
-      }
-  }
+            public void Decrease()
+            {
+                currentCount--;
+            }
+        }
+    }
 
-```
+  ```
+</div>
 
   همان طور که می بینید در کلاسی به نام Counter یک متغیر به نام currentCount از نوع int که نوع عددی می باشد با مقدار اولیه " 0 " تعیین کرده‌ایم. همچنین دو متد به نام‌های Increase و Decrease که همانند جلسه گذشته، زمانی که فراخوانی می‌شوند، یک واحد به عدد ما افزوده و یا کم می‌کنند.
 
@@ -237,22 +257,25 @@ button {
 
 نحوه فراخوانی هر تابع روی رویداد onclick  دکمه مربوطه و استفاده از نام متغیر به جای عدد مطابق کد زیر تغییر می‌کند.
 
+  <div dir="ltr">
 
-```html
-<div class="card">
-    <div class="counter">
-        <span id="count">@currentCount</span>
-    </div>
-    <div class="action">
-        <button id="increase" @onclick="Increase">
-            Increase
-        </button>
-        <button id="decrease" @onclick="Decrease">
-            Deacrease
-        </button>
-    </div>
+  ```html
+  <div class="card">
+      <div class="counter">
+          <span id="count">@currentCount</span>
+      </div>
+      <div class="action">
+          <button id="increase" @onclick="Increase">
+              Increase
+          </button>
+          <button id="decrease" @onclick="Decrease">
+              Deacrease
+          </button>
+      </div>
+  </div>
+
+  ```
 </div>
 
-```
-
 تغییرات جدید را ذخیره و مجددا صفحه مرورگر را بروزرسانی نمایید.
+</div>
