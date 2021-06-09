@@ -9,21 +9,21 @@
 
  در مرحله بعد مطابق تصویر زیر از لیست ارایه شده ‌Blazor WebAssembly App را انتخاب و با کلیک بر روی دکمه Next به مرحله بعدی می‌رویم.
   
-  <img width="500px" src="/images/img-2.png" />
+  <img width="500px" src="images/img-2.png" />
   
   همان طور که در تصویر زیر می‌بینید در قسمت Project name می‌توانیم اسم پروژه را انتخاب و در قسمت Location محل قرار گیری پروژه را مشخص کنیم و اگر تیک قسمت آخر را     برداریم می‌توانیم Solution name را متفاوت از Project name تعیین کنیم.  مجددا برای رفتن به مرحله بعد بر روی دکمه Next کلیک می‌کنیم.
 
- <img width="500px" src="/images/img-3.png" />
+ <img width="500px" src="images/img-3.png" />
  
  مطابق تصویر زیر، در این مرحله دقت کنید که Target Framework حتما روی (Net 5.0 (current قرار گرفته باشد.
  
- <img width="500px" src="/images/img-4.png" />
+ <img width="500px" src="images/img-4.png" />
  
  با کلیک بر روی دکمه Create پروژه SimpleCounter  ایجاد می‌شود.
  
  همان طور که می بینید در سمت راست محیط  visual studio  ما بخش Solution Explorer  را داریم. با توجه با این نکته که ما Blazor WebAssembly App  را انتخاب کردیم ساختار فایلی که اینجا می‌بینیم مربوط به ساختار پیش فرض Blazor می‌باشد. در ابتدا ما توضیحی کوتاه و مختصر در مورد این ساختار داده و سپس بنا بر نیاز تمرین فعلی این ساختار را تغییر می‌دهیم. 
  
- <img width="300px" src="/images/img-5.png" />
+ <img width="300px" src="images/img-5.png" />
  
  
  همانطور که در تصویر بالا می‌بینید ما داخل پروژه SimpleCounter.Blazor  به ترتیب پوشه‌های زیر را داریم.
@@ -88,11 +88,11 @@
 
 برای مطمئن شدن از درستی تغییر ساختار به پوشه pages برگشته و روی فایل Counter.razor کلیک راست کرده و همانند تصویر زیر گزینه View in Browser را انتخاب می کنیم.
 
-  <img width="300px" src="/images/img-6.png" />
+  <img width="300px" src="images/img-6.png" />
   
   به دلیل این که از قبل و به صورت پیش فرض ما یک سری کد داخل فایل Counter.razor  داشتیم خروجی که در مرورگر می‌بینیم مطابق تصویر زیر است.
   
-  <img width="300px" src="/images/img-7.png" />
+  <img width="300px" src="images/img-7.png" />
   
   برای ایجاد شمارنده‌‌ای مطابق جلسه پیش، اما این بار با استفاده از ‌Blazor به این صورت عمل می‌کنیم.
 
@@ -124,20 +124,20 @@
 
 خروجی تغییرات مطابق تصویر زیر می‌باشد.
 
-<img width="300px" src="/images/img-8.png" />
+<img width="300px" src="images/img-8.png" />
 
 برای افزودن کدهای css، روی پوشه pages  کلیک راست کرده، گزینه Add  را انتخاب و سپس گزینه NewItem را انتخاب می‌نماییم.
 
-<img width="500px" src="/images/img-9.png" />
+<img width="500px" src="images/img-9.png" />
 
 مطابق تصویر زیر از لیست ارائه شده Style Sheet  را انتخاب و در قسمت Name نامی مشابه نام Component که در اینجا Counter.razor نام دارد با پسوند css. انتخاب می کنیم.
 اسم فایل Counter.razor.css می‌باشد. سپس روی دکمه Add کلیک نمایید.
 
-<img width="500px" src="/images/img-10.png" />
+<img width="500px" src="images/img-10.png" />
 
 فایل Counter.razor.css مشابه تصویر زیر به پروژه اضافه می‌شود.
 
-<img width="300px" src="/images/img-11.png" />
+<img width="300px" src="images/img-11.png" />
 
 کدهای css کپی را از فایل css جلسه گذشته کپی و در فایل Counter.css وارد می‌کنیم. 
 
@@ -196,7 +196,7 @@ button {
 تغییرات را مجددا ذخیره و صفحه مرورگر را refresh می‌نماییم. خروجی تغییرات در مرورگر مشابه تصویر زیر می‌باشد.
 
 
-<img width="400px" src="/images/img-12.png" />
+<img width="400px" src="images/img-12.png" />
 
 در ادامه به جای افزودن کدهای Javascript برای تعیین عملکرد دکمه‌ها، از کدهای #C  استفاده می کنیم. به این صورت که مجددا روی پوشه Pages کلیک راست کرده و گزینه Add را انتخاب و سپس گزینه Class را انتخاب می کنیم. این بار فایلی با نام Counter.razor.cs ایجاد می کنیم.
 
