@@ -1,0 +1,15 @@
+﻿@page "/counter";
+
+<div class="card">
+    <div class="counter">
+        <span id="count">@currentCount</span>
+    </div>
+    <div class="action">
+        <button id="increase" @onclick="Increase">
+            Increase
+        </button>
+        <button id="decrease" @onclick="Decrease">
+            Deacrease
+        </button>
+    </div>
+</div>
