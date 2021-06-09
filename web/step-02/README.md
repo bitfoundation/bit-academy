@@ -1,281 +1,445 @@
-
-
-
 <div dir="rtl">
 
-  ## جلسه سوم- پیاده سازی شمارنده با استفاده از  Blazor
+  ## جلسه دوم- پیاده سازی شمارنده با استفاده از HTML, CSS, Javascript
   
- در این جلسه قصد داریم شمارنده جلسه پیش را با استفاده از Blazor  پیاده سازی کنیم. 
+  در این جلسه قصد داریم شمارنده ای مشابه تصویر زیر پیاده سازی کنیم. هدف ما از این جلسه این است که با انجام یک تمرین ساده شما رو با کاربرد  HTML, CSS, Javascript در صفحات وب آشنا کنیم.
 
-  وارد محیط visual studio  شده و از قسمت Get started روی گزینه create new project به منظور ایجاد پروژه جدید کلیک می‌کنیم. 
+  <img width="400px" src="images/img-1.png" />
   
+  در ابتدا پوشه ای به اسم  SimpleCounter1  در مسیر دلخواه ایجاد می‌کنیم.
+
+سپس وارد Visual Studio  شده و از قسمت   Get Started  مطابق تصویر زیر روی  گزینه  Open a local folder  کلیک کرده و فولدر مورد نظر ر انتخاب می کنیم.
+
   
-  <img width="500px" src="/images/img-1.png" />
-
- در مرحله بعد مطابق تصویر زیر از لیست ارایه شده ‌Blazor WebAssembly App را انتخاب و با کلیک بر روی دکمه Next به مرحله بعدی می‌رویم.
+  <img width="500px" src="images/img-2.png" />
   
-  <img width="500px" src="/images/img-2.png" />
+   مطابق تصویر زیر بعد از وارد شدن به محیط اصلی visual studio  در قسمت  Solution Explorer  روی اسم فولدر کلیک راست  و روی گزینه Add کلیک کرده  و در ادامه گزینه NewFile را انتخاب می‌کنیم تا یک فایل جدید ایجاد شود سپس نام فایل رو به counter.html تغییر می دهیم.
+
+  <img width="500px" src="images/img-3.png" />
+	
   
-  همان طور که در تصویر زیر می‌بینید در قسمت Project name می‌توانیم اسم پروژه را انتخاب و در قسمت Location محل قرار گیری پروژه را مشخص کنیم و اگر تیک قسمت آخر را     برداریم می‌توانیم Solution name را متفاوت از Project name تعیین کنیم.  مجددا برای رفتن به مرحله بعد بر روی دکمه Next کلیک می‌کنیم.
-
- <img width="500px" src="/images/img-3.png" />
- 
- مطابق تصویر زیر، در این مرحله دقت کنید که Target Framework حتما روی (Net 5.0 (current قرار گرفته باشد.
- 
- <img width="500px" src="/images/img-4.png" />
- 
- با کلیک بر روی دکمه Create پروژه SimpleCounter  ایجاد می‌شود.
- 
- همان طور که می بینید در سمت راست محیط  visual studio  ما بخش Solution Explorer  را داریم. با توجه با این نکته که ما Blazor WebAssembly App  را انتخاب کردیم ساختار فایلی که اینجا می‌بینیم مربوط به ساختار پیش فرض Blazor می‌باشد. در ابتدا ما توضیحی کوتاه و مختصر در مورد این ساختار داده و سپس بنا بر نیاز تمرین فعلی این ساختار را تغییر می‌دهیم. 
- 
- <img width="300px" src="/images/img-5.png" />
- 
- 
- همانطور که در تصویر بالا می‌بینید ما داخل پروژه SimpleCounter.Blazor  به ترتیب پوشه‌های زیر را داریم.
-
-پوشه Properties، داخل این پوشه یک فایل به نام launchSettings.json قرار گرفته که تنظیمات مربوط به راه اندازی سرور برنامه درآن است.
-
-
-پوشه wwwroot، در این پوشه فایل های استاتیک مانند فایل های css, font, image, … قرار دارند. 
-
-پوشه Pages، در این پوشه صفحات پروژه  با پسوند razor قرار گرفته‌اند. فایل‌هایی که دارای پسوند razor هستند شامل کدهای HTML و #C  می باشند.
-
-پوشه Shared، در این پوشه فایل‌هایی قرار دارند که می‌توانند بین صفحات مختلف به اشتراک گذاشته شوند.
-
-توضیحات در مورد ساختار فایل‌های پروژه برای این جلسه کافی است. همان طور که گفتیم طبق نیاز تمرین این جلسه ساختار فعلی را تغییر می دهیم. بدین ترتیب از پوشه wwwroot پوشه های css، sample-data و فایل favicon.ico رو حذف کرده و کدهای مربوط به فایل index.html رو به صورت زیر تغییر می‌دهیم.
-
-
-<div dir="ltr">
-
-  ```html
-   
-    <!DOCTYPE html>
-    
-    <html>
-      <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>SimpleCounter.Blazor</title>
-          <link href="SimpleCounter.Blazor.styles.css" rel="stylesheet" />
-      </head>
-
-      <body>
-          <div id="app">Loading...</div>
-          <script src="_framework/blazor.webassembly.js"></script>
-      </body>
-    </html>
-  ```
-</div>
-
-از پوشه pages  هم فایل های FetchData.razor و Index.razor  را هم حذف می‌کنیم.
- و همین طور پوشه Shared را هم حذف نمایید.
-در ادامه در فایل Imports.razor_ ، به دلیل اینکه پوشه  Shared را از قبل حذف کرده ایم، خط  زیر را هم حذف می‌کنیم.
-
-<div dir="ltr">
-
-  ```razor
-    @using simpleCounter.Blazor.Shared
-  ```
-</div>
-
-کدهای داخل فایل App.razor  را هم به کد زیر تغییر می دهیم.
-
-<div dir="ltr">
-
-  ```razor
-    
-    <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
-        <Found Context="routeData">
-            <RouteView RouteData="@routeData"/>
-        </Found>
-        <NotFound>
-            <LayoutView>
-                <p>Sorry, there's nothing at this address.</p>
-            </LayoutView>
-        </NotFound>
-    </Router>
-  ```
-</div>
-
-در کد بالا هم   DefaultLayout  و Layout را به دلیل حذف فایل های مربوطه حذف می‌کنیم.
-
-برای مطمئن شدن از درستی تغییر ساختار به پوشه pages برگشته و روی فایل Counter.razor کلیک راست کرده و همانند تصویر زیر گزینه View in Browser را انتخاب می کنیم.
-
-  <img width="300px" src="/images/img-6.png" />
+  <img width="500px" src="images/img-4.png" />
   
-  به دلیل این که از قبل و به صورت پیش فرض ما یک سری کد داخل فایل Counter.razor  داشتیم خروجی که در مرورگر می‌بینیم مطابق تصویر زیر است.
-  
-  <img width="300px" src="/images/img-7.png" />
-  
-  برای ایجاد شمارنده‌‌ای مطابق جلسه پیش، اما این بار با استفاده از ‌Blazor به این صورت عمل می‌کنیم.
-
-ابتدا به فایل Counter.razor رفته و کدهای زیر را که همان کدهای فایل HTML جلسه پیش است را جایگزین کدهای فعلی می‌کنیم.
+  فایل های HTML معمولا با پسوند html و یا htm مشخص می شوند. با استفاده از کدهای HTML ساختار اصلی صفحات وب را ایجاد می‌کنیم. صفحات HTML شامل انواع المنت ها یا عناصر هستند به عنوان مثال یک صفحه HTML می تواند شامل المنت های text, image, table و…. می‌باشد.
+هر عنصر یا المنت HTML توسط یک تگ شروع و یک تگ پایان به صورت زیر تعریف می شود.
 
   <div dir="ltr">
 
-  ```razor
-    
-    @page "/counter"
-
-    <div class="card">
-        <div class="counter">
-            <span id="count">0</span>
-        </div>
-        <div class="action">
-            <button id="increase" onclick="Increase()">
-                Increase
-            </button>
-            <button id="decrease" onclick="Decrease()">
-                Deacrease
-            </button>
-        </div>
-    </div>
-
+  ```html
+   
+   <tagname/> Element content <tagname>
+   
   ```
-</div>
+  </div>
   
-  دقت کنید که خط اول این فایل که مسیر این فایل را در مرورگر مشخص می کند همچنان بدون تغییر باقی می‌ماند.
-تغییرات را با استفاده از ctrl + s  ذخیره کرده و مجددا به مرورگر رفته و صفحه را بروزرسانی می‌کنیم.
+  با استفاده از کدهای HTML  زیر ساختار شمارنده را ایجاد می‌کنیم. در ادامه به توضیح کوتاهی از هر کدام از تگ های زیر می پردازیم.
+  
+  <div dir="ltr">
 
+  ```html
+   
+   <html>
+     <head>
+        <title>
+          Counter
+        </title>
+     </head>
+     
+     <body>
+      <div>
+        <div>
+          <span>0</span>
+        </div>
+        <div>
+          <button>Increase</button>
+          <button>Decrease</button>
+        </div>
+      </div>
+     </body>
+  </html>
+   
+  ```
+  </div>
+  
+  تگ html المنت اصلی یک صفحه HTML است و مشخص کننده شروع و پایان یک فایل HTML  می باشد.
+  
+  تگ head جنبه نمایشی ندارد و می تواند شامل تگ title  برای مشخص کردن عنوان صفحه و یا تگ های متا که در جلسات آینده نحوه استفاده و کاربرد آنها را توضیح می‌دهیم و یا تگ های link برای افزودن یک فایل خارجی و … می باشد.
+  
+  تگ body تمامی مواردی که جنبه نمایش دارند و قرار است به کاربر نشان داده شوند داخل این تگ تعریف می‌شوند.
+  
+  تگ div برای بخش بندی قسمت‌های مختلف صفحه و یا گروه بندی المنت ها استفاده می‌شود.
+  
+  تگ span معمولا برای مشخص کردن قسمتی از متن استفاده می‌شود.
+  
+  تگ button  برای ایجاد دکمه ای که قابلیت کلیک شدن داشته باشه استفاده می‌شود.
+  
+  به منظور دیدن خروجی کدها با استفاده از ctrl+s  تغییرات را ذخیره و داخل فایل counter.html مطابق تصویر زیر کلیک راست کرده و گزینه  view in Browser  را انتخاب می‌کنیم.
+  
+  <img width="500px" src="images/img-5.png" />
+   
+  از این پس هر تغییری که در فایل ها ایجاد کردید ابتدا تغییرات را ذخیره  و سپس برا دیدن نتیجه تغییرات صفحه مرورگر را refresh نمایید.
+  
+مجددا روی نام فولدر (SimpleCounter1) کلیک راست کرده و مطابق تصویر زیر، گزینه Add  و سپس گزینه New Folder  را انتخاب می کنیم. نام فولدر را به  css تغییر می دهیم. روی فولدر css کلیک راست و این بار یک فایل به نام  counter.css  ایجاد می کنیم.
+  
+  <img width="500px" src="images/img-6.png" />
+  
+  <img width="500px" src="images/img-7.png" />
+  
+قبل از ورود به کدهای  css لازم است یک حداقلی در مورد سلکتورها، نحوه و موارد استفاده آنها  بدانیم.
+به عنوان مثال اگر قرار باشد  یک ظاهر یا استایل را برای دکمه های داخل این تمرین تعیین کنیم ابتدا لازم داریم دکمه را انتخاب و سپس استایل مورد نظر را به آن دکمه اختصاص دهیم.
 
-خروجی تغییرات مطابق تصویر زیر می‌باشد.
+برای انتخاب کردن المنت روش های متفاوتی وجود دارد که در این جلسه ما به بررسی سه تا از مهم ترین روش های انتخاب یک المنت یا عنصر می پردازیم.
+  
+  ۱. استفاده مستقیم از نام خود المنت
 
-<img width="300px" src="/images/img-8.png" />
+ به عنوان مثال در این تمرین می خواهیم به دکمه، رنگ پس زمینه سبز رو اختصاص بدیم. اگر قرار باشد برای انتخاب المنت از نام خود المنت استفاده کنیم به این صورت عمل میکنیم.
+ 
+<div dir="ltr">
 
-برای افزودن کدهای css، روی پوشه pages  کلیک راست کرده، گزینه Add  را انتخاب و سپس گزینه NewItem را انتخاب می‌نماییم.
+```css
+button {  
+  background-color: green; 
+}
+```
 
-<img width="500px" src="/images/img-9.png" />
+</div>
 
-مطابق تصویر زیر از لیست ارائه شده Style Sheet  را انتخاب و در قسمت Name نامی مشابه نام Component که در اینجا Counter.razor نام دارد با پسوند css. انتخاب می کنیم.
-اسم فایل Counter.razor.css می‌باشد. سپس روی دکمه Add کلیک نمایید.
+۲. استفاده از نام کلاس
 
-<img width="500px" src="/images/img-10.png" />
+برای استفاده از نام class ابتدا باید attribute یا ویژگی کلاس رو به المنت مورد نظر اضافه و مقداری (نام کلاس) را هم برای این ویژگی به عنوان مثال به صورت زیر تعیین کنید.
+ 
+ <div dir="ltr">
 
-فایل Counter.razor.css مشابه تصویر زیر به پروژه اضافه می‌شود.
+  ```html
+  
+  
+    <div class="card"></div>
+    
+  ```
 
-<img width="300px" src="/images/img-11.png" />
+</div>
 
-کدهای css کپی را از فایل css جلسه گذشته کپی و در فایل Counter.css وارد می‌کنیم. 
-
+و سپس برای افزودن استایل به این المنت به این صورت عمل می کنیم.
 
 <div dir="ltr">
 
 ```css
-.card {
- padding: 20px;
- margin: 200px auto;
- width: 400px;
- height: 400px;
- background-color: lightskyblue;
- box-shadow: 1px 2px 10px 0 #808080;
-}
- 
-.counter {
- margin: 50px auto;
- width: 150px;
- height: 150px;
- line-height: 150px;
- background-color: #eee;
- border-radius: 50%;
- border: 10px solid #2196f3;
- text-align: center;
- font-size: 60px;
- font-weight: bold;
- color: #1077c2;
-}
- 
-.action {
- text-align: center;
-}
- 
-button {
- padding: 20px 30px;
- margin: 5px;
- font-size: 24px;
- font-weight: bold;
- border-radius: 5px;
- cursor: pointer;
- color: white
-}
- 
-#increase {
- background-color: #18cd73;
- border: 3px solid #19a35d;
-}
- 
-#decrease {
- background-color: #ef7694;
- border: 3px solid #b74b66;
+
+.card {  
+  background-color: blue; 
 }
 
 ```
+
 </div>
 
-تغییرات را مجددا ذخیره و صفحه مرورگر را refresh می‌نماییم. خروجی تغییرات در مرورگر مشابه تصویر زیر می‌باشد.
+دقت کنید که زمانی که می خواهید از نام کلاس برای انتخاب المنت استفاده کنید قبل از نام کلاس باید از " . " استفاده کنید.
 
+۳. استفاده از نام id
 
-<img width="400px" src="/images/img-12.png" />
+برای استفاده از نام id ابتدا باید attribute یا ویژگی id رو به المنت مورد نظر اضافه و یک مقداری (نام id ) را هم برای این ویژگی به عنوان مثال به صورت زیر تعیین کنید.
 
-در ادامه به جای افزودن کدهای Javascript برای تعیین عملکرد دکمه‌ها، از کدهای #C  استفاده می کنیم. به این صورت که مجددا روی پوشه Pages کلیک راست کرده و گزینه Add را انتخاب و سپس گزینه Class را انتخاب می کنیم. این بار فایلی با نام Counter.razor.cs ایجاد می کنیم.
-
-کد این فایل را به کد زیر تغییر می‌دهیم.
-
-  <div dir="ltr">
-
-  ```c#
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
-    namespace SimpleCounter.Blazor.Pages
-    {
-        public partial class Counter
-        {
-            public int currentCount = 0;
-
-            public void Increase()
-            {
-                currentCount++;
-            }
-
-            public void Decrease()
-            {
-                currentCount--;
-            }
-        }
-    }
-
-  ```
-</div>
-
-  همان طور که می بینید در کلاسی به نام Counter یک متغیر به نام currentCount از نوع int که نوع عددی می باشد با مقدار اولیه " 0 " تعیین کرده‌ایم. همچنین دو متد به نام‌های Increase و Decrease که همانند جلسه گذشته، زمانی که فراخوانی می‌شوند، یک واحد به عدد ما افزوده و یا کم می‌کنند.
-
-سپس مجددا وارد فایل Counter.razor  شده و نحوه فراخوانی متدها را تغییر می‌دهیم چرا که باید از سینتکس ‌‌Blazor که با @ مشخص میشوند استفاده کنیم.
-
-همچنین به جای عدد صفر از نام متغیر CurrntCount استفاده می کنیم تا هر تغییر که روی عدد جاری اعمال شد مستقیما در این قسمت نمایش داده شود.
-
-نحوه فراخوانی هر تابع روی رویداد onclick  دکمه مربوطه و استفاده از نام متغیر به جای عدد مطابق کد زیر تغییر می‌کند.
-
-  <div dir="ltr">
+ <div dir="ltr">
 
   ```html
+  
+    <div id="card"></div>
+    
+  ```
+
+</div>
+
+و سپس برای دادن استایل به این المنت به این صورت عمل می کنیم.
+
+<div dir="ltr">
+
+```css
+
+#card {  
+  background-color: red; 
+}
+
+```
+
+</div>
+
+شما می توانید مانند کد زیر از نام کلاسی که برای یک المنت تعیین کرده اید برای المنت های دیگر هم استفاده کنید.
+
+<div dir="ltr">
+
+  ```html
+  
   <div class="card">
+    <span>0</span>	
+  </div>
+  
+  <div class="card">
+    <button>Increase</button>
+    <button>Decrease</button>
+  </div>
+    
+  ```
+
+</div>
+
+ولی دقت نمایید که نام id منحصرا برای یک المنت هست و نمی توانیم از نام id یک المنت برای المنت دیگری استفاده کنیم.
+
+قبل از شروع به نوشتن کدهای css  ما باید ابتدا فایل counter.css  رو با استفاده از تگ <link> داخل تگ <head> و با استفاده از ویژگی href این تگ، به فایل counter.html اضافه کنیم.
+
+<div dir="ltr">
+
+  ```html
+  
+  <head>
+    <title>
+      Counter
+    </title>
+    <link  rel=”stylsheet” href=”css/counter.css”/>   
+  </head>
+    
+  ```
+
+</div>
+
+و سپس برای نوشتن کدهای css وارد فایل css می‌شویم.
+
+در ابتدا برای تعیین کردن رنگ پس زمینه برای کل صفحه به صورت زیر عمل می کنیم.
+
+<div dir="ltr">
+
+```css
+
+body {
+  background-color: #fafafa;
+}
+
+```
+
+</div>
+
+دراین جا body در واقع همان selector  ما می‌باشد. اصطلاحا به background-color  می گوییم property که هر المنت می تواند property  های متفاوتی داشته باشد و هر property  می تواند مقادیر متفاوتی داشته باشد و در نهایت با استفاده از ";"  یک property از property بعدی جدا می‌شود.
+
+به فایل counter.html برگشته و برای انتخاب المنت ها یکسری class و id به المنت های موجود در این فایل،  به صورت زیر 
+اختصاص می دهیم.
+
+
+<div dir="ltr">
+
+  ```html
+  
+  <body>
+    <div class="card">
       <div class="counter">
-          <span id="count">@currentCount</span>
+        <span id="count">0</span>
       </div>
       <div class="action">
-          <button id="increase" @onclick="Increase">
-              Increase
-          </button>
-          <button id="decrease" @onclick="Decrease">
-              Deacrease
-          </button>
+        <button class="increase">Increase</button>
+        <button class="decrease">Decrease</button>
       </div>
-  </div>
-
+    </div>
+  </body>
+    
   ```
+
 </div>
 
-تغییرات جدید را ذخیره و مجددا صفحه مرورگر را بروزرسانی نمایید.
+برگردیم به فایل counter.css در ابتدا به تگ  div با کلاس card پراپرتی های زیرا را اختصاص می دهیم.
+
+<div dir="ltr">
+
+```css
+
+.card {
+  Padding: 20px;  //برای تعیین  فاصله المنت از محتوای درون المنت استفاده می‌شود
+  Margin: 200px auto;  //برای تعیین فاصله المنت از محتوای بیرون از المنت استفاده می شود
+  Width: 400px;  //برای تعیین عرض المنت مورد نظر استفاده می‌شود
+  Height: 400px;  //برای تعین ارتفاع المنت مورد نظر استفاده می‌شود
+  Background-color: lightskyblue;  //برای تعیین رنگ پس زمینه المنت مورد نظر استفاده می‌شود
+  Box-shadow: 1px 2px 10px 0 #808080;  //برای افزودن سایه به المنت مورد نظر استفاده می‌شود
+  Border-radius: 5px;  //باافزودن شعاع به گوشه های یک المنت که در نهایت موجب خمیدگی گوشه می‌شود
+}
+
+
+```
+
 </div>
+
+نکته: هر کدام از پراپتری‌های padding و maargin  حداکثر چهار عدد را می توانند به عنوان مقدار بگیرند که این چهار عدد به ترتیب نشان دهنده فاصله از بالا، راست، پایین و چپ می‌باشند. اگر ما فقط یک مقدار به هر کدام از این property ها اختصاص دهیم به این معنی است که هر چهار طرف یک مقدار مشابه را به خود می گیرند و اگر دو مقدار اختصاص دهیم به این معنی است که عدد اول مربوط به فاصله از بالا و پایین المنت و عدد دوم مربوط به فاصله از چپ و راست المنت می‌باشد.
+
+اختصاص دادن مقدار auto  به جای عدد دوم به پراپرتی  margin  به این معنی است که المنت ما از سمت چپ و راست در قسمت وسط قرار می‌گیرد.
+
+در ادامه به تگ  div با کلاس counter پراپرتی های زیرا را اختصاص می دهیم.
+
+<div dir="ltr">
+
+```css
+
+.counter {
+  margin: 50px; 
+  width: 150px;
+  height: 150px;
+  line-height: 150px; //باعث میشه متن داخل المنت به اندازه مقداری که داده شده از خط قبل و بعد فاصله بگیرد
+  background-color: #eee;
+  border-radius: 50%;  //با دادن این مقدار به این پراپرتی المنت ما دایره‌ای شکل می‌شود
+  border: 10px solid #2196f3; //برای افزودن خطی با سایز، رنگ و استایل خاص به المنت استفاده می شود
+  text-align: center;  //نحوه چیدمان متن داخل المنت را مشخص می کند
+  font-size: 60px;  //سایز فونت متن داخل المنت را مشخص می‌کند
+  Font-weight: bold;  //ضخامت متن داخل المنت را مشخص می کند
+  color: #107732;  //رنگ متن داخل المنت را مشخص می کند
+}
+
+
+```
+
+</div>
+
+سپس به تگ  div با کلاس action پراپرتی زیرا را اختصاص می دهیم.
+
+<div dir="ltr">
+
+```css
+
+button {
+  padding: 20px 30px;
+  margin: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;  //باعث می‌شود زمانی که با موس روی دکمه ‌ها می‌رویم اشاره گر ماوس به شکل دست در بیاید
+}
+
+#increase {
+  background-color: #18cd73;
+  border: 3px solid #19a35d;
+}
+
+#decrease {
+  background-color; #ef7694;
+  border: 3px solid #b74b66;
+}
+
+```
+
+</div>
+
+به منظور این که به صفحات وب یک عملکردی را اضافه کنیم مثلا در این تمرین، زمانی که روی دکمه Increase  کلیک کردیم یه واحد به عدد اضافه و زمانی که روی دکمه Decrease کلیک کردیم یک واحد از عدد کم شود از کدهای JavaScript استفاده می‌کنیم.
+برای این منظور ابتدا یک فولدر جدید به نام js  ساخته و سپس یه فایل جدید به نام counter.js   را داخل همین فولدر می‌سازیم.
+
+<img width="400px" src="images/img-8.png" />
+
+در ادامه باید فایل js  را به فایل counter.html اضافه کنیم. برای این کار به فایل counter.html  رفته و به انتهای تگ body  یک تگ  script اضافه می کنیم و با استفاده از ویژگی src این تگ آدرس فایل js  را مشخص می کنیم.
+
+<div dir="ltr">
+
+  ```html
+  
+  <body>
+    <div class="card">
+      <div class="counter">
+	      <span id="count">0</span>
+      </div>
+      
+      <div class="action">
+        <button class="increase">Increase</button>
+        <button class="decrease">Decrease</button>
+      </div>
+    </div>
+    <script src=”js/counter.js”></script>
+  </body>
+    
+  ```
+
+</div>
+
+برای نوشتن کدهای Javascript به فایل counter.js  رفته و در ابتدا یک متغیر به نام val  و از نوع const تعریف می‌کنیم و سپس مقدار document.querySelector(‘#count’) را  به صورت زیر به آن اختصاص می‌دهیم.
+
+<div dir="ltr">
+
+  ```js
+  
+  const val = document.querySelector(‘#count’);
+    
+  ```
+
+</div>
+
+سپس صفحه مرورگر را refresh کرده روی صفحه کلیک راست و گزینه‌ی inspect  را انتخاب کنید. محیطی که با انتخاب این گزینه برای شما باز می‌شود محیط developer tools  نام دارد سپس وارد تب console  شوید. تب console یکی از قدرتمندترین ابزارها برای دیباگ کردن کدهای سمت فرانت می‌باشد. 
+صفحه مرورگر خود را در همین حالت نگه داشته و مجددا به فایل counter.js  رفته و خط زیر را به این فایل اضافه نمایید.
+
+<div dir="ltr">
+
+  ```js
+  
+  console.log (val)
+    
+  ```
+
+</div>
+
+مجددا صفحه مرورگر را refresh نمایید همان طور که می‌بینید مقداری که داخل متغیر  val قرار گرفته در قسمت console چاپ شده است.
+
+مقدار چاپ شده داخل تب console  به صورت زیر است.
+
+<div dir="ltr">
+
+  ```html
+  
+  <span id="count">0</span>
+    
+  ```
+
+</div>
+
+در واقع با استفاده از متد querySelector المنت مورد نظر را در JavaScript  انتخاب و به متغیر val اختصاص داده‌ایم.
+
+نکته: هر متد، یک بلاک کد از پیش تعریف شده است که به منظور انجام وظیفه ای خاص مانند تبدیل یه مقدار به رشته و یا انتخاب یک المنت و … تعیین شده است.
+
+از (console.log (val  صرفا برای متوجه شدن مقدار داخل متغیر  val استفاده کردیم و در ادامه کار احتیاجی به آن نداریم بنابراین این خط از کد را پاک می‌کنیم.
+
+در ادامه باید دو تابع یا function  برای اضافه کردن و کم کردن از عدد بنویسیم.
+
+<div dir="ltr">
+
+  ```js
+  
+  function Increase() {
+	  val.textCountent++ ; 
+  }
+    
+  ```
+
+</div>
+
+از متد  textContent  برای دسترسی به عدد داخل المنت استفاده می‌کنیم.
+
+<div dir="ltr">
+
+  ```js
+  
+  function Decrease() {
+	  val.textCountent-- ;
+  }
+
+    
+  ```
+
+</div>
+
+در نهایت هر function یا تابعی باید یک جایی فراخوانی شود در این تمرین ما در نظر داشتیم با کلیک بر روی هر دکمه (افزایش یا کاهش عدد) انجام شود برای این منظور به فایل  counter.html  برمی گردیم و روی رویداد onclick هر کدام از button ها function مربوط را به صورت زیر فراخوانی می کنیم.
+
+<div dir="ltr">
+
+  ```js
+  
+  <div class="action">
+    <button class="increase"onclick=”increase()”>Increase</button>
+    <button class="decrease onclick=”decrease()">Decrease</button>
+  </div>
+    
+  ```
+
+</div>
+
+</div>
+
