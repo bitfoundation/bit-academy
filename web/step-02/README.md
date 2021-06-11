@@ -428,7 +428,7 @@ button {
 	
 تغییرات را ذخیره و به مرررگر برمی‌گردیم. خروجی نهایی به صورت زیر می‌باشد.
 	
-<img width="500px" src="images/counter.gif" />
+<img width="400px" src="images/counter.gif" />
 
 </div>
 
