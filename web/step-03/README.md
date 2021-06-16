@@ -187,7 +187,7 @@
 
 <img width="300px" src="images/img-11.png" />
 
-کدهای css کپی را از فایل css جلسه گذشته کپی و در فایل Counter.css وارد می‌کنیم. 
+کدهای CSS را از فایل CSS جلسه گذشته کپی و در فایل Counter.css وارد می‌کنیم.  
 
 
 <div dir="ltr">
