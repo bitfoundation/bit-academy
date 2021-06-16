@@ -20,7 +20,7 @@
   ```
 </div>
 
-<img width="400px" src="images/img-2.png" />
+<img width="300px" src="images/img-2.png" />
 
  برای ایجاد ساختار اولیه ماشین حساب کد زیر را در فایل Calculator.razor  وارد کنید.
 
@@ -53,7 +53,7 @@
 
 از تگ های Input برای گرفتن انواع دیتا از سمت کاربر استفاده می‌کنیم.
 
-<img width="400px" src="images/img-3.png" />
+<img width="300px" src="images/img-3.png" />
 
 به منظور افزودن استایل به المنت در این جلسه از نام class هر المنت به عنوان selector  استفاده می‌کنیم. در نتیجه کدهای مربوط به فایل Calculator.razor به صورت زیر تغییر می کنند.
 
