@@ -195,8 +195,6 @@ namespace SimpleBlazorCalculator.Pages
             finalresult = (Convert.ToDouble(num1) * Convert.ToDouble(num2)).ToString();
         }
  
- 
- 
         void DivideNumbers()
         {
             if (Convert.ToDouble(num2) != 0)
@@ -216,5 +214,11 @@ namespace SimpleBlazorCalculator.Pages
   
   ```
 </div>
+
+همانطور که در کد بالا می‌بینید داخل کلاس Calculator، سه متغیر از نوع string داریم که متغیر num1 , num2 قرار است دو عددی که از کاربر دریافت می‌کنیم را داخل خود نگه داشته و متغیر  finalresult نتیجه نهایی را در خود نگه دارد.
+
+چهار متد از نوع void برای چهار عمل اصلی داریم.
+استفاده از نوع void برای تعیین نوع یک متد به این معناست که آن متد مقداری را بر نمی گرداند.
+
   
 </div>
