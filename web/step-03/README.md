@@ -143,11 +143,11 @@
     
     @page "/counter"
 
-    <div class="card">
-        <div class="counter">
+    <div id="card">
+        <div id="counter">
             <span id="count">0</span>
         </div>
-        <div class="action">
+        <div id="action">
             <button id="increase" onclick="Increase()">
                 Increase
             </button>
@@ -193,7 +193,7 @@
 <div dir="ltr">
 
 ```css
-.card {
+#card {
  padding: 20px;
  margin: 200px auto;
  width: 400px;
@@ -202,7 +202,7 @@
  box-shadow: 1px 2px 10px 0 #808080;
 }
  
-.counter {
+#counter {
  margin: 50px auto;
  width: 150px;
  height: 150px;
@@ -216,7 +216,7 @@
  color: #1077c2;
 }
  
-.action {
+#action {
  text-align: center;
 }
  
@@ -291,8 +291,8 @@ button {
   <div dir="ltr">
 
   ```html
-  <div class="card">
-      <div class="counter">
+  <div id="card">
+      <div id="counter">
           <span id="count">@currentCount</span>
       </div>
       <div class="action">
