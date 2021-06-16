@@ -187,7 +187,7 @@
 
 <img width="300px" src="images/img-11.png" />
 
-کدهای CSS را از فایل CSS جلسه گذشته کپی و در فایل Counter.css وارد می‌کنیم.  
+کدهای CSS را از فایل CSS جلسه گذشته کپی و در فایل Counter.razor.css وارد می‌کنیم.  
 
 
 <div dir="ltr">
@@ -227,7 +227,7 @@ button {
  font-weight: bold;
  border-radius: 5px;
  cursor: pointer;
- color: white
+ color: white;
 }
  
 #increase {
@@ -295,7 +295,7 @@ button {
       <div id="counter">
           <span id="count">@currentCount</span>
       </div>
-      <div class="action">
+      <div id="action">
           <button id="increase" @onclick="Increase">
               Increase
           </button>
