@@ -217,8 +217,8 @@ namespace SimpleBlazorCalculator.Pages
 
 همانطور که در کد بالا می‌بینید داخل کلاس Calculator، سه متغیر از نوع string داریم که متغیر num1 , num2 قرار است دو عددی که از کاربر دریافت می‌کنیم را داخل خود نگه داشته و متغیر  finalresult نتیجه نهایی را در خود نگه دارد.
 
-همانطور که می‌بینید چهار متد به نام‌های AddNumbers، SubtractNumbers، MultiplyNumbers، DivideNumbers نوع void برای  چهار عمل اصلی داریم.
-استفاده از نوع void برای تعیین نوع یک متد به این معناست که آن متد مقداری را بر نمی گرداند.
+همانطور که می‌بینید چهار متد به نام‌های AddNumbers، SubtractNumbers، MultiplyNumbers، DivideNumbers از نوع void برای  چهار عمل اصلی داریم.
+استفاده از نوع void در تعیین نوع یک متد، به این معناست که آن متد مقداری را بر نمی گرداند.
 
   
 </div>
