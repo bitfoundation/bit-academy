@@ -230,8 +230,8 @@ button {
   font-size: 24px;
   font-weight: bold;
   border-radius: 5px;
-  cursor: pointer;
-  color: white;  /* .زمانی که با موس روی دکمه‌ها می‌رویم اشاره گر ماوس به شکل دست در می‌یاید */
+  cursor: pointer; /* .زمانی که با موس روی دکمه‌ها می‌رویم اشاره گر ماوس به شکل دست در می‌یاید */
+  color: white;  
 }
 
 #increase {
