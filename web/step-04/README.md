@@ -261,5 +261,42 @@ Num1, num2 هر کدام یک مقدار رشته‌ای هستند که حاو�
   
   ```
 </div>
+
+با استفاده از ویژگی bind در ‌Blazor می‌توانیم مقادیر متغیرهای (num1, num2, finalresult) مربوط به هر input را به آنها نسبت دهیم. 
+ 
+ در واقع ما یک اتصال داده بین متغیرها در کلاس calculator و این  input ها ایجاد می‌کنیم. بدین ترتیب زمانی که کاربر اعداد را وارد می‌کند، مقادیر داخل متغیرهای num1 و num2 نشسته و در مقابل مقدار متغیر finalresult را به input  سوم نسبت می‌دهیم و با هر تغییری در این متغیر مقدار input بروزرسانی می‌شود.
+
+برای اعمال ویژگی bind کد را به صورت زیر تغییر دهید. 
+ 
+<div dir="ltr">
+
+  ```html
+
+  <div class="container">
+    <div class="card">
+        <div class="field">
+            <input type="text" placeholder="0" bind="@num1"/>
+        </div>
+
+        <div class="field">
+            <input type="text" placeholder="0" bind="@num2"/>
+        </div>
+
+        <div class="action">
+            <button class="btn" @onclick="AddNumbers">+</button>
+            <button class="btn" @onclick="SubtractNumbers">-</button>
+            <button class="btn" @onclick="MultiplyNumbers">*</button>
+            <button class="btn" @onclick="DivideNumbers">/</button>
+        </div>
+
+        <div class="field result">
+            <input type="text" placeholder="0" readonly bind="@finalresult" />
+        </div>
+    </div>
+  </div>
+  
+  ```
+</div>
+ 
   
 </div>
