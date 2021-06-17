@@ -83,10 +83,10 @@
     <div class="container">
     <div class="card">
         <div class="field">
-            <input placeholder="0"/>
+            <input type="text" placeholder="0"/>
         </div>
         <div class="field">
-            <input placeholder="0"/>
+            <input type="text" placeholder="0"/>
         </div>
         <div class="action">
             <button class="btn">+</button>
@@ -95,7 +95,7 @@
             <button class="btn">/</button>
         </div>
         <div class="field result">
-            <input readonly placeholder="0"/>
+            <input type="text" placeholder="0" readonly/>
         </div>
     </div>
 </div>
@@ -228,5 +228,38 @@ Num1, num2 هر کدام یک مقدار رشته‌ای هستند که حاو�
 <img width="250px" src="images/img-5.png" />
   
   به منظور استفاده از ساختار شرطی از کلمه کلیدی if استفاده می‌کنیم. در داخل پرانتز شرط مورد نظر را نوشته، در صورت صحت شرط تعیین شده، مجموعه‌ای از دستورات در بلاک کد اول، اجرا و در غیر این صورت بعد از کلمه کلیدی else مجموعه دستورات در بلاک کد دوم، اجرا می‌شوند.
+
+در مرحله بعد باید هر متد را بر روی رویداد onclick دکمه مربوطه فراخوانی کنیم. 
+بدین ترتیب مجددا وارد فایل Calculator.razor شده و تغییرات زیر را بر روی کد اعمال می‌کنیم.
+
+<div dir="ltr">
+
+  ```c#
+
+  <div class="container">
+    <div class="card">
+        <div class="field">
+            <input type="text" placeholder="0" />
+        </div>
+
+        <div class="field">
+            <input type="text" placeholder="0" />
+        </div>
+
+        <div class="action">
+            <button class="btn" @onclick="AddNumbers">+</button>
+            <button class="btn" @onclick="SubtractNumbers">-</button>
+            <button class="btn" @onclick="MultiplyNumbers">*</button>
+            <button class="btn" @onclick="DivideNumbers">/</button>
+        </div>
+
+        <div class="field result">
+            <input type="text" placeholder="0" readonly />
+        </div>
+    </div>
+  </div>
+  
+  ```
+</div>
   
 </div>
