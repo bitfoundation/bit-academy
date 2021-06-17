@@ -1,11 +1,9 @@
-const val = document.querySelector('#count');
-
-console.log(val)
+const counter = document.querySelector('#count');
 
 function Increase() {
-    val.textContent++;
+    counter.textContent++;
 }
 
 function Decrease() {
-    val.textContent--;
+    counter.textContent--;
 }
