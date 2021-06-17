@@ -6,9 +6,11 @@
 
 <img width="400px" src="images/img-1.png" />
 
-همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد می‌کنیم و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف می‌کنیم. با این تفاوت که هر سه فایل موجود در پوشه Pages را حذف کنید. 
-داخل پوشه Pages  فایل جدید به نام Calculator.razor  ایجاد می‌کنیم.
-دقت کنید که در تعیین نام کامپوننت حرف اول باید بزرگ باشد.
+همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد کرده و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف کنید. با این تفاوت که هر سه فایل موجود در پوشه Pages را حذف کنید.
+  
+داخل پوشه Pages  فایل جدید به نام Calculator.razor  ایجاد کنید.
+
+  
 وارد فایل Calculator.razor شده و در ابتدای این فایل کد زیر را برای تعیین مسیر این صفحه در مرورگر وارد کنید.
 
 <div dir="ltr">
@@ -173,47 +175,48 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
- 
+
 namespace SimpleBlazorCalculator.Pages
 {
     public partial class Calculator
     {
-        string num1;
-        string num2;
-        string finalresult;
- 
+        public decimal Num1 { get; set; }
+
+        public decimal Num2 { get; set; }
+
+        public string Finalresult { get; set; }
+
         void AddNumbers()
         {
-            finalresult = (Convert.ToDouble(num1) + Convert.ToDouble(num2)).ToString();
+            Finalresult = (Num1 + Num2).ToString();
         }
- 
+
         void SubtractNumbers()
         {
-            finalresult = (Convert.ToDouble(num1) - Convert.ToDouble(num2)).ToString();
+            Finalresult = (Num1 - Num2).ToString();
         }
- 
+
         void MultiplyNumbers()
         {
-            finalresult = (Convert.ToDouble(num1) * Convert.ToDouble(num2)).ToString();
+            Finalresult = (Num1 * Num2).ToString();
         }
- 
+
         void DivideNumbers()
         {
-            if (Convert.ToDouble(num2) != 0)
+            if (Num2 != 0)
             {
-                finalresult = (Convert.ToDouble(num1) / Convert.ToDouble(num2)).ToString();
+                Finalresult = (Num1 / Num2).ToString("0.##");
             }
- 
             else
             {
- 
-                finalresult = "Cannot Divide by Zero";
+                Finalresult = "Cannot Divide by Zero";
             }
         }
     }
 }
 
-  
+
+
   ```
 </div>
 
@@ -277,11 +280,11 @@ Num1, num2 هر کدام یک مقدار رشته‌ای هستند که حاو�
   <div class="container">
     <div class="card">
         <div class="field">
-            <input type="text" placeholder="0" @bind="@num1"/>
+            <input type="text" placeholder="0" @bind="@Num1"/>
         </div>
 
         <div class="field">
-            <input type="text" placeholder="0" @bind="@num2"/>
+            <input type="text" placeholder="0" @bind="@Num2"/>
         </div>
 
         <div class="action">
@@ -292,7 +295,7 @@ Num1, num2 هر کدام یک مقدار رشته‌ای هستند که حاو�
         </div>
 
         <div class="field result">
-            <input type="text" placeholder="0" readonly @bind="@finalresult" />
+            <input type="text" placeholder="0" readonly @bind="@Finalresult" />
         </div>
     </div>
   </div>
