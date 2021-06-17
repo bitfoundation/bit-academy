@@ -234,7 +234,7 @@ Num1, num2 هر کدام یک مقدار رشته‌ای هستند که حاو�
 
 <div dir="ltr">
 
-  ```c#
+  ```html
 
   <div class="container">
     <div class="card">
