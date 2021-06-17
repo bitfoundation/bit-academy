@@ -310,6 +310,6 @@ namespace SimpleBlazorCalculator.Pages
  
   خروجی نهایی به صورت زیر می‌باشد.
 
-  <img width="400px" src="images/step-04.gif" />
+  <img width="400px" src="images/calculator.gif" />
 
 </div>
