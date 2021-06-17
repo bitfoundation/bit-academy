@@ -255,21 +255,29 @@ button {
 <div dir="ltr">
 
   ```html
-  <head>
-    <script src="counter.js"></script>
-  </head>
-  <body>
-    <div id="card">
-      <div id="counter">
-	      <span id="count">0</span>
-      </div>
-      
-      <div id="action">
-        <button id="increase">Increase</button>
-        <button id="decrease">Decrease</button>
-      </div>
-    </div>
-  </body>
+  
+<html>
+    <head>
+	<title>Counter</title>
+	<link rel="stylesheet" href="counter.css" />
+	<script src="counter.js" defer></script>
+    </head>
+    <body>
+	<div class="card">
+	    <div class="counter">
+		<span id="count">0</span>
+	    </div>
+	    <div class="action">
+		<button id="increase" onclick="Increase()">
+		    Increase
+		</button>
+		<button id="decrease" onclick="Decrease()">
+		    Deacrease
+		</button>
+	    </div>
+	</div>
+    </body>
+</html>
     
   ```
 
