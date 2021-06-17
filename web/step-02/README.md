@@ -273,7 +273,7 @@ button {
 
   ```js
   
-  let val = document.querySelector('#count');
+  let counter = document.querySelector('#count');
     
   ```
 
@@ -291,7 +291,7 @@ button {
 
   ```js
   
-  console.log (val)
+  console.log (counter)
     
   ```
 
@@ -306,7 +306,7 @@ button {
 
 نکته: هر متد، یک بلاک کد از پیش تعریف شده است که به منظور انجام وظیفه ای خاص مانند تبدیل یک مقدار به یک رشته و یا انتخاب یک المنت و … تعیین شده است. 
 
-از (console.log (val  صرفا برای متوجه شدن مقدار داخل متغیر  val استفاده کردیم و در ادامه کار احتیاجی به آن نداریم بنابراین این خط از کد را پاک می‌کنیم.
+از (console.log (counter  صرفا برای متوجه شدن مقدار داخل متغیر  val استفاده کردیم و در ادامه کار احتیاجی به آن نداریم بنابراین این خط از کد را پاک می‌کنیم.
 
 در ادامه باید دو تابع یا function  برای اضافه کردن و کم کردن از عدد بنویسیم.
 
@@ -315,7 +315,7 @@ button {
   ```js
   
   function Increase() {
-	  val.textCountent++ ; 
+	  counter.textCountent++ ; 
   }
     
   ```
@@ -329,7 +329,7 @@ button {
   ```js
   
   function Decrease() {
-	  val.textCountent-- ;
+	  counter.textCountent-- ;
   }
   
   ```
