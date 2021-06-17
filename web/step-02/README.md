@@ -61,8 +61,7 @@
   
   تگ html المنت اصلی یک صفحه HTML است و مشخص کننده شروع و پایان یک فایل HTML  می باشد.
   
-  تگ head شامل اطلاعاتی مرتبط با سند HTML است. برای مثال می‌توان با تگ link، یک سری استایل را که در یک فایل جداگانه خودمان نوشته‌ایم یا از اینترنت دریافت کرده ایم را استفاده کرد و برای مثال، ظاهر دکمه‌های استفاده شده را بهبود داد.
-در ادامه همین قسمت با استایل نویسی آشنا خواهید شد.
+  تگ head بخشی از فایل HTML است که هنگام بارگذاری صفحه در مرورگر وب نمایش داده نمی شود. می تواند شامل تگ title برای مشخص کردن عنوان صفحه و یا تگ های link  برای افزودن فایل‌های external مانند فایل های مربوط به style, script صفحه و .... باشد.
   
   تگ body تمامی مواردی که جنبه نمایش دارند و قرار است به کاربر نشان داده شوند داخل این تگ تعریف می‌شوند.
   
@@ -260,28 +259,21 @@ button {
 <div dir="ltr">
 
   ```html
- <html>
-    <head>
-        <title>Counter</title>
-        <link rel="stylesheet" href="counter.css" />
-        <script src="counter.js" defer></script>
-    </head>
-    <body>
-        <div class="card">
-            <div class="counter">
-                <span id="count">0</span>
-            </div>
-            <div class="action">
-                <button id="increase" onclick="Increase()">
-                    Increase
-                </button>
-                <button id="decrease" onclick="Decrease()">
-                    Deacrease
-                </button>
-            </div>
-        </div>
-    </body>
-</html>
+  <head>
+    <script src="counter.js"></script>
+  </head>
+  <body>
+    <div id="card">
+      <div id="counter">
+	      <span id="count">0</span>
+      </div>
+      
+      <div id="action">
+        <button id="increase">Increase</button>
+        <button id="decrease">Decrease</button>
+      </div>
+    </div>
+  </body>
     
   ```
 
