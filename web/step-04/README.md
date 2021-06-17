@@ -31,19 +31,19 @@
     <div>
       <div>
           <div>
-              <input type="text"/>
+              <input type="text" placeholder="0"/>
           </div>
           <div>
-              <input type="text"/>
+              <input type="text" placeholder="0"/>
           </div>
           <div>
               <button>+</button>
-              <button >-</button>
+              <button>-</button>
               <button>*</button>
               <button>/</button>
           </div>
           <div>
-              <input type="text" readonly/>
+              <input type="text" placeholder="0" readonly/>
           </div>
       </div>
   </div>
@@ -67,6 +67,8 @@
   
   ```
 </div>
+  
+ویژگی placeholder در input می‌تواند شامل یک متن خیلی کوتاه باشد که اشاره به مقدار مورد انتظار یک المنت دارد.
 
 در این تمرین همانطور که مشاهده می‌کنید ازدو تگ input برای گرفتن دو عدد از کاربر استفاده می‌کنیم.
 و همچنین از یک تگ input با ویژگی readonly به معنای این که محتوای این تگ قابل تغییر نیست و فقط قابل خواندن است، برای نتیجه نهایی استفاده می‌کنیم.
