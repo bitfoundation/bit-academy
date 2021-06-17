@@ -1,40 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SimpleBlazorCalculator.Pages
+﻿namespace SimpleBlazorCalculator.Pages
 {
     public partial class Calculator
     {
-        string num1;
-        string num2;
-        string finalresult;
+        public decimal Num1 { get; set; }
+
+        public decimal Num2 { get; set; }
+
+        public string Finalresult { get; set; }
 
         void AddNumbers()
         {
-            finalresult = (Convert.ToDouble(num1) + Convert.ToDouble(num2)).ToString();
+            Finalresult = (Num1 + Num2).ToString();
         }
 
         void SubtractNumbers()
         {
-            finalresult = (Convert.ToDouble(num1) - Convert.ToDouble(num2)).ToString();
+            Finalresult = (Num1 - Num2).ToString();
         }
 
         void MultiplyNumbers()
         {
-            finalresult = (Convert.ToDouble(num1) * Convert.ToDouble(num2)).ToString();
+            Finalresult = (Num1 * Num2).ToString();
         }
 
         void DivideNumbers()
         {
-            if (Convert.ToDouble(num2) != 0)
+            if (Num2 != 0)
             {
-                finalresult = (Convert.ToDouble(num1) / Convert.ToDouble(num2)).ToString();
+                Finalresult = (Num1 / Num2).ToString("0.##");
             }
             else
             {
-                finalresult = "Cannot Divide by Zero";
+                Finalresult = "Cannot Divide by Zero";
             }
         }
     }
