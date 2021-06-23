@@ -142,15 +142,15 @@
     
     @page "/counter"
 
-    <div id="card">
-        <div id="counter">
+    <div class="card">
+        <div class="counter">
             <span id="count">0</span>
         </div>
-        <div id="action">
-            <button id="increase" onclick="Increase()">
+        <div class="action">
+            <button class="increase" onclick="Increase()">
                 Increase
             </button>
-            <button id="decrease" onclick="Decrease()">
+            <button class="decrease" onclick="Decrease()">
                 Deacrease
             </button>
         </div>
@@ -192,7 +192,7 @@
 <div dir="ltr">
 
 ```css
-#card {
+.card {
  padding: 20px;
  margin: 200px auto;
  width: 400px;
@@ -201,7 +201,7 @@
  box-shadow: 1px 2px 10px 0 #808080;
 }
  
-#counter {
+.counter {
  margin: 50px auto;
  width: 150px;
  height: 150px;
@@ -215,7 +215,7 @@
  color: #1077c2;
 }
  
-#action {
+.action {
  text-align: center;
 }
  
@@ -229,12 +229,12 @@ button {
  color: white;
 }
  
-#increase {
+.increase {
  background-color: #18cd73;
  border: 3px solid #19a35d;
 }
  
-#decrease {
+.decrease {
  background-color: #ef7694;
  border: 3px solid #b74b66;
 }
@@ -262,7 +262,7 @@ button {
     {
         public partial class Counter
         {
-            public int currentCount { get; set; } = 0;
+            public int currentCount { get; set; }
 
             public void Increase()
             {
@@ -291,14 +291,14 @@ button {
 
   ```html
   <div id="card">
-      <div id="counter">
+      <div class="counter">
           <span id="count">@currentCount</span>
       </div>
-      <div id="action">
-          <button id="increase" @onclick="Increase">
+      <div class="action">
+          <button class="increase" @onclick="Increase">
               Increase
           </button>
-          <button id="decrease" @onclick="Decrease">
+          <button class="decrease" @onclick="Decrease">
               Deacrease
           </button>
       </div>
