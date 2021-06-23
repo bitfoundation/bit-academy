@@ -259,11 +259,22 @@ button {
 
   ```html
   
-<head>
-   <title>Counter</title>
-   <link rel="stylesheet" href="counter.css" />
-   <script src="counter.js" defer></script>
-</head>
+<body>
+	<div class="card">
+		<div class="counter">
+			<span>0</span>
+	   	</div>
+		<div class="action">
+			<button class="increase" onclick="Increase()">
+				Increase
+			</button>
+			<button class="decrease" onclick="Decrease()">
+				Deacrease
+			</button>
+		</div>
+	</div>
+	<script src="counter.js"></script>
+ </body>
     
   ```
 
