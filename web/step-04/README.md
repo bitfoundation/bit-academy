@@ -186,22 +186,22 @@ namespace SimpleBlazorCalculator.Pages
 
         public string Finalresult { get; set; }
 
-        void AddNumbers()
+        public void AddNumbers()
         {
             Finalresult = (Num1 + Num2).ToString();
         }
 
-        void SubtractNumbers()
+        public void SubtractNumbers()
         {
             Finalresult = (Num1 - Num2).ToString();
         }
 
-        void MultiplyNumbers()
+        public void MultiplyNumbers()
         {
             Finalresult = (Num1 * Num2).ToString();
         }
 
-        void DivideNumbers()
+        public void DivideNumbers()
         {
             if (Num2 != 0)
             {
