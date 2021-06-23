@@ -128,7 +128,7 @@ body {
 
 </div>
 
-در ادامه برای افزودن استایل به المنت‌های دیگر می خواهیم از روش انتخاب المنت با استفاده از ویژگی id المنت استفاده کنیم. بدین ترتیب به فایل counter.html رفته و برای هر کدام از المنت ها، ویژگی id  را با مقدار دلخواه تعیین می کنیم.
+در ادامه برای افزودن استایل به المنت‌های دیگر می خواهیم از روش انتخاب المنت با استفاده از ویژگی class هر المنت استفاده کنیم. بدین ترتیب به فایل counter.html رفته و برای هر کدام از المنت ها، ویژگی class  را با مقدار دلخواه تعیین می کنیم.
 
 
 <div dir="ltr">
@@ -136,13 +136,13 @@ body {
   ```html
   
   <body>
-    <div id="card">
-      <div id="counter">
-        <span id="count">0</span>
+    <div class="card">
+      <div class="counter">
+        <span>0</span>
       </div>
-      <div id="action">
-        <button id="increase">Increase</button>
-        <button id="decrease">Decrease</button>
+      <div class="action">
+        <button class="increase">Increase</button>
+        <button class="decrease">Decrease</button>
       </div>
     </div>
   </body>
@@ -151,15 +151,15 @@ body {
 
 </div>
 	
-اگر ما همچنان از نام خود المنت برای انتخاب المنت استفاده می‌کردیم، پراپرتی‌هایی که به آن المنت اختصاص می‌دادیم تمامی المنت‌ها با آن نام را در صفحه تحت تاثیر قرار می‌داد. به عنوان مثال در این تمرین ما دو دکمه داریم که یکسری از ویژگی‌‌های ظاهری بین آنها مشترک هستند مانند اندازه دکمه‌ها که ما می توانیم همچنان از نام خود المنت (button) برای انتخاب المنت استفاده کنیم اما یک سری از ویژگی‌ها مانند رنگ پس‌زمینه هر دکمه با دکمه بعدی متفاوت می‌باشد که در اینجا باید از یک Selector یا انتخاب‌گر دیگر مانند id برای انتخاب المنت مورد نظر استفاده کنیم.
+اگر ما همچنان از نام خود المنت برای انتخاب المنت استفاده می‌کردیم، پراپرتی‌هایی که به آن المنت اختصاص می‌دادیم تمامی المنت‌ها با آن نام را در صفحه تحت تاثیر قرار می‌داد. به عنوان مثال در این تمرین ما دو دکمه داریم که یکسری از ویژگی‌‌های ظاهری بین آنها مشترک هستند مانند اندازه دکمه‌ها که ما می توانیم همچنان از نام خود المنت (button) برای انتخاب المنت استفاده کنیم اما یک سری از ویژگی‌ها مانند رنگ پس‌زمینه هر دکمه با دکمه بعدی متفاوت می‌باشد که در اینجا باید از یک Selector یا انتخاب‌گر دیگر مانند class برای انتخاب المنت مورد نظر استفاده کنیم.
 
-برای انتخاب المنت با استفاده از نام id از " # "  قبل از نوشتن نام selector استفاده می‌کنیم.
+برای انتخاب المنت با استفاده از نام class از " . "  قبل از نوشتن نام selector استفاده می‌کنیم.
 
 <div dir="ltr">
 
 ```css
 
-#card {
+.card {
   Padding: 20px;  /* .برای تعیین  فاصله المنت از محتوای درون المنت استفاده می‌شود */
   Margin: 200px auto; /* .برای تعیین فاصله المنت از محتوای بیرون از المنت استفاده می‌شود */ 
   Width: 400px;  /* .برای تعیین عرض المنت استفاده می‌شود */
@@ -183,7 +183,7 @@ body {
 
 ```css
 
-#counter {
+.counter {
   margin: 50px auto; 
   width: 150px;
   height: 150px;
@@ -208,7 +208,7 @@ body {
 
 ```css
 
-#action {
+.action {
   text-align: center; 
 }
 
@@ -234,12 +234,12 @@ button {
   color: white;  
 }
 
-#increase {
+.increase {
   background-color: #18cd73;
   border: 3px solid #19a35d;
 }
 
-#decrease {
+.decrease {
   background-color: #ef7694;
   border: 3px solid #b74b66;
 }
@@ -346,8 +346,8 @@ button {
   ```html
   
   <div class="action">
-    <button id="increase" onclick="increase()">Increase</button>
-    <button id="decrease" onclick="decrease()">Decrease</button>
+    <button class="increase" onclick="increase()">Increase</button>
+    <button class="decrease" onclick="decrease()">Decrease</button>
   </div>
     
   ```
