@@ -30,25 +30,28 @@
 
   ```html
   
-    <div>
-      <div>
-          <div>
-              <input type="text" placeholder="0"/>
-          </div>
-          <div>
-              <input type="text" placeholder="0"/>
-          </div>
-          <div>
-              <button>+</button>
-              <button>-</button>
-              <button>*</button>
-              <button>/</button>
-          </div>
-          <div>
-              <input type="text" placeholder="0" readonly/>
-          </div>
+    
+<div class="container">
+  <div class="card">
+      <div class="field">
+          <input type="text" placeholder="0"/>
+      </div>
+      <div class="field">
+          <input type="text" placeholder="0"/>
+      </div>
+      <div class="action">
+          <button class="btn">+</button>
+          <button class="btn">-</button>
+          <button class="btn">*</button>
+          <button class="btn">/</button>
+      </div>
+      <div class="field result">
+          <input type="text" placeholder="0" readonly/>
       </div>
   </div>
+</div>
+
+
   
   ```
 </div>
@@ -107,11 +110,6 @@
   ```
 </div>
 
-همان طور که در کد بالا می‌بینید ("class="field result) می‌توانیم مقادیر متعددی را برای ویژگی class هر المنت در نظر بگیریم. 
-  
-تفاوت استفاده از نام class به جای نام id در این است که اگر برای یک المنت id تعیین کنیم، از نام id آن المنت نمی‌توانیم برای المنت‌های دیگر استفاده کنیم. ولی همان طور که در کد بالا می‌بینید زمانی که از نام class برای انتخاب یک المنت استفاده می‌کنیم می توانیم از همان نام، برای المنت‌های دیگرهم، که می‌خواهیم همان پراپرتی‌ها را داشته باشند، استفاده کنیم.
-زمانی که می‌خواهیم از نام class به عنوان selector استفاده کنیم، قبل از نام کلاس باید " . " اضافه کنیم.
-با استفاده از کدهای زیر استایل مورد نظر ما ایجاد می‌شود.
 
 <div dir="ltr">
 
