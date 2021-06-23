@@ -1,9 +1,9 @@
 const counter = document.getElementById('count');
 
-function Increase() {
+function increase() {
     counter.textContent++;
 }
 
-function Decrease() {
+function decrease() {
     counter.textContent--;
 }
