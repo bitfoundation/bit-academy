@@ -39,12 +39,12 @@ button {
     color: white
 }
 
-#increase {
+.increase {
     background-color: #18cd73;
     border: 3px solid #19a35d;
 }
 
-#decrease {
+.decrease {
     background-color: #ef7694;
     border: 3px solid #b74b66;
 }

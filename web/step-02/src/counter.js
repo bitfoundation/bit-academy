@@ -1,4 +1,4 @@
-const counter = document.querySelector('#count');
+const counter = document.getElementById('count');
 
 function Increase() {
     counter.textContent++;
