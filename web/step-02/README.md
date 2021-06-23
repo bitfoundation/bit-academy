@@ -285,10 +285,10 @@ button {
                 <span id="count">0</span>
             </div>
             <div class="action">
-                <button class="increase" onclick="Increase()">
+                <button class="increase" onclick="increase()">
                     Increase
                 </button>
-                <button class="decrease" onclick="Decrease()">
+                <button class="decrease" onclick="decrease()">
                     Deacrease
                 </button>
             </div>
@@ -350,7 +350,7 @@ button {
 
   ```js
   
-  function Increase() {
+  function increase() {
 	  counter.textCountent++ ; 
   }
     
@@ -364,7 +364,7 @@ button {
 
   ```js
   
-  function Decrease() {
+  function decrease() {
 	  counter.textCountent-- ;
   }
   
