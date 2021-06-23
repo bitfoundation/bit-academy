@@ -81,35 +81,6 @@
   
 <img width="300px" src="images/img-3.png" />
 
-به منظور افزودن استایل به المنت در این جلسه، از نام class هر المنت، به عنوان selector استفاده می‌کنیم. در نتیجه کدهای مربوط به فایل Calculator.razor به صورت زیر تغییر می کنند.
-
-<div dir="ltr">
-
-  ```html
-  
-    <div class="container">
-    <div class="card">
-        <div class="field">
-            <input type="text" placeholder="0"/>
-        </div>
-        <div class="field">
-            <input type="text" placeholder="0"/>
-        </div>
-        <div class="action">
-            <button class="btn">+</button>
-            <button class="btn">-</button>
-            <button class="btn">*</button>
-            <button class="btn">/</button>
-        </div>
-        <div class="field result">
-            <input type="text" placeholder="0" readonly/>
-        </div>
-    </div>
-</div>
-  
-  ```
-</div>
-
 
 <div dir="ltr">
 
