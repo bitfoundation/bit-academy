@@ -283,7 +283,7 @@ button {
     <body>
         <div class="card">
             <div class="counter">
-                <span>0</span>
+                <span id="count">0</span>
             </div>
             <div class="action">
                 <button class="increase" onclick="Increase()">
