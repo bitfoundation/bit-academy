@@ -9,12 +9,12 @@ namespace SimpleBlazorCounter.Pages
     {
         public int CurrentCount { get; set; }
 
-        public void increase()
+        public void Increase()
         {
             CurrentCount++;
         }
 
-        public void decrease()
+        public void Decrease()
         {
             CurrentCount--;
         }
