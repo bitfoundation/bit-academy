@@ -262,8 +262,9 @@ button {
   ```html
 
     <div class="counter">
-	<span>0</span>
-    </div>
+	<span id="count">0</span>
+    </div> 
+
 	
   ```
 
