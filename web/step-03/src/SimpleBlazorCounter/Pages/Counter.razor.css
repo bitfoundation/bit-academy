@@ -1,28 +1,31 @@
 ﻿body {
-    background-color: #fafafa;
+    Background-color: #fafafa;
 }
 
+
 .card {
-    padding: 20px;
-    margin: 200px auto;
-    width: 400px;
-    height: 400px;
-    background-color: lightskyblue;
-    box-shadow: 1px 2px 10px 0 #808080;
+    Padding: 20px; /* .برای تعیین  فاصله المنت از محتوای درون المنت استفاده می‌شود */
+    Margin: 200px auto; /* .برای تعیین فاصله المنت از محتوای بیرون از المنت استفاده می‌شود */
+    Width: 400px; /* .برای تعیین عرض المنت استفاده می‌شود */
+    Height: 400px; /* .برای تعین ارتفاع المنت استفاده می‌شود */
+    Background-color: lightskyblue; /* .برای تعیین رنگ پس زمینه المنت استفاده می‌شود */
+    Box-shadow: 1px 2px 10px 0 #808080; /* .برای افزودن سایه به المنت مورد نظر استفاده می‌شود */
+    Border-radius: 5px; /* .باافزودن شعاع به گوشه‌های یک المنت که در نهایت موجب خمیدگی آن گوشه می‌شود */
 }
+
 
 .counter {
     margin: 50px auto;
     width: 150px;
     height: 150px;
-    line-height: 150px;
+    line-height: 150px; /* .متن داخل المنت به اندازه مقداری که داده شده از خط قبل و بعد فاصله می‌گیرد */
     background-color: #eee;
-    border-radius: 50%;
-    border: 10px solid #2196f3;
-    text-align: center;
-    font-size: 60px;
-    font-weight: bold;
-    color: #1077c2;
+    border-radius: 50%; /* .با دادن این مقدار به این پراپرتی المنت دایره‌ای شکل می‌شود */
+    border: 10px solid #2196f3; /* .استایل، عرض و رنگ حاشیه المنت را مشخص می‌کند  */
+    text-align: center; /* .نحوه چیدمان متن داخل المنت را مشخص می‌کند */
+    font-size: 60px; /* .سایز فونت متن داخل المنت را مشخص می‌کند */
+    Font-weight: bold; /* .ضخامت متن داخل المنت را مشخص می‌کند */
+    color: #107732; /* .رنگ متن داخل المنت را مشخص می‌کند */
 }
 
 .action {
@@ -30,21 +33,27 @@
 }
 
 button {
-    padding: 20px 30px;
-    margin: 5px;
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white
+  padding: 20px 30px;
+  margin: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;  /* .زمانی که با موس روی دکمه‌ها می‌رویم اشاره گر ماوس به شکل دست در می‌یاید */
 }
 
-#increase {
-    background-color: #18cd73;
-    border: 3px solid #19a35d;
+.increase {
+  background-color: #18cd73;
+  border: 3px solid #19a35d;
 }
 
-#decrease {
-    background-color: #ef7694;
-    border: 3px solid #b74b66;
+.decrease {
+  background-color: #ef7694;
+  border: 3px solid #b74b66;
 }
+
+
+
+
+
+
