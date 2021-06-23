@@ -92,7 +92,7 @@
     <title>
       Counter
     </title>
-    <link  rel="stylsheet" href="counter.css"/>   
+    <link rel="stylsheet" href="counter.css"/>   
   </head>
     
   ```
