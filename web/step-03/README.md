@@ -262,16 +262,16 @@ button {
     {
         public partial class Counter
         {
-            public int currentCount { get; set; }
+            public int CurrentCount { get; set; }
 
             public void Increase()
             {
-                currentCount++;
+                CurrentCount++;
             }
 
             public void Decrease()
             {
-                currentCount--;
+                CurrentCount--;
             }
         }
     }
@@ -292,7 +292,7 @@ button {
   ```html
   <div id="card">
       <div class="counter">
-          <span id="count">@currentCount</span>
+          <span id="count">@CurrentCount</span>
       </div>
       <div class="action">
           <button class="increase" @onclick="Increase">
