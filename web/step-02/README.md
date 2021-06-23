@@ -101,7 +101,7 @@
 	
 الگوی کلی دستورات  CSS  به صورت زیر می‌باشد.
 
-<img width="400px" src="images/css-declaration.png" />
+<img width="400px" src="images/css-declaration-1.png" />
 	
 		
 همانطور که مشاهده می‌کنید دستورات CSS از سه بخش Selector، Property، Property value  تشکیل شده است.
