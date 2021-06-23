@@ -184,32 +184,33 @@ namespace SimpleBlazorCalculator.Pages
 
         public decimal Num2 { get; set; }
 
-        public string Finalresult { get; set; }
+        public string FinalResult { get; set; }
+  
 
         public void AddNumbers()
         {
-            Finalresult = (Num1 + Num2).ToString();
+            FinalResult = (Num1 + Num2).ToString("0.##");
         }
 
         public void SubtractNumbers()
         {
-            Finalresult = (Num1 - Num2).ToString();
+            FinalResult = (Num1 - Num2).ToString("0.##");
         }
 
         public void MultiplyNumbers()
         {
-            Finalresult = (Num1 * Num2).ToString();
+            FinalResult = (Num1 * Num2).ToString("0.##");
         }
 
         public void DivideNumbers()
         {
             if (Num2 != 0)
             {
-                Finalresult = (Num1 / Num2).ToString("0.##");
+                FinalResult = (Num1 / Num2).ToString("0.##");
             }
             else
             {
-                Finalresult = "Cannot Divide by Zero";
+                FinalResult = "Cannot Divide by Zero";
             }
         }
     }
@@ -220,13 +221,13 @@ namespace SimpleBlazorCalculator.Pages
   ```
 </div>
 
-همانطور که در کد بالا می‌بینید داخل کلاس Calculator،  از سه پارامتر از نوع decimal استفاده می‌کنیم که پارامترهای Num1 و Num2 قرار است دو عددی که از کاربر دریافت می‌کنیم را داخل خود نگه دارند و پارامتر finalresult  نتیجه نهایی را در خود نگه می‌دارد.
+همانطور که در کد بالا می‌بینید داخل کلاس Calculator،  از سه پارامتر از نوع decimal استفاده می‌کنیم که پارامترهای Num1 و Num2 قرار است دو عددی که از کاربر دریافت می‌کنیم را داخل خود نگه دارند و پارامتر FinalResult  نتیجه نهایی را در خود نگه می‌دارد.
 
 نوع decimal و یا ده‌دهی زمانی مناسب است که درجه دقت مورد نیاز، توسط تعداد ارقام سمت راست نقطه اعشاری تعیین شود. این اعداد معمولاً در برنامه های مالی ، برای مبالغ ارزی (به عنوان مثال ، 1.00 دلار) ، نرخ بهره (به عنوان مثال ، 2.625٪) و غیره استفاده می شود.
 
 چهار متد هم به نام‌های AddNumbers، SubtractNumbers، MultiplyNumbers، DivideNumbers برای  چهار عمل اصلی داریم.
 
-در داخل هر متد بعد از اعمال عملگر بر روی دو عدد، از متد ()ToStrin برای تبدیل نتیجه که به صورت decimal می‌باشد به string استفاده می کنیم و در نهایت داخل پارامتر Finalresult  قرار می‌دهیم.
+در داخل هر متد بعد از اعمال عملگر بر روی دو عدد، از متد ()ToStrin برای تبدیل نتیجه که به صورت decimal می‌باشد به string استفاده می کنیم و در نهایت داخل پارامتر FinalResult  قرار می‌دهیم.
 
 
 برای نمایش اعشار تا دو رقم از ToString("0.##") استفاده می‌کنیم.
@@ -272,9 +273,9 @@ namespace SimpleBlazorCalculator.Pages
   ```
 </div>
 
-با استفاده از ویژگی bind@ در ‌Blazor می‌توانیم مقادیر متغیرهای (num1, num2, finalresult) مربوط به هر input را به آنها نسبت دهیم. 
+با استفاده از ویژگی bind@ در ‌Blazor می‌توانیم مقادیر متغیرهای (Num1, Num2, FinalResult) مربوط به هر input را به آنها نسبت دهیم. 
  
- در واقع ما یک اتصال داده بین متغیرها در کلاس calculator و این  input ها ایجاد می‌کنیم. بدین ترتیب زمانی که کاربر اعداد را وارد می‌کند، مقادیر داخل متغیرهای num1 و num2 نشسته و در مقابل مقدار متغیر finalresult را به input  سوم نسبت می‌دهیم و با هر تغییری در این متغیر مقدار input بروزرسانی می‌شود.
+ در واقع ما یک اتصال داده بین متغیرها در کلاس calculator و این  input ها ایجاد می‌کنیم. بدین ترتیب زمانی که کاربر اعداد را وارد می‌کند، مقادیر داخل متغیرهای Num1 و Num2 نشسته و در مقابل مقدار متغیر FinalResult را به input  سوم نسبت می‌دهیم و با هر تغییری در این متغیر مقدار input بروزرسانی می‌شود.
 
 برای اعمال ویژگی bind@ کد را به صورت زیر تغییر دهید. 
  
@@ -300,7 +301,7 @@ namespace SimpleBlazorCalculator.Pages
         </div>
 
         <div class="field result">
-            <input type="text" placeholder="0" readonly @bind="@Finalresult" />
+            <input type="text" placeholder="0" readonly @bind="@FinalResult" />
         </div>
     </div>
   </div>
