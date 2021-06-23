@@ -262,7 +262,7 @@ button {
     {
         public partial class Counter
         {
-            public int currentCount = 0;
+            public int currentCount { get; set; } = 0;
 
             public void Increase()
             {
