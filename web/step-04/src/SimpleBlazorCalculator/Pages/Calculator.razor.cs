@@ -11,32 +11,32 @@ namespace SimpleBlazorCalculator.Pages
 
         public decimal Num2 { get; set; }
 
-        public string Finalresult { get; set; }
+        public string FinalResult { get; set; }
 
         public void AddNumbers()
         {
-            Finalresult = (Num1 + Num2).ToString();
+            FinalResult = (Num1 + Num2).ToString("0.##");
         }
 
         public void SubtractNumbers()
         {
-            Finalresult = (Num1 - Num2).ToString();
+            FinalResult = (Num1 - Num2).ToString("0.##");
         }
 
         public void MultiplyNumbers()
         {
-            Finalresult = (Num1 * Num2).ToString();
+            FinalResult = (Num1 * Num2).ToString("0.##");
         }
 
         public void DivideNumbers()
         {
             if (Num2 != 0)
             {
-                Finalresult = (Num1 / Num2).ToString("0.##");
+                FinalResult = (Num1 / Num2).ToString("0.##");
             }
             else
             {
-                Finalresult = "Cannot Divide by Zero";
+                FinalResult = "Cannot Divide by Zero";
             }
         }
     }
