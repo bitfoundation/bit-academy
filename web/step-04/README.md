@@ -118,7 +118,9 @@
 
 <img width="400" src="images/img-11.png" /> 
 
-
+سپس برای نوشتن کدهای scss به فایل Calculator.razor.scss برمی‌گردیم.
+  
+ 
 <div dir="ltr">
 
   ```css
