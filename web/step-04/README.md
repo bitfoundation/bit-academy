@@ -89,7 +89,11 @@
 
 در ابتدا مطابق تصویر زیر از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب می‌کنیم.
 
-<img width="300px" src="images/img-6.png" />
+<img width="400px" src="images/img-6.png" />
+
+در فایل باز شده تب ‌‌Browse را انتخاب و در قسمت سرچ باکس scssBuilder را جستجو می‌کنیم.
+
+<img width="400px" src="images/img-7.png" />
 
 <div dir="ltr">
 
