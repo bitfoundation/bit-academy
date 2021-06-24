@@ -138,15 +138,14 @@ $light-gray: #dcdcdc !default;
 // Font
 $font-family: "Segoe UI", Roboto, Arial, sans-serif !default;
 
-
 .card {
     margin: 120px auto;
     padding: 20px;
     width: 400px;
     height: 400px;
-    background-color: $blue;
+    background-color: $light-blue;
     border-radius: 5px;
-    box-shadow: 1px 2px 10px 0 $gray;
+    box-shadow: 1px 2px 10px 0 $light-gray;
 }
 
 .field {
@@ -157,8 +156,8 @@ input {
     padding: 10px;
     width: 350px;
     height: 30px;
-    color: $blue;
-    border: 2px solid $gray;
+    color: $light-blue;
+    border: 2px solid $light-gray;
     text-align: center;
     font-family: $font-family;
     font-size: 30px;
@@ -178,9 +177,9 @@ input {
     width: 80px;
     height: 80px;
     border-radius: 5px;
-    border: 2px solid $gray;
+    border: 2px solid $light-gray;
     line-height: 80px;
-    color: $blue;
+    color: $light-blue;
     font-size: 35px;
     cursor: pointer;
 }
