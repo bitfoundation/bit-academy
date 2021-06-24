@@ -95,6 +95,14 @@
 
 <img src="images/img-7.png" />
 
+و سپس از لیست ارائه شده Delegate.SassBuilder را انتخاب و از سمت راست بر روی دکمه Install  کلیک می‌کنیم.
+  
+<img src="images/img-8.png" />
+
+در نهایت بر روی دکمه ok کلیک می‌کنیم تا این Package نصب شود.
+
+<img src="images/img-9.png" />
+
 <div dir="ltr">
 
   ```css
