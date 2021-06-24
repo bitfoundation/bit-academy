@@ -132,8 +132,8 @@
 // Variables
 //
 // Color system
-$blue: cornflowerblue !default;
-$gray: #dcdcdc !default;
+$light-blue: cornflowerblue !default;
+$light-gray: #dcdcdc !default;
 
 // Font
 $font-family: "Segoe UI", Roboto, Arial, sans-serif !default;
