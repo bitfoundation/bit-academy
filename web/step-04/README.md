@@ -102,10 +102,7 @@
   
 
 در نهایت بر روی دکمه ok کلیک می‌کنیم تا این Package نصب شود.
-  
-
-<img src="images/img-9.png" />
-  
+   
 
 بعد از نصب  Delegate.SassBuilder بر روی پوشه Pages در بخش Solution Explorer کلیک راست کرده و فایل جدیدی به نام Calculator.razor.scss ایجاد می‌کنیم.
 
