@@ -102,10 +102,7 @@
   
 
 در نهایت بر روی دکمه ok کلیک می‌کنیم تا این Package نصب شود.
-  
-
-<img src="images/img-9.png" />
-  
+   
 
 بعد از نصب  Delegate.SassBuilder بر روی پوشه Pages در بخش Solution Explorer کلیک راست کرده و فایل جدیدی به نام Calculator.razor.scss ایجاد می‌کنیم.
 
@@ -121,6 +118,10 @@
 
 هدف ما از بخش استایل‌ها در این جلسه، آشنایی شما با ویژگی Variable در SCSS می‌باشد.
 
+شما فرض کنید در فایل مربوط به استایل‌ها ما چندین بار از رنگ آبی استفاده کردیم، بعد از مدتی تصمیم میگیریم این رنگ آبی، به عنوان مثال به رنگ آبی روشن تر تغییر کند. اگر از Variableها استفاده نکنیم مجبوریم تمامی رنگ‌های آبی موجود در فایل‌ها را به صورت دستی تغییر دهیم اما با استفاده از Variable ها ما تنها مقدار متغیر مربوط به رنگ آبی را تغییر می‌دهیم، بدین ترتیب تمامی پراپرتی‌ها که متغیر مربوط به رنگ آبی را به عنوان مقدار داشته‌اند، رنگ جدیدی را که به متغیر نسبت داده ایم به خود می‌گیرند.
+  
+به منظور تعریف متغیرها در SCSS  از کاراکتر $ قبل از نام متغیر استفاده می‌کنیم. بدیهی است که نام متغیر می‌تواند هر آنچه که شما می‌خواهید باشد.
+
 کد زیر را copy و در فایل paste ،Calculator.razor.scss نمایید.
   
 
@@ -131,21 +132,20 @@
 // Variables
 //
 // Color system
-$blue: cornflowerblue !default;
-$gray: #dcdcdc !default;
+$light-blue: cornflowerblue !default;
+$light-gray: #dcdcdc !default;
 
 // Font
 $font-family: "Segoe UI", Roboto, Arial, sans-serif !default;
-
 
 .card {
     margin: 120px auto;
     padding: 20px;
     width: 400px;
     height: 400px;
-    background-color: $blue;
+    background-color: $light-blue;
     border-radius: 5px;
-    box-shadow: 1px 2px 10px 0 $gray;
+    box-shadow: 1px 2px 10px 0 $light-gray;
 }
 
 .field {
@@ -156,8 +156,8 @@ input {
     padding: 10px;
     width: 350px;
     height: 30px;
-    color: $blue;
-    border: 2px solid $gray;
+    color: $light-blue;
+    border: 2px solid $light-gray;
     text-align: center;
     font-family: $font-family;
     font-size: 30px;
@@ -177,22 +177,16 @@ input {
     width: 80px;
     height: 80px;
     border-radius: 5px;
-    border: 2px solid $gray;
+    border: 2px solid $light-gray;
     line-height: 80px;
-    color: $blue;
+    color: $light-blue;
     font-size: 35px;
     cursor: pointer;
 }
   
   ```
 </div>
-
-همان طور که در کد بالا می‌بینید ما از ویژگی Variable ها در SCSS، در این فایل استفاده کرده‌ایم.
-  
-شما فرض کنید در فایل مربوط به استایل‌ها ما چندین بار از رنگ آبی استفاده کردیم، بعد از مدتی تصمیم میگیریم این رنگ آبی، به عنوان مثال به رنگ آبی روشن تر تغییر کند. اگر از Variableها استفاده نکنیم مجبوریم تمامی رنگ‌های آبی موجود در فایل‌ها را به صورت دستی تغییر دهیم اما با استفاده از Variable ها ما تنها مقدار متغیر مربوط به رنگ آبی را تغییر می‌دهیم، بدین ترتیب تمامی پراپرتی‌ها که متغیر مربوط به رنگ آبی را به عنوان مقدار داشته‌اند، رنگ جدیدی را که به متغیر نسبت داده ایم به خود می‌گیرند.
-  
-به منظور تعریف متغیرها در SCSS  از کاراکتر $ قبل از نام متغیر استفاده می‌کنیم. بدیهی است که نام متغیر می‌تواند هر آنچه که شما می‌خواهید باشد.
-  
+    
  خروجی تمرین، تا این مرحله به صورت تصویر زیر می باشد.
 
 
