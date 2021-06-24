@@ -118,59 +118,77 @@
 
 <img width="400" src="images/img-11.png" /> 
 
-سپس برای نوشتن کدهای scss به فایل Calculator.razor.scss برمی‌گردیم.
+هدف ما از بخش استایل‌ها در این جلسه، آشنایی شما با ویژگی Variable در SCSS می‌باشد.
+
+کد زیر copy و در فایل paste ،Calculator.razor.scss نمایید.
   
  
 <div dir="ltr">
 
-  ```css
- .card {
+  ```scss
+  
+// Variables
+//
+// Color system
+$blue: cornflowerblue !default;
+$gray: #dcdcdc !default;
+
+// Font
+$font-family: "Segoe UI", Roboto, Arial, sans-serif !default;
+
+
+.card {
     margin: 120px auto;
     padding: 20px;
     width: 400px;
     height: 400px;
-    background-color: cornflowerblue;
+    background-color: $blue;
     border-radius: 5px;
-    box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 10px 0 $gray;
 }
- 
+
 .field {
     margin: 15px
 }
- 
+
 input {
     padding: 10px;
     width: 350px;
     height: 30px;
-    color: cornflowerblue;
-    border: 2px solid #dcdcdc;
+    color: $blue;
+    border: 2px solid $gray;
     text-align: center;
+    font-family: $font-family;
     font-size: 30px;
 }
- 
-.result {
-    margin-top: 75px;
-}
- 
+
 .action {
     margin: 30px 0;
     text-align: center;
 }
- 
+
+.result {
+    margin-top: 75px;
+}
+
 .btn {
     margin: 5px;
     width: 80px;
     height: 80px;
     border-radius: 5px;
-    border: 2px solid #dcdcdc;
+    border: 2px solid $gray;
     line-height: 80px;
-    color: cornflowerblue;
+    color: $blue;
     font-size: 35px;
     cursor: pointer;
 }
   
   ```
 </div>
+
+همان طور که در کد بالا می‌بینید ما از ویژگی Variable ها در SCSS، در این فایل استفاده کرده‌ایم.
+  
+شما فرض کنید در فایل مربوط به استایل‌ها ما چندین بار از رنگ آبی استفاده کرده ایم. بعد از مدتی تصمیم میگیریم این رنگ آبی، به عنوان مثال به رنگ آبی روشن تر تغییر کند. اگر از Variableها استفاده نکنیم مجبوریم تمامی رنگ‌های آبی موجود در فایل‌ها را به صورت دستی تغییر دهیم اما با استفاده از Variable ها ما تنها مقدار متغیر مربوط به رنگ آبی را تغییر می‌دهیم، بدین ترتیب تمامی پراپرتی‌ها که متغیر مربوط به رنگ آبی را به عنوان مقدار داشته‌اند، رنگ جدیدی را که به متغیر نسبت داده ایم به خود می‌گیرند.
 
 <img width="400px" src="images/img-4.png" />
 
