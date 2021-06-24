@@ -112,7 +112,9 @@
 
  <img width="600" src="images/img-10.png" /> 
 
-در همین مرحله اگر پروژه را اجرا کنیم، می‌بیینم که با استفاده از    Delegate.SassBuilder فایل Calculator.razor.css حاصل از کامپایل فایل Calculator.razor.scss ایجاد می‌شود.
+
+در همین مرحله اگر پروژه را اجرا کنیم، می‌بینیم که فایل کامپایل شده با پسوند CSS به فایل‌های مربوط به کامپوننت Calculator اضافه می‌شود. 
+
 
 <img width="400" src="images/img-11.png" /> 
 
