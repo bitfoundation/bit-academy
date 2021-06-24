@@ -93,7 +93,7 @@
 
 در فایل باز شده تب ‌‌Browse را انتخاب و در قسمت سرچ باکس scssBuilder را جستجو می‌کنیم.
 
-<img width="500px" src="images/img-7.png" />
+<img src="images/img-7.png" />
 
 <div dir="ltr">
 
