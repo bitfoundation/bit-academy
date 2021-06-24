@@ -110,7 +110,7 @@
 بعد از نصب  Delegate.SassBuilder بر روی پوشه Pages در بخش Solution Explorer کلیک راست کرده و فایل جدیدی به نام Calculator.razor.scss ایجاد می‌کنیم.
 
 
- <img width="500" src="images/img-10.png" /> 
+ <img width="600" src="images/img-10.png" /> 
 
 
 <div dir="ltr">
