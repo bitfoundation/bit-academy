@@ -6,9 +6,9 @@
 
 <img width="400px" src="images/img-1.png" />
 
-همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد کرده و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف کنید. با این تفاوت که هر سه فایل موجود در پوشه Pages را حذف کنید.
+همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد کرده و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف کنید و کدهای لازم را در index.html و launchSettings.json و App.razor بگذارید، با این تفاوت که هر سه فایل موجود در پوشه Pages را حذف کنید و در دو فایل index.html و launchSettings.json به جای SimpleBlazorCounter، بنویسید SimpleBlazorCalculator
   
-داخل پوشه Pages  فایل جدید به نام Calculator.razor  ایجاد کنید.
+داخل پوشه Pages راست کلیک نموده و از منوی Add، گزینه Razor Component را زده و اسم آن را Calculator.razor بگذارید.
 
   
 وارد فایل Calculator.razor شده و در ابتدای این فایل کد زیر را برای تعیین مسیر این صفحه در مرورگر وارد کنید.
@@ -91,7 +91,7 @@
 
 <img width="400px" src="images/img-6.png" />
 
-در فایل باز شده تب ‌‌Browse را انتخاب و در قسمت سرچ باکس scssBuilder را جستجو می‌کنیم.
+در فایل باز شده تب ‌‌Browse را انتخاب و در قسمت سرچ باکس Delegate.SassBuilder را جستجو می‌کنیم.
 
 <img src="images/img-7.png" />
 
