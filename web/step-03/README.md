@@ -15,7 +15,7 @@
   
    همان طور که در تصویر زیر می‌بینید در قسمت Project name می‌توانیم اسم پروژه را تعیین کنیم (در این قسمت اسم پروژه را SimpleBlazorCounter می‌گذاریم) و در قسمت Location محل قرار گیری پروژه را مشخص کنیم. مجددا برای رفتن به مرحله بعد بر روی دکمه Next کلیک می‌کنیم.
 
- <img width="500px" src="images/img-3.png" />
+ <img width="700px" src="images/img-3.png" />
  
  مطابق تصویر زیر، در این مرحله دقت کنید که Target Framework حتما روی (Net 5.0 (current قرار گرفته باشد.
  
@@ -180,7 +180,7 @@
 مطابق تصویر زیر از لیست ارائه شده Style Sheet  را انتخاب و در قسمت Name نامی مشابه نام Component که در اینجا Counter.razor نام دارد با پسوند css. انتخاب می کنیم.
 اسم فایل Counter.razor.css می‌باشد. سپس روی دکمه Add کلیک نمایید.
 
-<img width="500px" src="images/img-10.png" />
+<img width="700px" src="images/img-10.png" />
 
 فایل Counter.razor.css مشابه تصویر زیر به پروژه اضافه می‌شود.
 
