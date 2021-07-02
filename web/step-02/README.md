@@ -306,7 +306,7 @@ button {
 
   ```js
   
-  let counter = document.getElementById('count');
+  let counter = document.getElementById("count");
     
   ```
 
@@ -351,7 +351,7 @@ button {
   ```js
   
   function increase() {
-	  counter.textCountent++ ; 
+	  counter.textContent++ ; 
   }
     
   ```
@@ -365,7 +365,7 @@ button {
   ```js
   
   function decrease() {
-	  counter.textCountent-- ;
+	  counter.textContent-- ;
   }
   
   ```
