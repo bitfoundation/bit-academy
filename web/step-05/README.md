@@ -51,9 +51,6 @@
                     and setting deadlines to make sure projects get done on time.
                 </p>
             </div>
-            <div class="hidden-desktop">
-                <img src="images/logo-tablet.png" alt="Task Management" class="logo" />
-            </div>
             <div class="card login-form">
                 <h1>
                     Sign in
