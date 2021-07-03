@@ -39,41 +39,40 @@
   <div dir="ltr">
 
   ```razor
-    @page "/login"
+ @page "/login"
 
-    <div class="container">
-        <div class="content">
-            <div class="card product-description">
-                <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
-                <p>
-                    Task management is more than a to-do list.
-                    It means tracking tasks from beginning to end, delegating subtasks to teammates,
-                    and setting deadlines to make sure projects get done on time.
-                </p>
-            </div>
-            <div class="hidden-desktop">
-                <img src="images/logo-tablet.png" alt="Task Management" class="logo" />
-            </div>
-            <div class="card login-form">
-                <h1>
-                    Sign in
-                </h1>
+  <div class="container">
+      <div class="content">
+          <div class="card product-description">
+              <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
+              <p>
+                  Task management is more than a to-do list.
+                  It means tracking tasks from beginning to end, delegating subtasks to teammates,
+                  and setting deadlines to make sure projects get done on time.
+              </p>
+          </div>
+          <div class="hidden-desktop">
+              <img src="images/logo-tablet.png" alt="Task Management" class="logo" />
+          </div>
+          <div class="card login-form">
+              <h1>
+                  Sign in
+              </h1>
 
-                <form>
-                    <BitTextField Type="TextFieldType.Text" Placeholder="Username" Class="m-b-20"/>
+              <form>
+                  <BitTextField Type="TextFieldType.Text" Placeholder="Username" Class="m-b-20"/>
 
-                    <BitTextField Type="TextFieldType.Password" Placeholder="Password" Class="m-b-20"/>
+                  <BitTextField Type="TextFieldType.Password" Placeholder="Password" Class="m-b-20"/>
 
-                    <BitButton>
-                        Sign in
-                    </BitButton>
-                </form>
-            </div>
-        </div>
-    </div>
+                  <BitButton>
+                      Sign in
+                  </BitButton>
+              </form>
+          </div>
+      </div>
+  </div>
 
     ```
-
     </div>
   
 </div>
