@@ -25,19 +25,53 @@
   
 <img src="images/img-22.png" />
  
-پروژه‌ای جدید به نام  TaskManagement ایجاد کرده و فایل‌ها، کدها و پوشه‌های اضافی را همانند جلسات گذشته حذف کنید.
+در ادامه به منظور پیاده‌سازی طرح داخل Figma ، پروژه‌ای به نام  TaskManagement ایجاد می‌کنیم. پوشه‌هاُ فایل‌ها و کدهای اضافی را همانند جلسات گذشته حذف می‌کنیم.
 
-در پوشه pages  فایل جدیدی به نام Login.razor  ایجاد کرده و در ابتدای این فایل کد زیر را وارد نمایید. 
+از این جلسه به بعد می‌خواهیم از فریم ورک ‌Bit برای ایجاد سریع‌تر و آسان‌تر المنت‌ها استفاده کنیم. 
 
- <div dir="ltr">
+
+برای نصب این فریم‌ورک، همانند نصب Delegate.SassBuilder در جلسه گذشته از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌‌Browse در قسمت سرچ باکس bit.client.web.blazor را جستجو و نصب کنید.
+
+بعد از تمام نصب برمی‌گردیم به ساختار پروژه، در پوشه pages  فایل جدیدی به نام Login.razor ایجاد کرده و کد زیر را به منظور ایجاد ساختار اصلی پروژه در این صفحه بنویسید. 
+
+  
+  
+  <div dir="ltr">
 
   ```razor
+    
     @page "/login"
-  ```
-</div>
-  
- به منظور مطمئن شدن از درستی ساده سازی ساختار، پروژه را اجرا کنید.
 
-از این جلسه به بعد می‌خواهیم از فریم ورک ‌Bit برای ایجاد سریع‌تر و آسان‌تر element ها استفاده کنیم. بدین منظور همانند نصب Delegate.SassBuilder در جلسه گذشته از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌‌Browse در قسمت سرچ باکس bit.client.web.blazor را جستجو و نصب کنید.
+    <div class="container">
+        <div class="content">
+            <div class="card product-description">
+                <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
+                <p>
+                    Task management is more than a to-do list. It means tracking tasks from beginning to end, delegating subtasks to teammates, and setting deadlines to make sure projects get done on time.
+                </p>
+            </div>
+            <div class="hidden-desktop">
+                <img src="images/logo-tablet.png" alt="Task Management" class="logo" />
+            </div>
+            <div class="card login-form">
+                <h1>
+                    Sign in
+                </h1>
+
+                <form>
+                    <BitTextField Class="m-b-20" Type="TextFieldType.Text" Placeholder="Username" />
+
+                    <BitTextField Class="m-b-20" Type="TextFieldType.Password" Placeholder="Password" />
+
+                    <BitButton @onclick="CustomLogin" Class="button-login">
+                        Sign in
+                    </BitButton>
+                </form>
+            </div>
+        </div>
+    </div>
+
+      ```
+  </div>
   
 </div>
