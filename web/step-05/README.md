@@ -74,6 +74,6 @@
   
   برای توضیح بهتر کد بالا، بگذارید از تصویر طرح صفحه Login، در سایز دسکتاپ، استفاده کنیم.
 
-<img width="400px" src="images/img-3.png" />
+<img  src="images/img-3.png" />
   
 </div>
