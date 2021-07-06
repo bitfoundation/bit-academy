@@ -184,3 +184,23 @@
   ```
 
 </div>
+  
+  در ادامه به div  با کلاس container پراپتی‌های زیر را اختصاص می‌دهیم.
+
+<div dir="ltr">
+
+  ```scss
+ .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./images/background-image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+  ```
+
+</div>
