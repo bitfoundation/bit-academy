@@ -168,4 +168,19 @@
 
 تا این جای کار ما ساختار صفحه Login را ایجاد کردیم. در ادامه برای افزودن استایل‌ها فایل جدیدی به نام Login.razor.scss  ایجاد می کنیم.
 
+در ابتدای این فایل، متغیرهای رنگ را، بر اساس کد رنگ‌های استفاده شده در طراحی این صفحه، تعریف می‌کنیم.
+
+<div dir="ltr">
+
+  ```scss
+  // Variables
+  //
+  // Color system
+  $white: #fff !default;
+  $purple: #6264A7 !default;
+  $light-gray: #aaa !default;
+  $dark-gray: #333 !default;
+
+  ```
+
 </div>
