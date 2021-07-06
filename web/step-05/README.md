@@ -32,6 +32,58 @@
 
 برای نصب این فریم‌ورک، همانند نصب Delegate.SassBuilder در جلسه گذشته از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌‌Browse در قسمت سرچ باکس bit.client.web.blazor را جستجو و نصب کنید.
 
+سپس خط زیر را که مربوط به کدهای CSS این فریم ورک می‌باشد به تگ head  داخل فایل index.html در پوشه wwwroot اضافه می‌کنیم.
+  
+  <div dir="ltr">
+
+  ```razor
+    
+    <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
+    
+  ``` 
+  </div>
+
+و خط زیر را هم که مربوط به کدهای JavaScript این فریم ورک می‌باشد را به انتهای تگ body این فایل اضافه می‌کنیم.  
+ 
+  <div dir="ltr">
+
+  ```razor
+    
+    <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js" asp-append-version="true"></script>
+    
+  ``` 
+  </div>
+
+کدهای داخل فایل index.html  بعد از افزودن دو خط بالا به صورت زیر می‌باشد.
+
+ <div dir="ltr">
+
+  ```razor
+    
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>TaskManagement</title>
+        <base href="/" />
+        <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
+        <link href="TaskManagement.styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div id="app">Loading...</div>
+
+        <script src="_framework/blazor.webassembly.js"></script>
+        <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js" asp-append-version="true"></script>
+    </body>
+
+    </html>
+
+  ``` 
+  </div>
+
 بعد از اتمام نصب برمی‌گردیم به ساختار پروژه، در پوشه pages  فایل جدیدی به نام Login.razor ایجاد کرده و کد زیر را به منظور ایجاد ساختار اصلی پروژه در این صفحه بنویسید. 
 
   
