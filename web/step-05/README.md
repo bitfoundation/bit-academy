@@ -63,21 +63,21 @@
     <!DOCTYPE html>
     <html>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>TaskManagement</title>
-        <base href="/" />
-        <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
-        <link href="TaskManagement.styles.css" rel="stylesheet" />
-    </head>
+      <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title>TaskManagement</title>
+          <base href="/" />
+          <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
+          <link href="TaskManagement.styles.css" rel="stylesheet" />
+      </head>
 
-    <body>
-        <div id="app">Loading...</div>
+      <body>
+          <div id="app">Loading...</div>
 
-        <script src="_framework/blazor.webassembly.js"></script>
-        <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js" asp-append-version="true"></script>
-    </body>
+          <script src="_framework/blazor.webassembly.js"></script>
+          <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js" asp-append-version="true"></script>
+      </body>
 
     </html>
 
