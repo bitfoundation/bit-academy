@@ -327,10 +327,6 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 }
 
 @media screen and (max-width: 600px) {
-    .hidden-desktop {
-        display: block;
-    }
-
     .card {
         padding: 20px;
         width: 300px;
