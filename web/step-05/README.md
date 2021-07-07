@@ -285,6 +285,10 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
     .m-b-20 {
         margin-bottom: 20px;
     }
+    
+    .hidden-desktop {
+      display: none;
+    }
 
   ```
 </div>  
