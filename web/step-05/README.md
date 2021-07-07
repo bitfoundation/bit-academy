@@ -302,8 +302,8 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```scss
-   /* If the screen size is 900px or less */ 
-   @media screen and (max-width: 900px) {
+  /* Media Query for low resolution  Tablets, Ipads */
+  @media (min-width: 481px) and (max-width: 767px) {
     .container {
         flex-direction: column;
     }
@@ -316,9 +316,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
         &.product-description {
             display: none;
         }
-    }
-
-    .card {
+  
         &.login-form {
             background-color: transparent;
             box-shadow: none;
@@ -326,16 +324,33 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
     }
 }
 
-/* If the screen size is 600px or less */
-@media screen and (max-width: 600px) {
+ /* Media Query for Mobile Devices */
+ @media (max-width: 480px) {
+  
+  .container {
+        flex-direction: column;
+    }
+
+    .hidden-desktop {
+        display: block;
+    }
+
     .card {
         padding: 20px;
         width: 300px;
         height: auto;
+  
+        &.product-description {
+            display: none;
+        }
+  
+        &.login-form {
+            background-color: transparent;
+            box-shadow: none;
+        }
     }
 
 }
-
 
   ```
 </div> 
