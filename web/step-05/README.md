@@ -194,6 +194,7 @@
   ```scss
  .container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -213,6 +214,6 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 تصویر زیر چهار مقداری را که این پراپرتی می‌تواند داشته باشد را با چهار شکل بیان می‌کند.
 
-<img src="images/img-6.png" width="400px" />
+<img src="images/img-6.png" />
 
 </div>
