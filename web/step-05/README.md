@@ -248,6 +248,46 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 <img src="images/img-10.png" />
 
+در ادامه نوشته کدهای SCSS، کدهای زیرا را به انتهای کدهای قبلی اضافه نمایید.
+
+<div dir="ltr">
+
+  ```scss
+   .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 40px 100px 40px;
+      box-shadow: 1px 2px 10px 0 $light-gray;
+      width: 400px;
+      height: 500px;
+
+      &.product-description {
+          background-color: $purple;
+          color: $white;
+          text-align: center;
+          border-radius: 5px 0 0 5px;
+      }
+
+      &.login-form {
+          background-color: $white;
+          border-radius: 0 5px 5px 0;
+      }
+  }
+
+  .login-form {
+      h1 {
+          margin-bottom: 40px;
+          color: $dark-gray;
+      }
+  }
+
+  .m-b-20 {
+      margin-bottom: 20px;
+  }
+
+  ```
+</div>  
 
 
 </div>
