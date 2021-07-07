@@ -102,16 +102,16 @@
                 and setting deadlines to make sure projects get done on time.
             </p>
         </div>
+        <div class="hidden-desktop">
+            <img src="images/LogoTablet.png" alt="Task Management" class="logo" />
+        </div>
         <div class="card login-form">
             <h1>
                 Welcome back!
             </h1>
-
             <form>
                 <BitTextField Type="TextFieldType.Text" Placeholder="Username" Class="m-b-20"/>
-
                 <BitTextField Type="TextFieldType.Password" Placeholder="Password" Class="m-b-20"/>
-
                 <BitButton>
                     Sign in
                 </BitButton>
@@ -169,13 +169,13 @@
 <div dir="ltr">
 
   ```scss
-  // Variables
-  //
-  // Color system
-  $white: #fff !default;
-  $purple: #6264A7 !default;
-  $light-gray: #aaa !default;
-  $dark-gray: #333 !default;
+    // Variables
+    //
+    // Color system
+    $white: #fff !default;
+    $purple: #6264A7 !default;
+    $light-gray: #aaa !default;
+    $dark-gray: #333 !default;
 
   ```
 
@@ -188,17 +188,17 @@
 <div dir="ltr">
 
   ```scss
- .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("./images/background-image.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+   .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("./images/background-image.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
 
   ```
 </div>  
@@ -253,38 +253,38 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```scss
-  .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 40px 100px 40px;
-      box-shadow: 1px 2px 10px 0 $light-gray;
-      width: 400px;
-      height: 500px;
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 40px 100px 40px;
+        box-shadow: 1px 2px 10px 0 $light-gray;
+        width: 400px;
+        height: 500px;
 
-      &.product-description {
-          background-color: $purple;
-          color: $white;
-          text-align: center;
-          border-radius: 5px 0 0 5px;
-      }
+        &.product-description {
+            background-color: $purple;
+            color: $white;
+            text-align: center;
+            border-radius: 5px 0 0 5px;
+        }
 
-      &.login-form {
-          background-color: $white;
-          border-radius: 0 5px 5px 0;
-      }
-  }
+        &.login-form {
+            background-color: $white;
+            border-radius: 0 5px 5px 0;
+        }
+    }
 
-  .login-form {
-      h1 {
-          margin-bottom: 40px;
-          color: $dark-gray;
-      }
-  }
+    .login-form {
+        h1 {
+            margin-bottom: 40px;
+            color: $dark-gray;
+        }
+    }
 
-  .m-b-20 {
-      margin-bottom: 20px;
-  }
+    .m-b-20 {
+        margin-bottom: 20px;
+    }
 
   ```
 </div>  
