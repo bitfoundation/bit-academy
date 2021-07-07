@@ -94,30 +94,28 @@
     @page "/login"
 
     <div class="container">
-        <div class="content">
-            <div class="card product-description">
-                <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
-                <p>
-                    Task management is more than a to-do list.
-                    It means tracking tasks from beginning to end, delegating subtasks to teammates,
-                    and setting deadlines to make sure projects get done on time.
-                </p>
-            </div>
-            <div class="card login-form">
-                <h1>
-                    Welcome back!
-                </h1>
+        <div class="card product-description">
+            <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
+            <p>
+                Task management is more than a to-do list.
+                It means tracking tasks from beginning to end, delegating subtasks to teammates,
+                and setting deadlines to make sure projects get done on time.
+            </p>
+        </div>
+        <div class="card login-form">
+            <h1>
+                Welcome back!
+            </h1>
 
-                <form>
-                    <BitTextField Type="TextFieldType.Text" Placeholder="Username" Class="m-b-20"/>
+            <form>
+                <BitTextField Type="TextFieldType.Text" Placeholder="Username" Class="m-b-20"/>
 
-                    <BitTextField Type="TextFieldType.Password" Placeholder="Password" Class="m-b-20"/>
+                <BitTextField Type="TextFieldType.Password" Placeholder="Password" Class="m-b-20"/>
 
-                    <BitButton>
-                        Sign in
-                    </BitButton>
-                </form>
-            </div>
+                <BitButton>
+                    Sign in
+                </BitButton>
+            </form>
         </div>
     </div>
 
@@ -129,8 +127,6 @@
 <img src="images/img-3.png" width="700px" />
 
 تگ div  با کلاس container مربوط به پس زمینه رنگی می‌باشد که در پشت همه المنت‌های داخل صفحه قرار دارد.
-
-از تگ div با  کلاس content ، توسط استایل‌هایی که به این کلاس در کدهای CSS اختصاص می‌دهیم برای نگه‌داشتن دو بخش فرم لاگین و توضیحات محصول کنارهم استفاده می‌کنیم.
 
 از تگ div با دو کلاس card, product-description  برای ایجاد بخشی که به رنگ بنفش است استفاده کرده‌ایم.
 
