@@ -4,6 +4,8 @@
   
  در این جلسه قصد داریم شمارنده جلسه پیش را با استفاده از Blazor  پیاده سازی کنیم. 
 
+  
+  <details><summary>آماده سازی پروژه Blazor در Visual Studio</summary>
   وارد محیط Visual Studio  شده و از قسمت Get started روی گزینه Create a new project به منظور ایجاد پروژه جدید کلیک می‌کنیم. 
   
   
@@ -128,7 +130,9 @@
 
   
   <img width="300px" src="images/img-7.png" />
-  
+</details>
+
+<details><summary>افزودن کد های HTML</summary>  
   برای ایجاد شمارنده‌‌ای مطابق جلسه پیش، اما این بار با استفاده از ‌Blazor به این صورت عمل می‌کنیم.
 
 ابتدا از پوشه Pages فایل Counter.razor را انتخاب می‌کنیم.  ساختار کلی Blazor به این صورت است که کدهای Blazor‌ با @ مشخص می‌شوند. و بلاک های کد با code@ نوشته می‌شوند.
@@ -172,7 +176,9 @@
 
 
 <img width="300px" src="images/img-8.png" />
-
+</details>
+  
+<details><summary>افزودن کد های CSS</summary>    
 برای افزودن کدهای css، روی پوشه pages  کلیک راست کرده، گزینه Add  را انتخاب و سپس گزینه NewItem را انتخاب می‌نماییم.
 
 <img width="500px" src="images/img-9.png" />
@@ -246,7 +252,9 @@ button {
 
 
 <img width="400px" src="images/img-12.png" />
-
+</details>
+  
+<details><summary>افزودن کد های JavaScript</summary>    
 در ادامه به جای افزودن کدهای Javascript برای تعیین عملکرد دکمه‌ها، از کدهای #C  استفاده می‌کنیم. 
 کدهای #C  را می‌توانیم داخل بلاک code@، فایل Counter.razor بنویسیم. اما بهتر است بلاک code@ را از این فایل حذف کرده و یک فایل جدید به نام Counter.razor.cs از طریق Add > Class  < راست کلیک روی پوشه Pages، ایجاد و کدهای زیر را وارد این فایل کنیم.
 
@@ -310,4 +318,5 @@ button {
 نتیجه نهایی تغییرات به صورت زیر می‌باشد.
 
 <img width="400px" src="images/counter.gif" />
+</details>  
 </div>
