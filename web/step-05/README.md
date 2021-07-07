@@ -103,7 +103,7 @@
             </p>
         </div>
         <div class="hidden-desktop">
-            <img src="images/LogoTablet.png" alt="Task Management" class="logo" />
+            <img src="images/logo-tablet-mobile.png" alt="Task Management" class="logo" />
         </div>
         <div class="card login-form">
             <h1>
