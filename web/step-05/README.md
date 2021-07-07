@@ -302,7 +302,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```scss
-    
+   /* If the screen size is 900px or less */ 
    @media screen and (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -326,6 +326,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
     }
 }
 
+/* If the screen size is 600px or less */
 @media screen and (max-width: 600px) {
     .card {
         padding: 20px;
