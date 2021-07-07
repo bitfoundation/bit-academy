@@ -297,4 +297,54 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 از این قسمت به بعد، استایل‌هایی که مینویسم مربوط به نمایش صحیح المنت‌ها در سایز تبلت و موبایل می‌باشد.
 
+کدهای زیر را به ادامه کدهای قبلی اضافه نمایید.
+
+<div dir="ltr">
+
+  ```scss
+    
+   @media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .hidden-desktop {
+        display: block;
+    }
+
+    .card {
+        &.product-description {
+            display: none;
+        }
+    }
+
+    .card {
+        &.login-form {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hidden-desktop {
+        display: block;
+    }
+
+    .card {
+        padding: 20px;
+        width: 300px;
+        height: auto;
+    }
+
+    .card {
+        &.product-description {
+            display: none;
+        }
+    }
+}
+
+  ```
+</div> 
+
 </div>
