@@ -1,4 +1,4 @@
-const counter = document.getElementById('count');
+let counter = document.getElementById("count");
 
 function increase() {
     counter.textContent++;
