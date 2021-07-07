@@ -333,12 +333,8 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
         height: auto;
     }
 
-    .card {
-        &.product-description {
-            display: none;
-        }
-    }
 }
+
 
   ```
 </div> 
