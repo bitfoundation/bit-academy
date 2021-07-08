@@ -399,4 +399,56 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
   ``` 
   </div>
 
+
+<div dir="ltr">
+
+  ```razor
+    @page "/login"
+
+    <div class="container">
+        <div class="card product-description">
+            <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
+            <p>
+                Task management is more than a to-do list.
+                It means tracking tasks from beginning to end, delegating subtasks to teammates,
+                and setting deadlines to make sure projects get done on time.
+            </p>
+        </div>
+        <div class="hidden-desktop">
+            <img src="images/logo-tablet-mobile.png" alt="Task Management" class="logo" />
+        </div>
+        <div class="card login-form">
+            <h1>
+                Welcome back!
+            </h1>
+            <form onsubmit="return false;">
+
+                @if (IsMessageBarVisible)
+                {
+                    <BitMessageBar MessageBarStyle="@MessageBarStyle.Error">
+                        Username and password entered incorrectly.
+                    </BitMessageBar>
+                }
+
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Username" name="username" @bind="@UserName" />
+                </div>
+
+                <div>
+                    <label for="passowrd">Password</label>
+                    <input type="text" placeholder="Password" name="passowrd" @bind="@Password" />
+                </div>
+
+                <BitButton OnClick="Signin">
+                    Signin
+                </BitButton>
+
+            </form>
+        </div>
+    </div>
+
+  ``` 
+  </div>
+
 </div>
