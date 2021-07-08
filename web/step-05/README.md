@@ -366,4 +366,37 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
   
 در این مرحله، فقط می‌خواهیم دو مقداری را که توسط ورودی‌ها به عنوان UserName و Password از کاربر گرفته‌ایم را با یک مقدار فرضی مثلا "test"  مقایسه کنیم و در صورت مخالف بودن، پیغامی مبنی بر نادرست بودن UserName , Password وارد شده به کاربر نمایش دهیم.
 
+
+<div dir="ltr">
+
+  ```c#
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    namespace TaskManagement.Pages
+    {
+        public partial class Login
+        {
+            public string UserName { get; set; }
+            public string Password { get; set; }
+
+            public bool IsMessageBarVisible = false;
+
+            public void Signin()
+            {
+                if (UserName != "test" || Password != "test") {
+                    IsMessageBarVisible = true;
+                } else
+                {
+                    IsMessageBarVisible = false;
+                }
+            }
+        }
+    }
+
+  ``` 
+  </div>
+
 </div>
