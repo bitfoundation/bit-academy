@@ -459,4 +459,9 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
   ``` 
   </div>
 
+همان طور که در کد بالا می‌بینید از متغیر IsMessageBarVisible برای نشان دادن پیغامی مبنی بر نادرست بودن UserName و Password استفاده کرده‌ایم. بدین صورت که در صورت true  بودن IsMessageBarVisible با استفاده از کامپوننت BitMessageBar در فریم ورک ‌Bit این پیغام را نمایش می‌دهیم.
+
+کامپوننت BitMessageBar دارای پراپرتی MessageBarStyle می باشد که اگر با @MessageBarStyle.Error مقدار دهی شود، پیغام ما مانند تصویر زیر، استایل یک پیغامی که جنبه‌ی خطا دارد را، به خود می‌گیرد.
+
+
 </div>
