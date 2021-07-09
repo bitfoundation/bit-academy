@@ -399,6 +399,8 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
   ``` 
   </div>
+  
+  در #C یک متغیر از نوع boolean با کلمه کلیدی bool تعریف می‌شود و فقط می تواند شامل دو مقدار true  و false باشد.
 
 
 <div dir="ltr">
