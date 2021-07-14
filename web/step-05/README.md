@@ -70,10 +70,10 @@
       <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>TaskManagement</title>
+          <title>ToDoApp</title>
           <base href="/" />
           <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css"/>
-          <link href="TaskManagement.styles.css" rel="stylesheet"/>
+          <link href="ToDoApp.styles.css" rel="stylesheet"/>
       </head>
 
       <body>
@@ -97,15 +97,14 @@
 
     <div class="container">
         <div class="card product-description">
-            <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
+            <img src="images/logo-desktop.png" alt="ToDoApp" class="logo" />
             <p>
-                Task management is more than a to-do list.
-                It means tracking tasks from beginning to end, delegating subtasks to teammates,
-                and setting deadlines to make sure projects get done on time.
+                The ToDoApp lets you write, organize, and prioritize your tasks.
+                This way you can be more productive by registering your tasks in the ToDo App
             </p>
         </div>
         <div class="hidden-desktop">
-            <img src="images/logo-tablet-mobile.png" alt="Task Management" class="logo" />
+            <img src="images/logo-tablet-mobile.png" alt="ToDoApp" class="logo" />
         </div>
         <div class="card login-form">
             <h1>
@@ -368,7 +367,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 در ادامه فایل جدیدی به نام Login.razor.cs ایجاد می‌کنیم.
   
-در این مرحله، می‌خواهیم دو مقداری را که توسط ورودی‌ها به عنوان UserName و Password از کاربر گرفته‌ایم را با یک مقدار فرضی مثلا "test" مقایسه و در صورت مخالف بودن با این مقدار، متغیر IsMessageBarVisible
+در این مرحله، می‌خواهیم دو مقداری را که توسط ورودی‌ها به عنوان UserName و Password از کاربر گرفته‌ایم را با یک مقدار فرضی مثلا "test" مقایسه و در صورت مخالف بودن با این مقدار، متغیر ShowLoginErrorMessage
 که  از نوع boolean می باشد و به صورت پیش فرض با false مقدار دهی شده را، با مقدار true و در غیر این صورت با مقدار false مقداردهی کنیم.
   
 
@@ -380,22 +379,24 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
     using System.Linq;
     using System.Threading.Tasks;
 
-    namespace TaskManagement.Pages
+    namespace ToDoApp.Pages
     {
         public partial class Login
         {
             public string UserName { get; set; }
             public string Password { get; set; }
 
-            public bool IsMessageBarVisible = false;
+            public bool ShowLoginErrorMessage = false;
 
             public void Signin()
             {
-                if (UserName != "test" || Password != "test") {
-                    IsMessageBarVisible = true;
-                } else
+                if (UserName != "test" || Password != "test") 
                 {
-                    IsMessageBarVisible = false;
+                    ShowLoginErrorMessage = true;
+                } 
+                else
+                {
+                    ShowLoginErrorMessage = false;
                 }
             }
         }
@@ -408,7 +409,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 عملگر منطقی  || یا OR به این شکل عمل می‌کند که اگر تنها یکی از عبارات یا شرط ها درست باشد مقدار true را برمی گرداند.
 
-در کد بالا داخل بلاک کد if ، ما می‌گوییم اگر نام کاربری " یا " رمز عبور  مخالف مقدار test بود متغیر IsMessageBarVisible  با true مقداردهی شود.
+در کد بالا داخل بلاک کد if ، ما می‌گوییم اگر نام کاربری " یا " رمز عبور  مخالف مقدار test بود متغیر ShowLoginErrorMessage با true مقداردهی شود.
 
 در مرحله آخر می‌خواهیم از پارامترها و متد تعریف شده در این فایل، در فایل Login.razor استفاده کنیم.
 
@@ -419,15 +420,14 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
     <div class="container">
         <div class="card product-description">
-            <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
+            <img src="images/logo-desktop.png" alt="ToDoApp" class="logo" />
             <p>
-                Task management is more than a to-do list.
-                It means tracking tasks from beginning to end, delegating subtasks to teammates,
-                and setting deadlines to make sure projects get done on time.
+                The ToDoApp lets you write, organize, and prioritize your tasks.
+                This way you can be more productive by registering your tasks in the ToDo App
             </p>
         </div>
         <div class="hidden-desktop">
-            <img src="images/logo-tablet-mobile.png" alt="Task Management" class="logo" />
+            <img src="images/logo-tablet-mobile.png" alt="ToDoApp" class="logo" />
         </div>
         <div class="card login-form">
             <h1>
@@ -435,7 +435,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
             </h1>
             <form onsubmit="return false;">
 
-                @if (IsMessageBarVisible)
+                @if (ShowLoginErrorMessage)
                 {
                     <BitMessageBar MessageBarStyle="@MessageBarStyle.Error">
                         Username and password entered incorrectly.
