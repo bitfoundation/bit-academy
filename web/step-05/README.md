@@ -38,7 +38,7 @@
 
   ```razor
     
-    <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css"/>
     
   ``` 
   </div>
@@ -49,7 +49,7 @@
 
   ```razor
     
-    <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js" asp-append-version="true"></script>
+    <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js"></script>
     
   ``` 
   </div>
@@ -68,15 +68,15 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <title>TaskManagement</title>
           <base href="/" />
-          <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
-          <link href="TaskManagement.styles.css" rel="stylesheet" />
+          <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css"/>
+          <link href="TaskManagement.styles.css" rel="stylesheet"/>
       </head>
 
       <body>
           <div id="app">Loading...</div>
 
           <script src="_framework/blazor.webassembly.js"></script>
-          <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js" asp-append-version="true"></script>
+          <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js"></script>
       </body>
 
     </html>
