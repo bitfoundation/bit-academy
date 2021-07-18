@@ -98,16 +98,14 @@
 
     <div class="container">
         <div class="card product-description">
-            <img src="images/logo-desktop.png" alt="ToDoApp" class="logo" />
+            <img src="images/logo.png" alt="logo" class="logo" />
             <p>
                 The ToDoApp lets you write, organize, and prioritize your tasks.
                 This way you can be more productive by registering your tasks in the ToDo App
             </p>
         </div>
-        <div class="hidden-desktop">
-            <img src="images/logo-tablet-mobile.png" alt="ToDoApp" class="logo" />
-        </div>
         <div class="card login-form">
+            <img src="images/logo-small.png" alt="logo" class="logo logo-small" />
             <h1>
                 Welcome back!
             </h1>
@@ -258,13 +256,14 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
     .card {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         padding: 0 40px 100px 40px;
         box-shadow: 1px 2px 10px 0 $light-gray;
         width: 400px;
         height: 500px;
 
         &.product-description {
+            justify-content: center;
+            align-items: center;
             background-color: $purple;
             color: $white;
             text-align: center;
@@ -272,30 +271,36 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
         }
 
         &.login-form {
+            justify-content: center;
+            align-items: flex-start;
             background-color: $white;
             border-radius: 0 5px 5px 0;
+        }
+
+        .logo {
+            margin-bottom: 30px;
         }
     }
 
     .login-form {
         h1 {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: $dark-gray;
         }
+    }
+
+    .logo-small {
+        display: none;
     }
 
     .m-b-20 {
         margin-bottom: 20px;
     }
-    
-    .hidden-desktop {
-      display: none;
-    }
 
   ```
 </div>  
 
-در کلاس hidden-desktop در کد بالا، از پراپرتی display با مقدار none استفاده کرده ایم. از این مقدار در پراپرتی display به منظور پنهان کردن یک المنت می‌توانیم استفاده کنیم. به گونه‌ای که انگار این المنت از ابتدا وجود نداشته است.
+در کلاس logo-small در کد بالا، از پراپرتی display با مقدار none استفاده کرده ایم. از این مقدار در پراپرتی display به منظور پنهان کردن یک المنت می‌توانیم استفاده کنیم. به گونه‌ای که انگار این المنت از ابتدا وجود نداشته است.
 </details>
 <details><summary>نمایش صحیح المنت ها در سایز تبلت و موبایل</summary>  
 از این قسمت به بعد، استایل‌هایی که مینویسم مربوط به نمایش صحیح المنت‌ها در سایز تبلت و موبایل می‌باشد.
@@ -305,55 +310,34 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```scss
-  /* Media Query for low resolution  Tablets, Ipads */
-  @media (min-width: 481px) and (max-width: 767px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .hidden-desktop {
-        display: block;
-    }
-
-    .card {
-        &.product-description {
-            display: none;
+    /* Media Query for low-resolution Tablets and Mobile Devices*/
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
         }
-  
-        &.login-form {
-            background-color: transparent;
-            box-shadow: none;
+
+        .hidden-desktop {
+            display: block;
         }
-    }
-}
 
- /* Media Query for Mobile Devices */
- @media (max-width: 480px) {
-  
-  .container {
-        flex-direction: column;
-    }
+        .card {
+            width: auto;
+            height: auto;
 
-    .hidden-desktop {
-        display: block;
-    }
+            &.product-description {
+                display: none;
+            }
 
-    .card {
-        padding: 20px;
-        width: 300px;
-        height: auto;
-  
-        &.product-description {
-            display: none;
-        }
-  
-        &.login-form {
-            background-color: transparent;
-            box-shadow: none;
+            &.login-form {
+                background-color: transparent;
+                box-shadow: none;
+
+                .logo-small {
+                    display: block;
+                }
+            }
         }
     }
-
-}
 
   ```
 </div> 
@@ -418,46 +402,39 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```razor
-    @page "/login"
+     @page "/login"
 
     <div class="container">
         <div class="card product-description">
-            <img src="images/logo-desktop.png" alt="ToDoApp" class="logo" />
+            <img src="images/logo.png" alt="logo" class="logo" />
             <p>
                 The ToDoApp lets you write, organize, and prioritize your tasks.
                 This way you can be more productive by registering your tasks in the ToDo App
             </p>
         </div>
-        <div class="hidden-desktop">
-            <img src="images/logo-tablet-mobile.png" alt="ToDoApp" class="logo" />
-        </div>
         <div class="card login-form">
+            <img src="images/logo-small.png" alt="logo" class="logo logo-small" />
             <h1>
                 Welcome back!
             </h1>
             <form onsubmit="return false;">
-
                 @if (ShowLoginErrorMessage)
                 {
                     <BitMessageBar MessageBarStyle="@MessageBarStyle.Error">
                         Username and password entered incorrectly.
                     </BitMessageBar>
                 }
-
                 <div>
                     <label for="username">Username</label>
                     <input type="text" placeholder="Username" name="username" @bind="@UserName" />
                 </div>
-
                 <div>
                     <label for="passowrd">Password</label>
                     <input type="text" placeholder="Password" name="passowrd" @bind="@Password" />
                 </div>
-
                 <BitButton OnClick="Signin">
                     Signin
                 </BitButton>
-
             </form>
         </div>
     </div>
