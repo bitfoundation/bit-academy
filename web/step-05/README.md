@@ -356,7 +356,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 در این مرحله، می‌خواهیم دو مقداری را که توسط ورودی‌ها به عنوان UserName و Password از کاربر گرفته‌ایم را با یک مقدار فرضی مثلا "test" مقایسه و در صورت مخالف بودن با این مقدار، متغیر ShowLoginErrorMessage
 که  از نوع boolean می باشد و به صورت پیش فرض با false مقدار دهی شده را، با مقدار true و در غیر این صورت با مقدار false مقداردهی کنیم.
 
-<img src="images/img-15-1.png" width="700px" />
+<img src="images/img-15-2.png" width="700px" />
 
 <div dir="ltr">
 
