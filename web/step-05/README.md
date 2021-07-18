@@ -218,7 +218,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 برای درک بهتر، تصویر زیر تفاوت بین پراپرتی justify-content و align-items را در FlexBox نشان می‌دهد.
 
-<img src="images/img-7.png" />
+<img src="images/img-7-1.png" />
 
 بدیهی است که چون ما هر دو این پراپرتی‌ها را،  center مقداردهی کرده‌ایم، المنت‌های فرزند در مرکز المنت والد قرار میگیرند.
 
