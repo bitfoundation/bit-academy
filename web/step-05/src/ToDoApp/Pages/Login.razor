@@ -1,0 +1,37 @@
+﻿ @page "/login"
+
+<div class="container">
+    <div class="card product-description">
+        <img src="images/logo.png" alt="ToDoApp" class="logo" />
+        <p>
+            The ToDoApp lets you write, organize, and prioritize your tasks.
+            This way you can be more productive by registering your tasks in the ToDo App
+        </p>
+    </div>
+    <div class="card login-form">
+        <img src="images/logo-small.png" alt="ToDoApp" class="logo logo-small" />
+        <h1>
+            Welcome back!
+        </h1>
+        <form onsubmit="return false;">
+            @if (ShowLoginErrorMessage)
+            {
+                <BitMessageBar MessageBarStyle="@MessageBarStyle.Error">
+                    Username and password entered incorrectly.
+                </BitMessageBar>
+            }
+            <div>
+                <label for="username">Username</label>
+                <input type="text" placeholder="Username" name="username" @bind="@UserName" />
+            </div>
+            <div>
+                <label for="passowrd">Password</label>
+                <input type="text" placeholder="Password" name="passowrd" @bind="@Password" />
+            </div>
+            <BitButton OnClick="Signin">
+                Signin
+            </BitButton>
+        </form>
+    </div>
+</div>
+
