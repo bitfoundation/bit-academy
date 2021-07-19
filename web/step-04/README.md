@@ -6,12 +6,10 @@
 
 <img width="400px" src="images/img-1.png" />
 
-<<<<<<< HEAD
-همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد کرده و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف کنید و کدهای لازم را در index.html و launchSettings.json و App.razor بگذارید، با این تفاوت که هر سه فایل موجود در پوشه Pages را حذف کنید و در دو فایل index.html و launchSettings.json به جای SimpleBlazorCounter، بنویسید SimpleBlazorCalculator
-=======
+
 <details><summary>ایجاد پروژه در Visual Studio</summary>
 همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد کرده و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف کنید. با این تفاوت که هر سه فایل موجود در پوشه Pages را حذف کنید.
->>>>>>> 672eb30e2d1a39077cda34afbbe1c4259edeb282
+
   
 داخل پوشه Pages راست کلیک نموده و از منوی Add، گزینه Razor Component را زده و اسم آن را Calculator.razor بگذارید.
 
