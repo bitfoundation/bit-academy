@@ -254,7 +254,7 @@ button {
 <img width="400px" src="images/img-12.png" />
 </details>
   
-<details><summary>افزودن کد های JavaScript</summary>    
+<details><summary>افزودن رفتار تعاملی با استفاده از #C</summary>  
 در ادامه به جای افزودن کدهای Javascript برای تعیین عملکرد دکمه‌ها، از کدهای #C  استفاده می‌کنیم. 
 کدهای #C  را می‌توانیم داخل بلاک code@، فایل Counter.razor بنویسیم. اما بهتر است بلاک code@ را از این فایل حذف کرده و یک فایل جدید به نام Counter.razor.cs از طریق Add > Class  < راست کلیک روی پوشه Pages، ایجاد و کدهای زیر را وارد این فایل کنیم.
 

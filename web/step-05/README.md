@@ -3,53 +3,60 @@
   
 ## جلسه پنجم- پیاده سازی صفحه Login
   
-در این جلسه قصد داریم صفحه Login پروژه اصلی این دوره (TaskManagement) را به صورت Responsive پیاده سازی کنیم.
+در این جلسه قصد داریم صفحه Login پروژه اصلی این دوره (ToDoApp) را به صورت Responsive پیاده سازی کنیم.
 
-در گذشته کاربران فقط از طریق Desktop computer ها به وب‌سایت‌ها دسترسی پیدا می‌کردند. اکثرا هم مانیتورهای یکسانی داشتند، اما امروزه کاربران از طریق دستگاه‌های متفاوت با صفحه نمایش‌های چند اینچ تا ۲۷ اینچ یا حتی بیشتر، به وب‌سایت‌ها دسترسی پیدا می‌کنند و به طبع این کاربران انتظار دارند، وب‌‌سایتی که از آن بازدید می‌کنند با دستگاه مورد استفاده‌شان سازگاری داشته باشد. بدین ترتیب امروزه اکثر وب‌سایت‌ها به صورت Responsive پیاده سازی می‌شوند تا صفحات وب در تمامی دستگاه‌هایی که امکان دسترسی به اینترنت و باز کردن مرورگر را دارند اعم از لپ‌تاپ، تبلت، موبایل، جلوه خوبی داشته باشند.
+منظور از پیاده‌سازی به صورت Responsive، این است که ما در پیاده‌سازی صفحه وب به گونه‌ای عمل کنیم که المنت‌‌ها موجود در صفحه، در تمامی دستگاه‌هایی که مد نظر ما هستند اعم از لپ‌تاپ، تبلت و موبایل به درستی نمایش داده شوند. به عنوان مثال اگر برای باز کردن صفحه‌ای از وب به جای مرورگر لپ‌تاپ، از مرورگر موبایل استفاده کردیم برای خواندن متن موجود در صفحه احتیاج به زوم کردن متن نداشته باشیم و یا برای دیدن کامل محتوای صفحه، مجبور به اسکرول کردن صفحه به صورت افقی نباشیم.
 
-معمولا در تیم‌های برنامه نویسی روال کار به این صورت است که در ابتدا طراحی پروژه توسط تیم UI / UX انجام شده و سپس خروجی نهایی به توسعه دهنده جهت پیاده‌سازی پروژه داده می‌شود.
-
-دوستان ما در تیم UI / UX، برای طراحی صفحات وب از ابزاری به نام Figma استفاده می کنند. Figma یک ابزار طراحی قدرتمند است که در مرورگر اجرا می‌شود و به شما در ایجاد وب‌سایت‌ها، لوگوها، آیکن‌ها کمک می‌کند.
-
-تصویر زیر مربوط به طراحی صفحه لاگین در Figma در سه سایز Desktop, Tablet, Mobile می‌باشد.
-
-<img src="images/img-1.png" />
+<img src="images/responsive.png" width="700px"/>
   
-همان‌طور که در تصویر می‌بینید، در سایز دسکتاپ، ما دو بخش را داریم که در قسمت سمت راست، فرم Login  قرار گرفته  است و در سمت چپ، لوگو محصول، و همچنین توضیح کوتاهی در مورد محصول قرار گرفته است. در سایز تبلت به دلیل کمبود فضا بخش اصلی که فرم Login است نگه داشته شده، همچنین لوگو مربوط به پروژه هم به قسمت بالای فرم Login و با رنگی متفاوت از لوگو در سایز دسکتاپ قرار گرفته است و در نهایت در سایز موبایل، به دلیل برابری تقریبی سایز صفحه نمایش موبایل با باکس سفید، باکس سفید هم حذف شده است.
-
-شما در Figma  می‌توانید با کلیک بر روی هر المنت و یا کلیک بر روی لایه المنت مورد نظر، در سمت چپ صفحه، به مشخصات المنت، اعم از رنگ، سایز و موارد دیگر، در سمت راست صفحه دسترسی داشته باشید.
-لازم به ذکر است بیشترین استفاده ما از این مشخصات مربوط به سایز المنت، رنگ، فونت و فاصله المنت مورد نظر از بقیه اجزای صفحه می‌باشد. لذا، لطفا از کپی کردن کدهای CSS موجود در Figma اجتناب کرده و فقط برای راهنمایی گرفتن و بالا بردن دقت در پیاده‌سازی طرح از این کدها استفاده کنید.
+<details><summary>استفاده از Figma برای استایل دهی</summary>
   
+قبل از شروع به پیاده سازی صفحه Login می‌خواهیم به بررسی طرح این این صفحه، که از قبل، توسط تیم طراحی به وسیله ابزاری به نام Figma ایجاد شده است بپردازیم.
+  
+همان‌طور که در تصویر زیر می‌بینید، این صفحه در سه سایز Desktop, Tablet و Mobile  طراحی شده است. 
+
+در سایز دسکتاپ، بخش مربوط به Login کاربر، از دو بخش تشکیل شده است، که در یک بخش، فرم Login قرار گرفته و در بخش بعدی، لوگوی محصول به اضافه توضیح کوتاهی در مورد محصول قرار گرفته است. 
+
+در سایز تبلت و موبایل به دلیل کمبود فضا بخش اصلی، که همان فرم Login است نگه داشته شده است و همچنین لوگوی مربوط به پروژه هم به قسمت بالای فرم Login با رنگی متفاوت از لوگو، در سایز دسکتاپ قرار گرفته است.
+
+زمانی که طراح، طرح صفحه موجود را داخل Figma  به شما می‌دهد، شما می‌توانید با کلیک بر روی هر المنت و یا کلیک بر روی لایه المنت مورد نظر، به مشخصات المنت، در سمت راست صفحه، که شامل رنگ، سایز و موقعیت المنت در صفحه است، دسترسی داشته باشید.
+  
+لازم به ذکر است بیشترین استفاده ما از این مشخصات مربوط به سایز المنت، رنگ، فونت و فاصله المنت مورد نظر از بقیه اجزای صفحه می‌باشد. لذا، لطفا از کپی کردن کدهای CSS موجود در Figma اجتناب کرده و فقط برای راهنمایی گرفتن و بالا بردن دقت در پیاده‌سازی طرح، از این کدها استفاده کنید.
+
+<br></br>
+<img src="images/img-1-1.png" />
+<br></br>
+
 ٖهمچنین شما می توانید مطابق تصویر زیر از سمت چپ صفحه، تب Export را انتخاب و آیکن‌ها، لوگو و تمامی تصاویر موجود در طرح مربوط به پروژه را با هر نام و فرمتی که می‌خواهید دانلود نمایید.  
 
   
-<img src="images/img-2.png" />
- 
-در ادامه به منظور پیاده‌سازی طرح داخل Figma ، پروژه‌ای به نام  TaskManagement ایجاد می‌کنیم. پوشه‌ها فایل‌ها و کدهای اضافی را همانند جلسات گذشته حذف می‌کنیم.
+<img src="images/img-2-2.png" />
+</details>
+<details><summary>استفاده از فریم ورک Bit برای ایجاد المنت ها</summary>
+در ادامه، پروژه‌ای به نام ToDoApp ایجاد کرده و همانند جلسات گذشته پوشه‌ها، فایل‌ها و کدهای اضافی را حذف می‌کنیم.
+  
+از این جلسه به بعد می‌خواهیم از کامپوننت‌های ‌Bit برای ایجاد سریع‌تر و آسان‌تر المنت‌ها استفاده کنیم.
+  
+برای نصب Bit، همانند نصب Delegate.SassBuilder در جلسه گذشته از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌Browse در قسمت سرچ باکس bit.client.web.blazor را جستجو و نصب کنید.
 
-از این جلسه به بعد می‌خواهیم از فریم ورک ‌Bit برای ایجاد سریع‌تر و آسان‌تر المنت‌ها استفاده کنیم. 
-
-
-برای نصب این فریم‌ورک، همانند نصب Delegate.SassBuilder در جلسه گذشته از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌Browse در قسمت سرچ باکس bit.client.web.blazor را جستجو و نصب کنید.
-
-سپس خط زیر را که مربوط به کدهای CSS این فریم ورک می‌باشد به تگ head  داخل فایل index.html در پوشه wwwroot اضافه می‌کنیم.
+سپس خط زیر را که مربوط به کدهای CSS این کامپوننت‌ها می‌باشد به تگ head  داخل فایل index.html در پوشه wwwroot اضافه می‌کنیم.
   
   <div dir="ltr">
 
   ```razor
     
-    <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css"/>
     
   ``` 
   </div>
 
-و خط زیر را هم که مربوط به کدهای JavaScript این فریم ورک می‌باشد را به انتهای تگ body در این فایل اضافه می‌کنیم.  
+و خط زیر را هم که مربوط به کدهای JavaScript این کامپوننت‌ها می‌باشد را به انتهای تگ body در این فایل اضافه می‌کنیم.  
  
   <div dir="ltr">
 
   ```razor
     
-    <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js" asp-append-version="true"></script>
+    <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js"></script>
     
   ``` 
   </div>
@@ -66,17 +73,17 @@
       <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>TaskManagement</title>
+          <title>ToDoApp</title>
           <base href="/" />
-          <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
-          <link href="TaskManagement.styles.css" rel="stylesheet" />
+          <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css"/>
+          <link href="ToDoApp.styles.css" rel="stylesheet"/>
       </head>
 
       <body>
           <div id="app">Loading...</div>
 
           <script src="_framework/blazor.webassembly.js"></script>
-          <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js" asp-append-version="true"></script>
+          <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js"></script>
       </body>
 
     </html>
@@ -93,17 +100,14 @@
 
     <div class="container">
         <div class="card product-description">
-            <img src="images/logo-desktop.png" alt="Task Management" class="logo" />
+            <img src="images/logo.png" alt="logo" class="logo" />
             <p>
-                Task management is more than a to-do list.
-                It means tracking tasks from beginning to end, delegating subtasks to teammates,
-                and setting deadlines to make sure projects get done on time.
+                The ToDoApp lets you write, organize, and prioritize your tasks.
+                This way you can be more productive by registering your tasks in the ToDo App
             </p>
         </div>
-        <div class="hidden-desktop">
-            <img src="images/logo-tablet-mobile.png" alt="Task Management" class="logo" />
-        </div>
         <div class="card login-form">
+            <img src="images/logo-small.png" alt="logo" class="logo logo-small" />
             <h1>
                 Welcome back!
             </h1>
@@ -122,7 +126,8 @@
   
   برای توضیح بهتر کد بالا، بگذارید از تصویر طرح صفحه Login، در سایز دسکتاپ، استفاده کنیم.
 
-<img src="images/img-3.png" width="700px" />
+<img src="images/img-3-3.png" width="700px" />
+<br></br>
 
 تگ div  با کلاس container مربوط به پس زمینه رنگی می‌باشد که در پشت همه المنت‌های داخل صفحه قرار دارد.
 
@@ -148,15 +153,13 @@
 
 در تب Elements  شما می‌توانید نتیجه کامپایل کامپوننت‌های ‌‌Bit را به کدهای HTML مشاهده نمایید. همانطور که در تصویر زیر می‌بینید کامپوننت BitTextField تشکیل شده از یک تگ div است که در میان آن یک تگ input قرار گرفته است.
 همچنین این تگ، شامل تعداد کلاس از جمله کلاس bit-txt-fluent می‌باشد. همانطور که در سمت راست محیط Developer Tools مشاهده می‌کنید با استفاده از این کلاس‌ها، استایل‌هایی به این کامپوننت اختصاص داده شده است.
- 
- 
+<br></br>
 <img src="images/img-4.png"/>
-
+<br></br>
 هر کدام از این کامپوننت‌ها شامل تعدادی Property هستند.
 مثلا در کامپوننت ‌BitTextField، ما پراپرتی‌های Type, Placeholder, Class را داریم که مانند attribute ها در کدهای HTML، استفاده می‌شوند. مقادیری را که به این پراپرتی‌ها اختصاص ‌می‌دهیم به کامپوننت پاس داده شده و در جای مناسب خود قرار می‌گیرند.
 
 تصویر زیر محل قرار گرفتن پراپرتی های پاس داده شده به کامپوننت ‌BitTextField را در کد کامپایل شده این کامپوننت نشان می‌دهد.
-
 
 <img src="images/img-5.png"/>
 
@@ -179,9 +182,9 @@
 
 </div>
 
-قبل از اختصاص پراپرتی‌ها به کلاس container، لازم است بدانید که ما برای Layout صفحه از Flexbox در CSS استفاده می‌کنیم. البته روش‌های متفاوتی برای چیدمان المنت‌ها در صفحات وب وجود دارد اما Flexbox یک مدل مدرن‌تر و هوشمندانه‌تر را در مقایسه با روش های قدیمی‌تر ارائه می‌دهد.
+قبل از اختصاص پراپرتی‌ها به کلاس container، لازم است بدانید، از بین روش‌های متفاوتی که برای چیدمان المنت‌ها (Layout) صفحه وجود دارد، ما روش Flexbox را برای Layout صفحه انتخاب کرده‌ایم.  
   
-  در ادامه به div  با کلاس container پراپتی‌های زیر را اختصاص می‌دهیم.
+  در ادامه به div  با کلاس container پراپرتی‌های زیر را اختصاص می‌دهیم.
 
 <div dir="ltr">
 
@@ -225,7 +228,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 از پراپرتی background-image برای تعیین تصویر پس زمینه المنت استفاده می‌کنیم.
 
-پراپرتی Background-size با مقدار cover باعث می‌شود، تصویر پس‌زمینه به اندازه‌ای که تمام پس زمینه المنت را بتواند بپوشاند تغییر اندازه دهد. 
+پراپرتی background-size با مقدار cover باعث می‌شود، تصویر پس‌زمینه به اندازه‌ای که تمام پس زمینه المنت را بتواند بپوشاند تغییر اندازه دهد. 
 
 پراپرتی background-repeat با مقدار no-repeat از تکرار شدن تصویر پس زمینه، زمانی که سایز تصویر کوچکتر از سایز المنت هست جلوگیری می‌کند.
 
@@ -233,11 +236,12 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 با استفاده از این ویژگی شما می توانید به جای تکرار مجدد همان سلکتورها، یک سلکتور را داخل سلکتور دیگر، به صورت تو در تو بنویسید.
 
-برای درک بهترین این ویژگی به مقایسه دو کد، در تصویر زیر توجه نمایید.
+برای درک بهتر این ویژگی به مقایسه دو کد، در تصویر زیر توجه نمایید.
+<br></br>
 
-<img src="images/img-8.png" />
+<img src="images/img-8-2.png" />
   
-
+<br></br>
 همانطور که تصویر بالا می‌بینید، در CSS اگر بخواهیم یک المنتی را انتخاب کنیم که هر دو کلاس را داشته باشد به صورت زیر هر دو کلاس را بدون هیچ فاصله ای پشت هم می نویسیم.
 
 <img src="images/img-9.png" />
@@ -246,7 +250,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 <img src="images/img-10.png" />
 
-در ادامه نوشته کدهای SCSS، کدهای زیرا را به انتهای کدهای قبلی اضافه نمایید.
+در ادامه نوشته کدهای SCSS، کدهای زیر را به انتهای کدهای قبلی اضافه نمایید.
 
 <div dir="ltr">
 
@@ -254,13 +258,14 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
     .card {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         padding: 0 40px 100px 40px;
         box-shadow: 1px 2px 10px 0 $light-gray;
         width: 400px;
         height: 500px;
 
         &.product-description {
+            justify-content: center;
+            align-items: center;
             background-color: $purple;
             color: $white;
             text-align: center;
@@ -268,31 +273,38 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
         }
 
         &.login-form {
+            justify-content: center;
+            align-items: flex-start;
             background-color: $white;
             border-radius: 0 5px 5px 0;
+        }
+
+        .logo {
+            margin-bottom: 30px;
         }
     }
 
     .login-form {
         h1 {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: $dark-gray;
         }
+    }
+
+    .logo-small {
+        display: none;
     }
 
     .m-b-20 {
         margin-bottom: 20px;
     }
-    
-    .hidden-desktop {
-      display: none;
-    }
 
   ```
 </div>  
 
-در کلاس hidden-desktop در کد بالا، از پراپرتی display با مقدار none استفاده کرده ایم. از این مقدار در پراپرتی display به منظور پنهان کردن یک المنت می‌توانیم استفاده کنیم. به گونه‌ای که انگار این المنت از ابتدا وجود نداشته است.
-
+در کلاس logo-small در کد بالا، از پراپرتی display با مقدار none استفاده کرده ایم. از این مقدار در پراپرتی display به منظور پنهان کردن یک المنت می‌توانیم استفاده کنیم. به گونه‌ای که انگار این المنت از ابتدا وجود نداشته است.
+</details>
+<details><summary>نمایش صحیح المنت ها در سایز تبلت و موبایل</summary>  
 از این قسمت به بعد، استایل‌هایی که مینویسم مربوط به نمایش صحیح المنت‌ها در سایز تبلت و موبایل می‌باشد.
 
 کدهای زیر را به ادامه کدهای قبلی اضافه نمایید.
@@ -300,55 +312,34 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```scss
-  /* Media Query for low resolution  Tablets, Ipads */
-  @media (min-width: 481px) and (max-width: 767px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .hidden-desktop {
-        display: block;
-    }
-
-    .card {
-        &.product-description {
-            display: none;
+    /* Media Query for low-resolution Tablets and Mobile Devices*/
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
         }
-  
-        &.login-form {
-            background-color: transparent;
-            box-shadow: none;
+
+        .hidden-desktop {
+            display: block;
         }
-    }
-}
 
- /* Media Query for Mobile Devices */
- @media (max-width: 480px) {
-  
-  .container {
-        flex-direction: column;
-    }
+        .card {
+            width: auto;
+            height: auto;
 
-    .hidden-desktop {
-        display: block;
-    }
+            &.product-description {
+                display: none;
+            }
 
-    .card {
-        padding: 20px;
-        width: 300px;
-        height: auto;
-  
-        &.product-description {
-            display: none;
-        }
-  
-        &.login-form {
-            background-color: transparent;
-            box-shadow: none;
+            &.login-form {
+                background-color: transparent;
+                box-shadow: none;
+
+                .logo-small {
+                    display: block;
+                }
+            }
         }
     }
-
-}
 
   ```
 </div> 
@@ -358,12 +349,108 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 با استفاده از بررسی عرض صفحه نمایش در media queries می‌توانیم استایل‌های متناسب با هر اندازه از صفحه نمایش را، به المنت‌ها اضافه، تغییر و یا از آنها حذف نماییم. 
 
 به منظور مطمئن شدن از صحیح بودن نمایش المنت‌ها در دستگاه‌ها و یا صفحه نمایش‌های متفاوت، می‌توانید مطابق تصویر زیر، از محیط developer tools، بر روی Toggle device toolbar کلیک کرده و از بالای صفحه داخل مرورگر، سایز صفحه نمایش و یا نوع device خود را انتخاب نمایید.
-
-<img src="images/img-12.png" />
-  
-
+<br></br>
+<img src="images/img-12-1.png" />
+<br></br>
+</details>
+<details><summary>پردازش ورودی ها و نمایش پیغام مناسب</summary>  
 در ادامه فایل جدیدی به نام Login.razor.cs ایجاد می‌کنیم.
   
-در این مرحله، فقط می‌خواهیم دو مقداری را که توسط ورودی‌ها به عنوان UserName و Password از کاربر گرفته‌ایم را با یک مقدار فرضی مثلا "test"  مقایسه کنیم و در صورت مخالف بودن، پیغامی مبنی بر نادرست بودن UserName , Password وارد شده به کاربر نمایش دهیم.
+در این مرحله، می‌خواهیم دو مقداری را که توسط ورودی‌ها به عنوان UserName و Password از کاربر گرفته‌ایم را با یک مقدار فرضی مثلا "test" مقایسه و در صورت مخالف بودن با این مقدار، متغیر ShowLoginErrorMessage
+که  از نوع boolean می باشد و به صورت پیش فرض با false مقدار دهی شده را، با مقدار true و در غیر این صورت با مقدار false مقداردهی کنیم.
+<br></br>
+<img src="images/img-15-2.png" width="700px" />
+<br></br>
 
+<div dir="ltr">
+
+  ```c#
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    namespace ToDoApp.Pages
+    {
+        public partial class Login
+        {
+            public string UserName { get; set; }
+            public string Password { get; set; }
+
+            public bool ShowLoginErrorMessage = false;
+
+            public void Signin()
+            {
+                if (UserName != "test" || Password != "test") 
+                {
+                    ShowLoginErrorMessage = true;
+                } 
+                else
+                {
+                    ShowLoginErrorMessage = false;
+                }
+            }
+        }
+    }
+
+  ``` 
+  </div>
+  
+  در #C یک متغیر از نوع boolean با کلمه کلیدی bool تعریف می‌شود و فقط می تواند شامل دو مقدار true  و false باشد.
+
+عملگر منطقی  || یا OR به این شکل عمل می‌کند که اگر تنها یکی از عبارات یا شرط ها درست باشد مقدار true را برمی گرداند.
+
+در کد بالا داخل بلاک کد if ، ما می‌گوییم اگر نام کاربری " یا " رمز عبور  مخالف مقدار test بود متغیر ShowLoginErrorMessage با true مقداردهی شود.
+
+در مرحله آخر می‌خواهیم از پارامترها و متد تعریف شده در این فایل، در فایل Login.razor استفاده کنیم.
+
+<div dir="ltr">
+
+  ```razor
+     @page "/login"
+
+    <div class="container">
+        <div class="card product-description">
+            <img src="images/logo.png" alt="logo" class="logo" />
+            <p>
+                The ToDoApp lets you write, organize, and prioritize your tasks.
+                This way you can be more productive by registering your tasks in the ToDo App
+            </p>
+        </div>
+        <div class="card login-form">
+            <img src="images/logo-small.png" alt="logo" class="logo logo-small" />
+            <h1>
+                Welcome back!
+            </h1>
+            <form onsubmit="return false;">
+                @if (ShowLoginErrorMessage)
+                {
+                    <BitMessageBar MessageBarStyle="@MessageBarStyle.Error">
+                        Username and password entered incorrectly.
+                    </BitMessageBar>
+                }
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Username" name="username" @bind="@UserName" />
+                </div>
+                <div>
+                    <label for="passowrd">Password</label>
+                    <input type="text" placeholder="Password" name="passowrd" @bind="@Password" />
+                </div>
+                <BitButton OnClick="Signin">
+                    Signin
+                </BitButton>
+            </form>
+        </div>
+    </div>
+
+  ``` 
+  </div>
+
+همان طور که در کد بالا می‌بینید از متغیر ShowLoginErrorMessage برای نشان دادن پیغامی مبنی بر نادرست بودن UserName و Password استفاده کرده‌ایم. بدین صورت که در صورت true  بودن ShowLoginErrorMessage با استفاده از کامپوننت BitMessageBar در فریم ورک ‌Bit این پیغام را نمایش می‌دهیم.
+
+کامپوننت BitMessageBar دارای پراپرتی MessageBarStyle می باشد که اگر با MessageBarStyle.Error@ مقدار دهی شود، پیغام ما مانند تصویر زیر، استایل یک پیغامی که جنبه‌ی خطا دارد را، به خود می‌گیرد.
+
+<img src="images/img-13.png" />
+</details>
 </div>
