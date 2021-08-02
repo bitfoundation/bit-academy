@@ -6,7 +6,7 @@
 
 <img width="400px" src="images/img-1.png" />
 
-# لیست موضوعات	
+## لیست موضوعات	
 1. [ایجاد پروژه در Visual Studio](#CreateProject)	
 2. [ایجاد ساختار اصلی با HTML](#CreateMainStructure)	
 3. [افزودن استایل با استفاده از CSS](#AddStyle)	
