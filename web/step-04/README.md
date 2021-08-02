@@ -6,8 +6,13 @@
 
 <img width="400px" src="images/img-1.png" />
 
+## لیست موضوعات
+1. [ایجاد پروژه در Visual Studio](#CreateProject)
+2. [ایجاد ساختار اصلی](#CreateMainStructure)  
+3. [افزودن استایل بااستفاده از SCSS](#AddSCSS)  
+4. [افزودن رفتار تعاملی با استفاده از #C](#AddFunctionality)  
 
-<details><summary>ایجاد پروژه در Visual Studio</summary>
+## ایجاد پروژه در Visual Studio <a name="CreateProject"></a>  
 همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد کرده و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف کنید. با این تفاوت که هر سه فایل موجود در پوشه Pages را حذف کنید.
 
   
@@ -26,9 +31,9 @@
 </div>
 
 <img width="300px" src="images/img-2.png" />
-</details>
+
   
-<details><summary>ایجاد ساختار اصلی</summary>
+## ایجاد ساختار اصلی <a name="CreateMainStructure"></a>
  برای ایجاد ساختار اولیه ماشین حساب کد زیر را در فایل Calculator.razor  وارد کنید.
 
 <div dir="ltr">
@@ -85,8 +90,8 @@
 
   
 <img width="300px" src="images/img-3.png" />
-</details>
-<details><summary>افزودن استایل بااستفاده از SCSS</summary>
+
+## افزودن استایل بااستفاده از SCSS <a name="AddSCSS"></a>
 از این جلسه به بعد برای افزودن استایل‌ها از SCSS به جای CSS استفاده می‌کنیم. SCSS علاوه بر داشتن تمامی ویژگی های موجود در CSS شامل تعدادی ویژگی‌ قدرتمندتر نیز نسبت به CSS می‌باشد، که با استفاده از این ویژگی‌ها نوشتن استایل‌ها آسان‌تر، سریعتر و خواناتر می‌شود.
   
 سعی ما بر این است که به مرور زمان از این جلسه تا جلسه آخر این دوره، به توضیح کامل این ویژگی‌ها با مثال‌های متعدد بپردازیم.  
@@ -197,9 +202,9 @@ input {
 
 
 <img width="400px" src="images/img-4.png" />
-</details>
+
   
-<details><summary>افزودن رفتار تعاملی با استفاده از #C</summary>  
+## افزودن رفتار تعاملی با استفاده از #C <a name="AddFunctionality"></a>
 سپس فایل جدیدی به نام Calculator.razor.cs به منظور نوشتن متدها، برای چهار عمل اصلی (جمع، تفریق، ضرب، تقسیم) ایجاد می‌کنیم و کدهای زیر را وارد این فایل می‌کنیم.
   
 <div dir="ltr">
@@ -346,6 +351,5 @@ namespace SimpleBlazorCalculator.Pages
   خروجی نهایی به صورت زیر می‌باشد.
 
   <img width="400px" src="images/calculator.gif" />
-</details>
   
 </div>
