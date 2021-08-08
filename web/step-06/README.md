@@ -4,6 +4,6 @@
   
 در این جلسه می خواهیم به پیاده‌سازی یک TodoList ساده همانند تصویر زیر بپردازیم.
 
-<img src="images/1.png" width="700px"/>
+<img src="images/1.png" width="500px"/>
 
 </div>
