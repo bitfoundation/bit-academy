@@ -6,4 +6,15 @@
 
 <img src="images/1-1.png" width="500px"/>
 
+ابتدا در پوشه pages فایل جدیدی به نام TodoPage.razor ایجاد کرده و کد زیر را به منظور تعیین آدرس این صفحه در ابتدای این فایل قرار می دهیم.
+
+<div dir="ltr">
+
+```razor
+
+  @page "/todo";
+
+``` 
+</div>
+
 </div>
