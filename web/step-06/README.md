@@ -17,4 +17,9 @@
 ``` 
 </div>
 
+در ادامه ​​یک فایل به نام TodoItem.cs به ریشه پروژه اضافه کنید. 
+
+<img src="images/2.png" width="500px"/>
+
+
 </div>
