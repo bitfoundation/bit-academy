@@ -170,4 +170,42 @@ namespace ToDoApp.Pages
 
 </div>
 
+در ادامه متد AddTodo را به کلاس TodoPage به صورت زیر اضافه می‌کنیم.
+
+ٖ<div dir="ltr">
+
+```c#
+
+using Microsoft.AspNetCore.Components.Web;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ToDoApp.Pages
+{
+    public partial class TodoPage
+    {
+        public List<TodoItem> TodoList = new();
+        public string TodoName { get; set; }
+    }
+
+    public void AddTodo(KeyboardEventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(TodoName))
+        {
+            var newTask = new TodoItem()
+            {
+                Id = TodoList.Count() + 1,
+                Title = TodoName,
+                IsDone = false
+            };
+
+            TodoList.Add(newTask);
+            TodoName = null;
+        }
+    }
+}
+
+``` 
+</div>
+
 </div>
