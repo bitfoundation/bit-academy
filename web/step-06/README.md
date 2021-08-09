@@ -112,4 +112,62 @@ namespace ToDoApp.Pages
 
 در اینجا فعلا با استفاده از کامپوننت BitCheckbox وضعیت تکمیل شدن یا نشدن Todo  و با استفاده span عنوان Todo را نمایش داده‌ایم.
 
+در ادامه می خواهیم کد مربوط به افزودن یک Todo جدید را بنویسیم.
+
+بدین ترتیب ابتدا یک متغیر جدید به نام TodoName در فایل  TodoPage.razor.cs  اضافه می کنیم.
+
+<div dir="ltr">
+
+```c#
+
+using Microsoft.AspNetCore.Components.Web;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ToDoApp.Pages
+{
+    public partial class TodoPage
+    {
+        public List<TodoItem> TodoList = new();
+        public string TodoName { get; set; }
+    }
+}
+
+``` 
+</div>
+
+سپس در فایل TodoPage.razor یک input قرار داده و متغیر TodoName را به آن bind  می‌کنیم و می خواهیم روی رویداد onkeyup
+
+این input  یک متد به نام AddTodo را فراخوانی کنیم.
+ 
+کد تغییر یافته این فایل به صورت زیر می‌باشد.
+
+<div dir="ltr">
+  
+```razor
+
+<div class="container">
+  <div class="todo-add">
+      <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
+  </div>
+
+  <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+      <RowTemplate Context="TodoItem">
+          <div Class="todo-item">
+              <div class="todo-title">
+                  <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                  <span>
+                      @TodoItem.Title
+                  </span>
+              </div>
+          </div>
+      </RowTemplate>
+  </BitBasicList>
+
+</div>
+
+``` 
+
+</div>
+
 </div>
