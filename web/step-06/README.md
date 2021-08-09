@@ -81,21 +81,21 @@ namespace ToDoApp.Pages
 
 <div dir="ltr">
 
-```razor
+```c#
   <div class="container">
     
-<BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
-    <RowTemplate Context="TodoItem">
-        <div Class="todo-item">
-            <div class="todo-title">
-                <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
-                <span>
-                    @TodoItem.Title
-                </span>
+    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+        <RowTemplate Context="TodoItem">
+            <div Class="todo-item">
+                <div class="todo-title">
+                    <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                    <span>
+                        @TodoItem.Title
+                    </span>
+                </div>
             </div>
-        </div>
-    </RowTemplate>
-</BitBasicList>
+        </RowTemplate>
+    </BitBasicList>
     
   </div>
 
