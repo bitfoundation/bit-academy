@@ -247,8 +247,8 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
                 </div>
             </div>
        </RowTemplate>
-   </BitBasicList>
-}
+    </BitBasicList>
+  }
 </div>
 
 ``` 
