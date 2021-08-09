@@ -224,4 +224,35 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
 
  بعد از اضافه کردن TodoName را با مقدار null مقداردهی می کنیم.
 
+در این مرحله می‌توانیم یک شرط برای نمایش لیست Todo ها قرار دهیم به این صورت که اگر تعداد آیتم‌های لیست بیشتر از صفر بود، لیست را نمایش دهد.
+
+<div dir="ltr">
+  
+```razor
+
+<div class="container">
+  <div class="todo-add">
+      <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
+  </div>
+  @if (TodoList.Count > 0)
+  {
+    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+        <RowTemplate Context="TodoItem">
+            <div Class="todo-item">
+                <div class="todo-title">
+                    <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                    <span>
+                        @TodoItem.Title
+                    </span>
+                </div>
+            </div>
+       </RowTemplate>
+   </BitBasicList>
+}
+</div>
+
+``` 
+
+</div>
+
 </div>
