@@ -53,8 +53,20 @@ using System.Threading.Tasks;
  ما احتیاج به یک لیست برای نشان دادن todo ها داریم. بدین منظور از کامپوننت BitBasicList  کامپوننت های Bit به صورت زیر، استفاده می‌کنیم.
 
 ```razor
-
-
+<div class="container">
+    <BitBasicList Items="" Virtualize="true" Class="todo-list">
+        <RowTemplate Context="">
+            <div Class="todo-item">
+                <div class="todo-title">
+                  <BitCheckbox/>
+                  <span>
+                      
+                  </span>
+                </div>
+            </div>
+       </RowTemplate>
+  </BitBasicList>
+</div>
 
 ``` 
 </div>
