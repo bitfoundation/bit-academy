@@ -82,6 +82,7 @@ namespace ToDoApp.Pages
 <div dir="ltr">
 
 ```c#
+
   <div class="container">
     
     <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
