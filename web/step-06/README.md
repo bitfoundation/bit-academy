@@ -83,22 +83,22 @@ namespace ToDoApp.Pages
 
 ```c#
 
-  <div class="container">
-    
-    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
-        <RowTemplate Context="TodoItem">
-            <div Class="todo-item">
-                <div class="todo-title">
-                    <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
-                    <span>
-                        @TodoItem.Title
-                    </span>
-                </div>
-            </div>
-        </RowTemplate>
-    </BitBasicList>
-    
-  </div>
+<div class="container">
+
+  <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+      <RowTemplate Context="TodoItem">
+          <div Class="todo-item">
+              <div class="todo-title">
+                  <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                  <span>
+                      @TodoItem.Title
+                  </span>
+              </div>
+          </div>
+      </RowTemplate>
+  </BitBasicList>
+
+</div>
 
 ``` 
 </div>
