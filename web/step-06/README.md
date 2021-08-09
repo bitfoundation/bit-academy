@@ -21,5 +21,29 @@
 
 <img src="images/2.png" width="500px"/>
 
+در این فایل قرار است کلاسی به نام TodoItem داشته باشیم که این کلاس شامل فیلدهای مربوط به یک مورد todo می‌شود. کد مربوط به این فایل به صورت زیر می‌باشد.
+
+<div dir="ltr">
+
+```c#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+    public class TodoItem
+    {
+        public int Id { get; set; }
+
+        public string Title { get; set; }
+
+        public bool IsDone { get; set; }
+
+        public bool IsEdit { get; set; } = false;
+    }
+
+``` 
+</div>
 
 </div>
