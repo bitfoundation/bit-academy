@@ -48,4 +48,15 @@ using System.Threading.Tasks;
 
 همانطور که در کد بالا می بینید قرار است هر کدام از Todo ها، شامل چهار فیلد Id, Title, IsDone و IsEdit  با مقدار پیشفرض  false باشد.
 
+به فایل TodoPage.razor  برمیگردیم.
+
+ ما احتیاج به یک لیست برای نشان دان todo ها داریم. بدین منظور از کامپوننت BitBasicList ، BitFoundation به صورت زیر، استفاده می‌کنیم.
+
+```razor
+
+  @page "/todo";
+
+``` 
+</div>
+
 </div>
