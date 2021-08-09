@@ -77,18 +77,25 @@ namespace ToDoApp.Pages
 
 به فایل TodoPage.razor  برمیگردیم.
 
- ما احتیاج به یک لیست برای نشان دادن todo ها داریم. بدین منظور از کامپوننت BitBasicList  کامپوننت های Bit به صورت زیر، استفاده می‌کنیم.
+برای نمایش اعضای لیست یا همان Todo ها از کامپوننت BitBasicList کامپوننت های Bit به صورت زیر، استفاده می‌کنیم.
 
 <div dir="ltr">
 
 ```razor
   <div class="container">
     
-    <BitBasicList Items="" Virtualize="true" Class="todo-list">
-        <RowTemplate Context="">
-            <div Class="todo-item"></div>
-       </RowTemplate>
-    </BitBasicList>
+<BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+    <RowTemplate Context="TodoItem">
+        <div Class="todo-item">
+            <div class="todo-title">
+                <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                <span>
+                    @TodoItem.Title
+                </span>
+            </div>
+        </div>
+    </RowTemplate>
+</BitBasicList>
     
   </div>
 
