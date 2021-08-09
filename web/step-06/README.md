@@ -73,26 +73,11 @@ namespace ToDoApp.Pages
 ``` 
 </div>
 
+همان طور که در کد بالا می‌بینید با فراخوانی List<TodoItem> یک لیست از روی کلاس TodoItem که از قبل در فایل TodoItem.cs ایجاده کرده بود‌ه‌ایم، می‌سازیم.
+
 به فایل TodoPage.razor  برمیگردیم.
 
  ما احتیاج به یک لیست برای نشان دادن todo ها داریم. بدین منظور از کامپوننت BitBasicList  کامپوننت های Bit به صورت زیر، استفاده می‌کنیم.
-
-<div dir="ltr">
-
-```razor
-  <div class="container">
-    
-    <BitBasicList Items="" Virtualize="true" Class="todo-list">
-        <RowTemplate Context="">
-            <div Class="todo-item"></div>
-       </RowTemplate>
-    </BitBasicList>
-    
-  </div>
-
-``` 
-</div>
-  
 
 <div dir="ltr">
 
