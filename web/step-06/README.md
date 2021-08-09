@@ -78,7 +78,8 @@ namespace ToDoApp.Pages
 به فایل TodoPage.razor  برمیگردیم.
 
 برای نمایش اعضای لیست یا همان Todo ها از کامپوننت BitBasicList کامپوننت های Bit به صورت زیر، استفاده می‌کنیم.
-
+  
+  
 <div dir="ltr">
 
 ```c#
