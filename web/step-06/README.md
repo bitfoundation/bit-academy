@@ -188,7 +188,7 @@ namespace ToDoApp.Pages
         public string TodoName { get; set; }
     }
 
-    public void AddTodo(KeyboardEventArgs e)
+    public void AddTodo()
     {
         if (!string.IsNullOrWhiteSpace(TodoName))
         {
