@@ -260,6 +260,42 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
 بدین منظور از سه کامپوننت BitIconButton  برای فراخوانی  سه متد  CompleteTodoItem ، EditTodoItem و  DeleteTodoItem داخل لیست استفاده می‌کنیم.
 
 کد بالا به صورت زیر تغییر می‌کند.
+
+<div dir="ltr">
+  
+```razor
+
+<div class="container">
+  <div class="todo-add">
+      <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
+  </div>
+  @if (TodoList.Count > 0)
+  {
+    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+        <RowTemplate Context="TodoItem">
+            <div Class="todo-item">
+                <div class="todo-title">
+                    <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                    <span>
+                        @TodoItem.Title
+                    </span>
+                </div>
+
+                <div class="todo-action">
+                    <BitIconButton IconName="Completed" OnClick="(e => CompleteTodoItem(TodoItem))" Class="completed"/>
+                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
+                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                </div>
+            </div>
+       </RowTemplate>
+    </BitBasicList>
+  }
+</div>
+
+``` 
+
+</div>
+
  
 
 </div>
