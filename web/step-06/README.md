@@ -73,7 +73,7 @@ namespace ToDoApp.Pages
 ``` 
 </div>
 
-ین‌ترتیب یک لیست از روی کلاس TodoItem که از قبل در فایل TodoItem.cs ایجاده کرده بوده‌ایم، ساختیم.
+بدین‌ترتیب یک لیست از روی کلاس TodoItem که از قبل در فایل TodoItem.cs ایجاده کرده بوده‌ایم، ساختیم.
 
 به فایل TodoPage.razor  برمیگردیم.
 
