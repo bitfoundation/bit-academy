@@ -136,9 +136,7 @@ namespace ToDoApp.Pages
 ``` 
 </div>
 
-سپس در فایل TodoPage.razor یک input قرار داده و متغیر TodoName را به آن bind  می‌کنیم و می خواهیم روی رویداد onkeyup
-
-این input  یک متد به نام AddTodo را فراخوانی کنیم.
+سپس در فایل TodoPage.razor یک input قرار داده و متغیر TodoName را به آن bind  می‌کنیم و می خواهیم روی رویداد onkeyup این input  یک متد به نام AddTodo را فراخوانی کنیم. 
  
 کد تغییر یافته این فایل به صورت زیر می‌باشد.
 
