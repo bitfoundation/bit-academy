@@ -57,18 +57,13 @@ using System.Threading.Tasks;
 
 ```razor
   <div class="container">
-      <BitBasicList Items="" Virtualize="true" Class="todo-list">
-          <RowTemplate Context="">
-              <div Class="todo-item">
-                  <div class="todo-title">
-                    <BitCheckbox/>
-                    <span>
-
-                    </span>
-                  </div>
-              </div>
-         </RowTemplate>
+    
+    <BitBasicList Items="" Virtualize="true" Class="todo-list">
+        <RowTemplate Context="">
+            <div Class="todo-item"></div>
+       </RowTemplate>
     </BitBasicList>
+    
   </div>
 
 ``` 
