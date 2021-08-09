@@ -48,9 +48,48 @@ using System.Threading.Tasks;
 
 همانطور که در کد بالا می بینید قرار است هر کدام از Todo ها، شامل چهار فیلد Id, Title, IsDone و IsEdit  با مقدار پیشفرض  false باشد.
 
+سپس فایل جدیدی به نام TodoPage.razor.cs ایجاد می‌کنیم.
+
+در این فایل، ابتدا یک متغیر به نام TodoList  ازنوع List برای todo item ها  به صورت زیر ایجاد می کنیم. در ادامه قرار است در فایل TodoPage.razor از این متغیر به منظور نگهداری وضعیت لیست todo ها استفاده کنیم.
+
+<div dir="ltr">
+
+```c#
+
+using Microsoft.AspNetCore.Components.Web;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ToDoApp.Pages
+{
+    public partial class TodoPage
+    {
+        public List<TodoItem> TodoList = new();
+    }
+}
+
+``` 
+</div>
+
 به فایل TodoPage.razor  برمیگردیم.
 
  ما احتیاج به یک لیست برای نشان دادن todo ها داریم. بدین منظور از کامپوننت BitBasicList  کامپوننت های Bit به صورت زیر، استفاده می‌کنیم.
+
+<div dir="ltr">
+
+```razor
+  <div class="container">
+    
+    <BitBasicList Items="" Virtualize="true" Class="todo-list">
+        <RowTemplate Context="">
+            <div Class="todo-item"></div>
+       </RowTemplate>
+    </BitBasicList>
+    
+  </div>
+
+``` 
+</div>
   
 
 <div dir="ltr">
