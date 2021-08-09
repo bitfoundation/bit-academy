@@ -137,7 +137,9 @@ namespace ToDoApp.Pages
 </div>
 
 سپس در فایل TodoPage.razor یک input قرار داده و متغیر TodoName را به آن bind  می‌کنیم و می خواهیم روی رویداد onkeyup این input  یک متد به نام AddTodo را فراخوانی کنیم. 
- 
+
+رویداد onkeyup زمانی رخ می دهد که کاربر یک کلید (روی صفحه کلید) رها می کند.
+
 کد تغییر یافته این فایل به صورت زیر می‌باشد.
 
 <div dir="ltr">
