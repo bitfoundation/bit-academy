@@ -46,6 +46,6 @@ using System.Threading.Tasks;
 ``` 
 </div>
 
-مان طور که در کد بالا می بینید هر کدام از Todo های ما شامل چهار فیلد Id, Title, IsDone و IsEdit  با مقدار پیشفرض  false می‌باشد.
+همانطور که در کد بالا می بینید قرار است هر کدام از Todo ها، شامل چهار فیلد Id, Title, IsDone و IsEdit  با مقدار پیشفرض  false باشد.
 
 </div>
