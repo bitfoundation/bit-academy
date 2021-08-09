@@ -81,8 +81,8 @@ namespace ToDoApp.Pages
   
   
 <div dir="ltr">
-
-```c#
+  
+```razor
 
 <div class="container">
 
@@ -102,6 +102,7 @@ namespace ToDoApp.Pages
 </div>
 
 ``` 
+
 </div>
 
 </div>
