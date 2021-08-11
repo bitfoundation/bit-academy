@@ -119,10 +119,10 @@
                 Welcome back!
             </h1>
             <form>
-                <BitTextField Type="TextFieldType.Text" Placeholder="Username" Class="m-b-20"/>
-                <BitTextField Type="TextFieldType.Password" Placeholder="Password" Class="m-b-20"/>
-                <BitButton>
-                    Sign in
+                <BitTextField Type="TextFieldType.Text" @bind-Value="@UserName" Label="Username" Class="text-field" />
+                <BitTextField Type="TextFieldType.Password" @bind-Value="@Password" Label="Password" Class="text-field" />
+                <BitButton OnClick="Signin">
+                  Sign in
                 </BitButton>
             </form>
         </div>
@@ -424,16 +424,10 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
                         Username and password entered incorrectly.
                     </BitMessageBar>
                 }
-                <div>
-                    <label for="username">Username</label>
-                    <input type="text" placeholder="Username" name="username" @bind="@UserName" />
-                </div>
-                <div>
-                    <label for="passowrd">Password</label>
-                    <input type="text" placeholder="Password" name="passowrd" @bind="@Password" />
-                </div>
+                <BitTextField Type="TextFieldType.Text" @bind-Value="@UserName" Label="Username" Class="text-field" />
+                <BitTextField Type="TextFieldType.Password" @bind-Value="@Password" Label="Password" Class="text-field" />
                 <BitButton OnClick="Signin">
-                    Signin
+                  Sign in
                 </BitButton>
             </form>
         </div>
