@@ -296,10 +296,6 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
         display: none;
     }
 
-    .m-b-20 {
-        margin-bottom: 20px;
-    }
-
   ```
 </div>  
 
