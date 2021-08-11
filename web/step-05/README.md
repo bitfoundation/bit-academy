@@ -159,7 +159,7 @@
 <img src="images/img-4.png"/>
 <br></br>
 هر کدام از این کامپوننت‌ها شامل تعدادی Property هستند.
-مثلا در کامپوننت ‌BitTextField، ما پراپرتی‌های @bind-Value ,Type, Label, Class را داریم که مانند attribute ها در کدهای HTML، استفاده می‌شوند. مقادیری را که به این پراپرتی‌ها اختصاص ‌می‌دهیم به کامپوننت پاس داده شده و در جای مناسب خود قرار می‌گیرند.
+مثلا در کامپوننت ‌BitTextField، ما پراپرتی‌های bind-Value ,Type, Label, Class@ را داریم که مانند attribute ها در کدهای HTML، استفاده می‌شوند. مقادیری را که به این پراپرتی‌ها اختصاص ‌می‌دهیم به کامپوننت پاس داده شده و در جای مناسب خود قرار می‌گیرند.
 
 تصویر زیر محل قرار گرفتن پراپرتی های پاس داده شده به کامپوننت ‌BitTextField را در کد کامپایل شده این کامپوننت نشان می‌دهد.
 
@@ -420,7 +420,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
             <form onsubmit="return false;">
                 @if (ShowLoginErrorMessage)
                 {
-                    <BitMessageBar MessageBarStyle="@MessageBarStyle.Error">
+                    <BitMessageBar MessageBarType="BitMessageBarType.Error">
                         Username and password entered incorrectly.
                     </BitMessageBar>
                 }
@@ -438,7 +438,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 همان طور که در کد بالا می‌بینید از متغیر ShowLoginErrorMessage برای نشان دادن پیغامی مبنی بر نادرست بودن UserName و Password استفاده کرده‌ایم. بدین صورت که در صورت true  بودن ShowLoginErrorMessage با استفاده از کامپوننت BitMessageBar در فریم ورک ‌Bit این پیغام را نمایش می‌دهیم.
 
-کامپوننت BitMessageBar دارای پراپرتی MessageBarStyle می باشد که اگر با MessageBarStyle.Error@ مقدار دهی شود، پیغام ما مانند تصویر زیر، استایل یک پیغامی که جنبه‌ی خطا دارد را، به خود می‌گیرد.
+کامپوننت BitMessageBar دارای پراپرتی MessageBarType می باشد که اگر با BitMessageBarType.Error مقدار دهی شود، پیغام ما مانند تصویر زیر، استایل یک پیغامی که جنبه‌ی خطا دارد را، به خود می‌گیرد.
 
 <img src="images/img-13-1.png" />
 </div>
