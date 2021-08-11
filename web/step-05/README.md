@@ -440,5 +440,5 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
 کامپوننت BitMessageBar دارای پراپرتی MessageBarStyle می باشد که اگر با MessageBarStyle.Error@ مقدار دهی شود، پیغام ما مانند تصویر زیر، استایل یک پیغامی که جنبه‌ی خطا دارد را، به خود می‌گیرد.
 
-<img src="images/img-13.png" />
+<img src="images/img-13-1.png" />
 </div>
