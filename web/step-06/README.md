@@ -83,7 +83,7 @@ namespace ToDoApp.Pages
 
 تصویر زیر نحوه استفاده از تگ ul و تگ li را، برای نمایش یک لیست فرضی نشان می دهد.
 
-<img src="images/3.png"/> 
+<img src="images/img-3.png"/> 
 
 
 برای نمایش اعضای لیست یا همان Todo ها از کامپوننت BitBasicList کامپوننت های Bit به صورت زیر، استفاده می‌کنیم.
