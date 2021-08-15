@@ -282,7 +282,6 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
                 </div>
 
                 <div class="todo-action">
-                    <BitIconButton IconName="Completed" OnClick="(e => CompleteTodoItem(TodoItem))" Class="completed"/>
                     <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
                     <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
                 </div>
