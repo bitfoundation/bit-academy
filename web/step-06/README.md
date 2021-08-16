@@ -491,6 +491,71 @@ public void EditTodoItem(TodoItem todo)
 
 </div>
 
-همانطور که در کد بالا می‌بینید در div با کلاس todo-title  تغییری ایجاد کرده‌ایم. به این صورت که اگر مقدار IsEdit مربوط به TodoItem برابر با true بود، یعنی عنوان مربوط به todo باید ویرایش شود پس به جای نمایش عنوان مربوط به todo، یک input را نمایش می‌دهیم که متغیر NewName را که در مرحله بعد تعریف کنیم، به آن bind می‌کنیم و همچنین دو button داریم که یکی از آنها قرار است متدی به نام EditTodo را فراخوانی کرده و آن یکی متد CancelEditTodo را فراخوانی می‌کند. 
+همانطور که در کد بالا می‌بینید در div با کلاس todo-title  تغییری ایجاد کرده‌ایم. به این صورت که اگر مقدار IsEdit مربوط به TodoItem برابر با true بود، یعنی عنوان مربوط به todo باید ویرایش شود پس به جای نمایش عنوان مربوط به todo، یک input را نمایش می‌دهیم که متغیر NewName را که در مرحله بعد تعریف کنیم، به آن bind می‌کنیم و همچنین دو button داریم که یکی از آنها قرار است متدی به نام EditTodo را فراخوانی کرده و آن یکی متد CancelEditTodo را فراخوانی می‌کند.
 
+در ادامه برای تعریف متغیر و متدهای مربوط به ویرایش یک todo، به فایل TodoPage.razor.cs برمی‌گردیم و کد مربوط به این فایل را به صورت زیر تغییر می دهیم.
+ 
+<div dir="ltr">
+
+```c#
+
+using Microsoft.AspNetCore.Components.Web;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ToDoApp.Pages
+{
+    public partial class TodoPage
+    {
+        public List<TodoItem> TodoList = new();
+        public string TodoName { get; set; }
+        public string NewName { get; set; }
+    }
+
+    public void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(TodoName))
+        {
+            var newTask = new TodoItem()
+            {
+                Id = TodoList.Count() + 1,
+                Title = TodoName,
+                IsDone = false
+            };
+
+            TodoList.Add(newTask);
+            TodoName = null;
+        }
+    }
+  
+    public void DeleteTodoItem(TodoItem todo)
+    {
+        TodoList.Remove(todo);
+    }
+
+    public void EditTodoItem(TodoItem todo)
+    {
+        todo.IsEdit = true;
+    }
+
+    public void EditTodo(TodoItem todo)
+    {
+        if (!string.IsNullOrWhiteSpace(NewName))
+        {
+            todo.IsEdit = false;
+            todo.Title = NewName;
+            NewName = null;
+        }
+    }
+
+    public void CancelEditTodo(TodoItem todo)
+    {
+        todo.IsEdit = false;
+        NewName = null;
+    }
+}
+
+``` 
+</div>
+  
 </div>
