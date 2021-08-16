@@ -154,6 +154,31 @@ namespace ToDoApp.Pages
 همانطور که ‌می‌بینید کنار تگ input از یک تگ label هم استفاده شده است. با وجود تگ label شما می ‌توانید برای checkbox مربوطه عنوانی را تعیین نمایید، همچین منطقه بیشتری برای checked کردن یا unchecked کردن checkbox دارید چرا که حتی اگر روی مقداری که برای label در نظر گرفته‌اید هم کلیک کنید، checkbox شما تغییر وضعیت می‌دهد.
 
 توجه فرمایید که در مثال بالا مقداری که برای ویژگی id تگ input در نظر گرفته شده است با مقداری که برای ویژگی for تگ label در نظر گرفته شده یکی می‌باشد. بدین صورت ما می توانیم مشخص کنیم که کدام Label مربوط به کدام input است.
+
+ما در کامپوننت‌های Bit برای input با تایپ checkbox هم کامپوننتی به نام BitCheckbox را داریم که می توانیم از آن به صورت زیر در کد استفاده کنیم.
+
+<div dir="ltr">
+  
+```razor
+
+<div class="container">
+  <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+      <RowTemplate Context="TodoItem">
+          <div Class="todo-item">
+              <div class="todo-title">
+                  <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                  <span>
+                      @TodoItem.Title
+                  </span>
+              </div>
+          </div>
+      </RowTemplate>
+  </BitBasicList>
+</div>
+
+``` 
+
+</div>
   
 در ادامه می خواهیم کد مربوط به افزودن یک Todo جدید را بنویسیم.
 
