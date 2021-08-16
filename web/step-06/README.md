@@ -386,4 +386,47 @@ https://uifabricicons.azurewebsites.net
 
 با استفاده از این عبارت با هر بار کلیک بر روی این دکمه متد EditTodoItem فراخوانی شده و مقادیر TodoItem جاری به آن اختصاص داده می‌شود.
 
+در مرحله بعد می‌خواهیم متد مربوط به حذف شدن یک Todo از لیست را بنویسیم. بدین منظور به فایل TodoPage.razor.cs رفته و کد مربوط به این متد را به صورت زیر به این فایل اضافه می‌کنیم.
+
+<div dir="ltr">
+
+```c#
+
+using Microsoft.AspNetCore.Components.Web;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ToDoApp.Pages
+{
+    public partial class TodoPage
+    {
+        public List<TodoItem> TodoList = new();
+        public string TodoName { get; set; }
+    }
+
+    public void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(TodoName))
+        {
+            var newTask = new TodoItem()
+            {
+                Id = TodoList.Count() + 1,
+                Title = TodoName,
+                IsDone = false
+            };
+
+            TodoList.Add(newTask);
+            TodoName = null;
+        }
+    }
+  
+    public void DeleteTodoItem(TodoItem todo)
+    {
+        TodoList.Remove(todo);
+    }
+}
+
+``` 
+</div>
+
 </div>
