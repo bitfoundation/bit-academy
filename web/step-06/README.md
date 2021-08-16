@@ -324,9 +324,9 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
 
 </div>
 
-در ادامه می خواهیم هر Todo داخل لیست امکان ویرایش، حذف و کامل شدن را داشته باشد.
-
-بدین منظور از سه کامپوننت BitIconButton  برای فراخوانی  سه متد  CompleteTodoItem ، EditTodoItem و  DeleteTodoItem داخل لیست استفاده می‌کنیم.
+در ادامه می خواهیم هر Todo داخل لیست امکان ویرایش و حذف را نیز داشته باشد.
+  
+بدین منظور از دو کامپوننت BitIconButton برای فراخوانی دو متد EditTodoItem و DeleteTodoItem داخل لیست استفاده می‌کنیم.
 
 کد بالا به صورت زیر تغییر می‌کند.
 
