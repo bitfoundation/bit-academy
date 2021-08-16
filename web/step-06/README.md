@@ -237,7 +237,6 @@ namespace ToDoApp.Pages
 </div>
 
 ``` 
-
 </div>
 
 در ادامه متد AddTodo را به کلاس TodoPage به صورت زیر اضافه می‌کنیم.
