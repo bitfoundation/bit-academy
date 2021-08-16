@@ -364,6 +364,9 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
 
 </div>
 
+کدهای HTML مربوط به رندر کامپوننت BitIconButton به صورت تصویر زیر می‌باشد.
+
+<img src="images/img-6.png" />
  
 
 </div>
