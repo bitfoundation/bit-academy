@@ -93,8 +93,7 @@ namespace ToDoApp.Pages
 
 <div dir="ltr">
   
-```razor
-  
+```razor  
 @page "/todo";
 
 <div class="container">
