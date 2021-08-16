@@ -127,7 +127,6 @@ namespace ToDoApp.Pages
       <RowTemplate Context="TodoItem">
           <div Class="todo-item">
               <div class="todo-title">
-                  <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
                   <span>
                       @TodoItem.Title
                   </span>
@@ -143,11 +142,8 @@ namespace ToDoApp.Pages
 </div>
 
 
-در کد بالا پراپرتی Items این کامپوننت را، با متغیری که از قبل برای لیست Todo ها (TodoList) ایجاد کرده‌ایم مقداردهی می کنیم.
- 
-همچنین RowTemplate داخل کامپوننت BitBasicList هر سطر از لیست که یک TodoItem می‌باشد را ایجاد می‌کند، که همانطور که می‌بینید شما می‌توانید هر آنچه را که از TodoItem می‌خواهید به کاربر نمایش دهید داخل RowTemplate بگذارید.
-
-در اینجا فعلا با استفاده از کامپوننت BitCheckbox وضعیت تکمیل شدن یا نشدن Todo  و با استفاده span عنوان Todo را نمایش داده‌ایم.
+در کامپوننت BitBasicList پراپرتی Items این کامپوننت را، با متغیری که از قبل برای لیست Todoها (TodoList) ایجاد کرده‌ایم مقداردهی می کنیم.
+همچنین RowTemplate داخل این کامپوننت مربوط به هر عضو از TodoList  که از نوع TodoItem بوده می‌باشد، همانطور که می‌بینید شما می‌توانید هر آنچه را که از TodoItem می‌خواهید به کاربر نمایش دهید را داخل RowTemplate بگذارید.
 
 در ادامه می خواهیم کد مربوط به افزودن یک Todo جدید را بنویسیم.
 
