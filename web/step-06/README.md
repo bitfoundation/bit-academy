@@ -179,6 +179,8 @@ namespace ToDoApp.Pages
 ``` 
 
 </div>
+
+به پارامتر bind-IsChecked این کامپوننت می‌توانیم مقدار مربوط به متغیر IsDone هر TodoItem را bind کنیم.
   
 در ادامه می خواهیم کد مربوط به افزودن یک Todo جدید را بنویسیم.
 
