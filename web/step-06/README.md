@@ -91,6 +91,8 @@ namespace ToDoApp.Pages
 
 ما می‌توانیم از دستور foreach برای پیمایش اعضای یک لیست به صورت زیراستفاده کنیم.
 
+<img src="images/img-4.png" width="500px"/>
+
 <div dir="ltr">
   
 ```razor  
