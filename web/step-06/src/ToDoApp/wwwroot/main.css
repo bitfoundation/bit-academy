@@ -1,0 +1,36 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.text-field {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.bit-bsc-lst {
+    height: auto;
+}
+
+.todo-list {
+    height: auto;
+}
+
+.completed,
+.accept {
+    color: #2ecc71;
+}
+
+
+.edit {
+    color: #f1c40f;
+}
+
+.delete,
+.cancel {
+    color: #d35400;
+}

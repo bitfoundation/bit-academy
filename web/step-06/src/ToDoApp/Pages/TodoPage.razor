@@ -1,0 +1,90 @@
+﻿@page "/todo";
+
+<div class="container">
+    <div class="todo-count">
+        <span>Todos(@TodoList.Count(todo => !todo.IsDone))</span>
+    </div>
+    
+    <div class="searchbox">
+        <BitSearchBox Placeholder="Search"></BitSearchBox>
+    </div>
+
+    <div class="todo-app">
+        <div class="todo-add">
+            <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
+        </div>
+
+        @if (TodoList.Count > 0)
+        {
+           
+            
+            <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+                <RowTemplate Context="TodoItem">
+                    <div Class="todo-item">
+                        <div class="todo-title">
+                            <BitCheckbox @bind-IsChecked="TodoItem.IsDone" />
+                            @if (TodoItem.IsEdit)
+                            {
+                                <input @bind="@NewName" />
+                                <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
+                                <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                            }
+                            else
+                            {
+                                <span>
+                                    @TodoItem.Title
+                                </span>
+                            }
+
+                        </div>
+
+                        <div class="todo-action">
+                            <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
+                            <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                        </div>
+                    </div>
+
+                </RowTemplate>
+            </BitBasicList>
+
+
+
+
+        }
+    </div>
+    <div class="footer">
+        <ul class="filters">
+            <li>
+                <BitButton ButtonStyle="ButtonStyle.Standard" IsEnabled="true">All</BitButton>
+            </li>
+            <li>
+                <BitButton ButtonStyle="ButtonStyle.Standard" IsEnabled="true">Active</BitButton>
+            </li>
+            <li>
+                <BitButton ButtonStyle="ButtonStyle.Standard" IsEnabled="true">Completed</BitButton>
+            </li>
+        </ul>
+
+        <div class="footer-action">
+            @if (TodoList.Count > 0)
+            {
+                <BitButton OnClick="CheckAll">
+                    CheckAll
+                </BitButton>
+            }
+
+            @if (TodoList.Any(todo => todo.IsDone))
+            {
+                <BitButton OnClick="ClearCompleted">
+                    ClearCompleted
+                </BitButton>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+   
+
+
