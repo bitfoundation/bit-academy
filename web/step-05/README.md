@@ -40,11 +40,11 @@
 
 ## استفاده از فریم ورک Bit برای ایجاد المنت ها <a name ="BitComponents"></a>
 
-در ادامه، پروژه‌ای به نام TodoApp ایجاد کرده و همانند جلسات گذشته پوشه‌ها، فایل‌ها و کدهای اضافی را حذف می‌کنیم.
+در ادامه پروژه‌ای به نام TodoApp ایجاد کرده و همانند [جلسات گذشته](https://github.com/bitfoundation/virtual-academy/tree/main/web/step-03) پوشه‌ها، فایل‌ها و کدهای اضافی را حذف می‌کنیم.
   
 از این جلسه به بعد می‌خواهیم از کامپوننت‌های ‌Bit برای ایجاد سریع‌تر و آسان‌تر المنت‌ها استفاده کنیم.
   
-برای نصب Bit، همانند نصب Delegate.SassBuilder در جلسه گذشته از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌Browse در قسمت سرچ باکس Bit.Client.Web.BlazorUI را جستجو و نصب کنید.
+برای نصب Bit، همانند [نصب Delegate.SassBuilder در جلسه گذشته](https://github.com/bitfoundation/virtual-academy/tree/main/web/step-04#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%A7%D8%B3%D8%AA%D8%A7%DB%8C%D9%84-%D8%A8%D8%A7%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-scss-) از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌Browse در قسمت سرچ باکس Bit.Client.Web.BlazorUI را جستجو و نصب کنید.
 
 <img src="images/img-3-1.png" />
 
