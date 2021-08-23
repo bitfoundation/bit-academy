@@ -3,7 +3,7 @@
   
 ## جلسه پنجم- پیاده سازی صفحه Login
   
-در این جلسه قصد داریم صفحه Login پروژه اصلی این دوره (ToDoApp) را به صورت Responsive پیاده سازی کنیم.
+در این جلسه قصد داریم صفحه Login پروژه اصلی این دوره (TodoApp) را به صورت Responsive پیاده سازی کنیم.
 
 منظور از پیاده‌سازی به صورت Responsive، این است که ما در پیاده‌سازی صفحه وب به گونه‌ای عمل کنیم که المنت‌‌های موجود در صفحه، در تمامی دستگاه‌هایی که مد نظر ما هستند اعم از لپ‌تاپ، تبلت و موبایل به درستی نمایش داده شوند. به عنوان مثال اگر برای باز کردن صفحه‌ای از وب به جای مرورگر لپ‌تاپ، از مرورگر موبایل استفاده کردیم برای خواندن متن موجود در صفحه احتیاج به زوم کردن متن نداشته باشیم و یا برای دیدن کامل محتوای صفحه، مجبور به اسکرول کردن صفحه به صورت افقی نباشیم.
 
@@ -40,7 +40,7 @@
 
 ## استفاده از فریم ورک Bit برای ایجاد المنت ها <a name ="BitComponents"></a>
 
-در ادامه، پروژه‌ای به نام ToDoApp ایجاد کرده و همانند جلسات گذشته پوشه‌ها، فایل‌ها و کدهای اضافی را حذف می‌کنیم.
+در ادامه، پروژه‌ای به نام TodoApp ایجاد کرده و همانند جلسات گذشته پوشه‌ها، فایل‌ها و کدهای اضافی را حذف می‌کنیم.
   
 از این جلسه به بعد می‌خواهیم از کامپوننت‌های ‌Bit برای ایجاد سریع‌تر و آسان‌تر المنت‌ها استفاده کنیم.
   
@@ -82,10 +82,10 @@
       <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>ToDoApp</title>
+          <title>TodoApp</title>
           <base href="/" />
           <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css"/>
-          <link href="ToDoApp.styles.css" rel="stylesheet"/>
+          <link href="TodoApp.styles.css" rel="stylesheet"/>
       </head>
 
       <body>
@@ -122,8 +122,8 @@
         <div class="card product-description">
             <img src="images/logo.png" alt="logo" class="logo" />
             <p>
-                The ToDoApp lets you write, organize, and prioritize your tasks.
-                This way you can be more productive by registering your tasks in the ToDo App
+                The TodoApp lets you write, organize, and prioritize your tasks.
+                This way you can be more productive by registering your tasks in the Todo App
             </p>
         </div>
         <div class="card login-form">
@@ -373,7 +373,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```c#
-    namespace ToDoApp.Pages
+    namespace TodoApp.Pages
     {
         public partial class Login
         {
@@ -416,8 +416,8 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
         <div class="card product-description">
             <img src="images/logo.png" alt="logo" class="logo" />
             <p>
-                The ToDoApp lets you write, organize, and prioritize your tasks.
-                This way you can be more productive by registering your tasks in the ToDo App
+                The TodoApp lets you write, organize, and prioritize your tasks.
+                This way you can be more productive by registering your tasks in the Todo App
             </p>
         </div>
         <div class="card login-form">
