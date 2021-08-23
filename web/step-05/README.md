@@ -44,7 +44,9 @@
   
 از این جلسه به بعد می‌خواهیم از کامپوننت‌های ‌Bit برای ایجاد سریع‌تر و آسان‌تر المنت‌ها استفاده کنیم.
   
-برای نصب Bit، همانند نصب Delegate.SassBuilder در جلسه گذشته از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌Browse در قسمت سرچ باکس bit.client.web.blazor را جستجو و نصب کنید.
+برای نصب Bit، همانند نصب Delegate.SassBuilder در جلسه گذشته از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌Browse در قسمت سرچ باکس Bit.Client.Web.BlazorUI را جستجو و نصب کنید.
+
+<img src="images/img-3-1.png" />
 
 سپس خط زیر را که مربوط به کدهای CSS این کامپوننت‌ها می‌باشد به تگ head  داخل فایل index.html در پوشه wwwroot اضافه می‌کنیم.
   
