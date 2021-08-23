@@ -373,11 +373,6 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```c#
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
     namespace ToDoApp.Pages
     {
         public partial class Login
