@@ -12,7 +12,7 @@
 
 ```razor
 
-  @page "/todo";
+  @page "/todo"
 
 ``` 
 </div>
