@@ -132,8 +132,8 @@
                 Welcome back!
             </h1>
             <form>
-                <BitTextField Type="TextFieldType.Text" @bind-Value="@UserName" Label="Username" Class="text-field" />
-                <BitTextField Type="TextFieldType.Password" @bind-Value="@Password" Label="Password" Class="text-field" />
+                <BitTextField Type="TextFieldType.Text" Label="Username" Class="text-field" />
+                <BitTextField Type="TextFieldType.Password" Label="Password" Class="text-field" />
                 <BitButton OnClick="Signin">
                   Sign in
                 </BitButton>
