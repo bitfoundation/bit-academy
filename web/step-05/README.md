@@ -221,9 +221,9 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>TodoApp</title>
         <base href="/" />
-        <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" asp-append-version="true" />
-        <link href="ToDoApp.styles.css" rel="stylesheet" asp-append-version="true" />
-        <link rel="stylesheet" href="main.css" asp-append-version="true" />
+        <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" />
+        <link href="ToDoApp.styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="main.css" />
     </head>
 
     <body>
