@@ -209,6 +209,34 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
 
 در ادامه باید فایل main.css را به فایل index.html اضافه کنیم.
 
+<div dir="ltr">
+
+```razor
+
+  <!DOCTYPE html>
+  <html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>TodoApp</title>
+        <base href="/" />
+        <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css"/>
+        <link href="TodoApp.styles.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <div id="app">Loading...</div>
+
+        <script src="_framework/blazor.webassembly.js"></script>
+        <script src="_content/Bit.Client.Web.BlazorUI/scripts/bit.client.web.js"></script>
+    </body>
+
+  </html>
+
+``` 
+</div>
+
 سپس برای افزودن استایل‌ها فایل جدیدی به نام Login.razor.scss ایجاد می کنیم.
 
 در ابتدای این فایل، متغیرهای رنگ را، بر اساس کد رنگ‌های استفاده شده در طراحی این صفحه داخل Figma، تعریف می‌کنیم.
