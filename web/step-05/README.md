@@ -192,6 +192,17 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
 
 <img src="images/img-14.png" />
 
+<div dir="ltr">
+
+  ```css
+  * {
+      padding: 0;
+      margin: 0;
+  }
+  ```
+
+</div>
+
 سپس برای افزودن استایل‌ها فایل جدیدی به نام Login.razor.scss ایجاد می کنیم.
 
 در ابتدای این فایل، متغیرهای رنگ را، بر اساس کد رنگ‌های استفاده شده در طراحی این صفحه داخل Figma، تعریف می‌کنیم.
