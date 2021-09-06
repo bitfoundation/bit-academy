@@ -38,6 +38,10 @@
   
 <img src="images/img-2-2.png" />
 
+از طریق لینک زیر می‌توانید به طرح بالا در فیگما دسترسی داشته باشید.
+
+https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
+
 ## استفاده از فریم ورک Bit برای ایجاد المنت ها <a name ="BitComponents"></a>
 
 در ادامه پروژه‌ای به نام TodoApp ایجاد کرده و همانند [جلسات گذشته](https://github.com/bitfoundation/virtual-academy/tree/main/web/step-03) پوشه‌ها، فایل‌ها و کدهای اضافی را حذف می‌کنیم.
