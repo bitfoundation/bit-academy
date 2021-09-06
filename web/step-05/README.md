@@ -192,6 +192,8 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
 
 <img src="images/img-14.png" />
 
+در این مرحله، صفر کردن padding ها و margin های مربوط به تمامی المنت‌ها برای ما کافی‌ست. 
+
 <div dir="ltr">
 
   ```css
@@ -202,6 +204,8 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
   ```
 
 </div>
+
+سلکتور * در CSS به معنای انتخاب تمامی المنت‌ها موجود در صفحه می‌باشد.
 
 سپس برای افزودن استایل‌ها فایل جدیدی به نام Login.razor.scss ایجاد می کنیم.
 
