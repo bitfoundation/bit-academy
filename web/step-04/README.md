@@ -13,13 +13,15 @@
 4. [افزودن رفتار تعاملی با استفاده از #C](#AddFunctionality)  
 
 ## ایجاد پروژه در Visual Studio <a name="CreateProject"></a>  
-همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد کرده و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف کنید. با این تفاوت که هر سه فایل موجود در پوشه Pages را حذف کنید.
+همانند جلسه گذشته پروژه جدیدی به نام SimpleBlazorCalculator ایجاد کرده و مجددا فایل‌ها و پوشه‌های اضافی را مطابق جلسه گذشته حذف کنید. با دو تفاوت:
+همه صفحات موجود در پوشه Pages را پاک کنید.
+اگر از کدهای جلسه قبل استفاده می‌کنید، SimpleBlazorCounter را در هر جایی که کد را کپی کردید، با SimpleBlazorCalculator جایگزین کنید.
 
   
-داخل پوشه Pages راست کلیک نموده و از منوی Add، گزینه Razor Component را زده و اسم آن را Calculator.razor بگذارید.
+داخل پوشه Pages راست کلیک نموده و از منوی Add، گزینه New Itemو بعد گزینه Razor Component را زده و اسم آن را Calculator.razor بگذارید.
 
   
-وارد فایل Calculator.razor شده و در ابتدای این فایل کد زیر را برای تعیین مسیر این صفحه در مرورگر وارد کنید.
+وارد فایل Calculator.razor شده و در ابتدای این فایل کد زیر را برای تعیین مسیر این صفحه در مرورگر وارد کنید و در launchSettings.json نیز مقدار launchUrl را برابر با calculator قرار دهید.
 
 <div dir="ltr">
 
@@ -112,7 +114,7 @@
 <img src="images/img-8.png" />
   
 
-در نهایت بر روی دکمه ok کلیک می‌کنیم تا این Package نصب شود.
+در نهایت بر روی دکمه Ok کلیک می‌کنیم تا این Package نصب شود.
    
 
 بعد از نصب  Delegate.SassBuilder بر روی پوشه Pages در بخش Solution Explorer کلیک راست کرده و فایل جدیدی به نام Calculator.razor.scss ایجاد می‌کنیم.
@@ -353,3 +355,5 @@ namespace SimpleBlazorCalculator.Pages
   <img width="400px" src="images/calculator.gif" />
   
 </div>
+
+در پایان توجه داشته باشید که برای عمده تغییرات، نیازی به زدن Ctrl + F5 نیست، و کمی بعد از ذخیره سازی تغییرات با Ctrl + S، در همان مرورگری که در حال تست بودید، می‌توانید تغییرات را مشاهده کنید. البته اگر تغییر مدنظرتان را مشاهده نکردید، از Ctrl + F5 استفاده کنید.
