@@ -10,7 +10,7 @@
 	
 ## آموزش نصب Visual Studio <a name="InstallVisualStudio"></a>  
 	
-  در ابتدا به آدرس https://visualstudio.microsoft.com/vs/preview/ می‌رویم و از قسمت Try the preview، گزینه Visual Studio Community را انتخاب می‌کنیم که رایگان است.
+  در ابتدا به آدرس https://visualstudio.microsoft.com/vs/preview/#download-preview می‌رویم و از قسمت Try the preview، گزینه Visual Studio Community را انتخاب می‌کنیم که رایگان است.
 
 <img width="400px" src="images/img-1.png" />
  
