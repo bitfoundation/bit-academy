@@ -342,7 +342,7 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
-                    <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                    <BitCheckbox />
                     <span>
                         @TodoItem.Title
                     </span>
@@ -461,7 +461,7 @@ public void EditTodoItem(TodoItem todo)
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
-                    <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                    <BitCheckbox />
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
