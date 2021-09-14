@@ -596,6 +596,50 @@ private void HandleTodoChange(TodoItem todo)
  
 
 بدین منظور ابتدا کامپوننت BitSearchBox را به صورت زیر به فایل TodoPage.razor اضافه می‌کنیم.
+
+<div dir="ltr">
+  
+```razor
+
+<div class="container">
+  <div class="searchbox">
+      <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear"></BitSearchBox>
+  </div>
+  <div class="todo-add">
+      <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
+  </div>
+  @if (TodoList.Count > 0)
+  {
+    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+        <RowTemplate Context="TodoItem">
+            <div Class="todo-item">
+                <div class="todo-title">
+                    <BitCheckbox OnChange="() => HandleTodoChange(TodoItem)" />
+                    @if (TodoItem.IsEdit)
+                    {
+                        <input @bind="@NewName" />
+                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
+                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                    }
+                    else
+                    {
+                        <span>
+                            @TodoItem.Title
+                        </span>
+                    }
+                </div>
+                <div class="todo-action">
+                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
+                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                </div>
+            </div>
+       </RowTemplate>
+    </BitBasicList>
+  }
+</div>
+
+``` 
+</div>
   
 </div>
   
