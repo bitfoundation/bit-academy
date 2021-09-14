@@ -166,7 +166,7 @@ namespace ToDoApp.Pages
       <RowTemplate Context="TodoItem">
           <div Class="todo-item">
               <div class="todo-title">
-                  <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                  <BitCheckbox />
                   <span>
                       @TodoItem.Title
                   </span>
@@ -179,8 +179,6 @@ namespace ToDoApp.Pages
 ``` 
 
 </div>
-
-به پارامتر bind-IsChecked این کامپوننت می‌توانیم مقدار مربوط به متغیر IsDone هر TodoItem را bind کنیم.
   
 در ادامه می خواهیم کد مربوط به افزودن یک Todo جدید را بنویسیم.
 
@@ -225,7 +223,7 @@ namespace ToDoApp.Pages
       <RowTemplate Context="TodoItem">
           <div Class="todo-item">
               <div class="todo-title">
-                  <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                  <BitCheckbox />
                   <span>
                       @TodoItem.Title
                   </span>
@@ -309,7 +307,7 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
-                    <BitCheckbox @bind-IsChecked="TodoItem.IsDone"/>
+                    <BitCheckbox />
                     <span>
                         @TodoItem.Title
                     </span>
