@@ -572,5 +572,23 @@ namespace ToDoApp.Pages
 <BitCheckbox OnChange="() => HandleTodoChange(TodoItem)" />
 
 ``` 
+</div>
+
+برای اضافه کردن متد HandleTodoChange به فایل TodoPage.razor.cs رفته و کد زیر را به این فایل اضافه می‌کنیم.
+
+
+<div dir="ltr">
+
+```c#
+
+private void HandleTodoChange(TodoItem todo)
+{
+    todo.IsDone = !todo.IsDone;
+}
+
+``` 
+</div>
   
 </div>
+  
+  
