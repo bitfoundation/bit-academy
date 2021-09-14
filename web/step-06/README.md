@@ -255,7 +255,7 @@ namespace ToDoApp.Pages
         public string TodoName { get; set; }
     }
 
-    public void AddTodo()
+    private void AddTodo()
     {
         if (!string.IsNullOrWhiteSpace(TodoName))
         {
@@ -402,7 +402,7 @@ namespace ToDoApp.Pages
         public string TodoName { get; set; }
     }
 
-    public void AddTodo()
+    private void AddTodo()
     {
         if (!string.IsNullOrWhiteSpace(TodoName))
         {
@@ -418,7 +418,7 @@ namespace ToDoApp.Pages
         }
     }
   
-    public void DeleteTodoItem(TodoItem todo)
+    private void DeleteTodoItem(TodoItem todo)
     {
         TodoList.Remove(todo);
     }
@@ -435,7 +435,7 @@ namespace ToDoApp.Pages
 
 ```c#
 
-public void EditTodoItem(TodoItem todo)
+private void EditTodoItem(TodoItem todo)
 {
   todo.IsEdit = true;
 }
@@ -510,7 +510,7 @@ namespace ToDoApp.Pages
         public string NewName { get; set; }
     }
 
-    public void AddTodo()
+    private void AddTodo()
     {
         if (!string.IsNullOrWhiteSpace(TodoName))
         {
@@ -526,17 +526,17 @@ namespace ToDoApp.Pages
         }
     }
   
-    public void DeleteTodoItem(TodoItem todo)
+    private void DeleteTodoItem(TodoItem todo)
     {
         TodoList.Remove(todo);
     }
 
-    public void EditTodoItem(TodoItem todo)
+    private void EditTodoItem(TodoItem todo)
     {
         todo.IsEdit = true;
     }
 
-    public void EditTodo(TodoItem todo)
+    private void EditTodo(TodoItem todo)
     {
         if (!string.IsNullOrWhiteSpace(NewName))
         {
@@ -546,7 +546,7 @@ namespace ToDoApp.Pages
         }
     }
 
-    public void CancelEditTodo(TodoItem todo)
+    private void CancelEditTodo(TodoItem todo)
     {
         todo.IsEdit = false;
         NewName = null;
@@ -569,7 +569,6 @@ namespace ToDoApp.Pages
 <div dir="ltr">
   
 ```razor
-  
 <BitCheckbox OnChange="() => HandleTodoChange(TodoItem)" />
 
 ``` 
