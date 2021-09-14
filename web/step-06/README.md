@@ -563,5 +563,15 @@ namespace ToDoApp.Pages
 در ادامه متد CancelEditTodo را داریم، این متد زمانی فراخوانی می‌شود که ما از تغییر دادن نام todo منصرف شده‌ایم، بنابراین در این متد بعد از اختصاص دادن مقدار false به متغیر IsEdit مربوط به todo مقدار NewName را برابر با null قرار می‌دهیم.
 
 در ادامه می خواهیم متد مربوط به تکمیل شدن todo ها را بنویسیم به این صورت که اگر checkbox مربوط به هر todo را کاربر به حالت checked  تغییر داد، یعنی todo مربوط تکمیل شده است.
+
+به این منظور متد HandleTodoChange را به پارامتر OnChange کامپوننت BitCheckbox موجود در فایل TodoPage را به صورت زیر اختصاص می‌دهیم.
+
+<div dir="ltr">
+  
+```razor
+  
+<BitCheckbox OnChange="() => HandleTodoChange(TodoItem)" />
+
+``` 
   
 </div>
