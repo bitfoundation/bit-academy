@@ -564,7 +564,7 @@ namespace ToDoApp.Pages
 
 در ادامه می خواهیم متد مربوط به تکمیل شدن todo ها را بنویسیم به این صورت که اگر checkbox مربوط به هر todo را کاربر به حالت checked  تغییر داد، یعنی todo مربوط تکمیل شده است.
 
-به این منظور متد HandleTodoChange را به پارامتر OnChange کامپوننت BitCheckbox موجود در فایل TodoPage را به صورت زیر اختصاص می‌دهیم.
+به این منظور متد HandleTodoChange را به پارامتر OnChange کامپوننت BitCheckbox موجود در فایل TodoPage، به صورت زیر اختصاص می‌دهیم.
 
 <div dir="ltr">
   
