@@ -594,6 +594,10 @@ private void HandleTodoChange(TodoItem todo)
 
  در ادامه می‌خواهیم امکان جستجو کردن یک todoItem را به TodoList مان اضافه کنیم.
  
+ در ادامه می‌خواهیم امکان جستجو کردن یک todoItem را به TodoList مان اضافه کنیم.
+  
+
+بدین منظور ابتدا کامپوننت BitSearchBox را به صورت زیر به فایل TodoPage.razor اضافه می‌کنیم.
   
 </div>
   
