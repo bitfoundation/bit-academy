@@ -589,7 +589,7 @@ private void HandleTodoChange(TodoItem todo)
 ``` 
 </div>
 
-مجموع این دو قطعه کد به این صورت عمل کند که چون ما متد HandleTodoChange را به پارامتر OnChange اختصاص داده‌ایم با هر تغییر در وضعیت چک باکس (checked شدن و یا unchecked شدن) بلافاصله متد HandleTodoChange فراخوانی شده و وضعیت IsDone هر todo را مخالف شرایط جاری قرار می‌دهد. 
+مجموع این دو قطعه کد به این صورت عمل کند که چون ما متد HandleTodoChange را به پارامتر OnChange اختصاص داده‌ایم با هر تغییر در وضعیت چک باکس (checked شدن و یا unchecked شدن) بلافاصله متد HandleTodoChange فراخوانی شده و وضعیت IsDone هر todo را مخالف وضعیت جاری قرار می‌دهد.  
   
 </div>
   
