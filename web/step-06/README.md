@@ -950,6 +950,124 @@ private void Filter()
 
 در کد بالا ما گفته‌ایم که اگر FilterValue دارای مقدار Active بود item هایی را برگردان که IsDone آنها false هست یعنی هنوز تکمیل نشده‌اند و فعال هستند و اگر FilterValue دارای مقدار Completed بود item هایی را برگردان که IsDone آنها ture هست به این معنی که این item ها تکمیل شده‌اند.
 
+در نهایت هر جایی که تغییری در تعداد آیتم‌های موجود در لیست می‌دهیم مانند حذف کردن و یا اضافه شدن آیتم‌ها، باید متد  Filter را هم صدا بزنیم.
+
+کدهای موجود در این فایل به صورت زیر تغییر می‌کند.
+
+
+<div dir="ltr">
+
+```c#
+
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ToDoApp.Pages
+{
+    public partial class TodoPage
+    {
+        private List<TodoItem> TodoList = new();
+        private List<TodoItem> FilteredTodoList = new();
+        private string TodoName { get; set; }
+        private string NewName { get; set; }
+        private string SearchTerm;
+        private string FilterValue;
+
+        private void AddTodo()
+        {
+            if (!string.IsNullOrWhiteSpace(TodoName))
+            {
+                var newTask = new TodoItem()
+                {
+                    Id = TodoList.Count() + 1,
+                    Title = TodoName,
+
+                    IsDone = false
+                };
+
+                TodoList.Add(newTask);
+                Filter();
+                TodoName = null;
+            }
+        }
+
+        private void DeleteTodoItem(TodoItem todo)
+        {
+            TodoList.Remove(todo);
+            Filter();
+        }
+
+        private void EditTodoItem(TodoItem todo)
+        {
+            todo.IsEdit = true;
+        }
+
+        private void EditTodo(TodoItem todo)
+        {
+            if (!string.IsNullOrWhiteSpace(NewName))
+            {
+                todo.IsEdit = false;
+                todo.Title = NewName;
+                NewName = null;
+            }
+        }
+
+        private void CancelEditTodo(TodoItem todo)
+        {
+            todo.IsEdit = false;
+            NewName = null;
+        }
+
+        private void HandleTodoChange(TodoItem todo)
+        {
+            todo.IsDone = !todo.IsDone;
+            Filter();
+        }
+
+        private void HandleClear()
+        {
+            HandleSearch("");
+        }
+
+        private void HandleSearch(string searchTerm)
+        {
+            SearchTerm = searchTerm;
+            Filter();
+        }
+
+        private void HandleFilterChange(string filter)
+        {
+            FilterValue = filter;
+            Filter();
+        }
+
+        private void Filter()
+        {
+            FilteredTodoList = TodoList.Where(item =>
+            {
+                var result = string.IsNullOrWhiteSpace(SearchTerm) || item.Title.ToLower().Contains(SearchTerm.ToLower());
+                if (result is false) return false;
+                if (string.IsNullOrWhiteSpace(FilterValue) is false)
+                {
+                    switch (FilterValue)
+                  {
+                      case "Active":
+                         return !item.IsDone;
+                       case "Completed":
+                           return item.IsDone;
+                    }
+
+                }
+                return true;
+            }).ToList();
+
+        }
+
+    }
+}
+  
+``` 
+</div>
   
 </div>
 
