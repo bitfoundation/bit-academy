@@ -935,7 +935,9 @@ private void Filter()
 }
   
 ``` 
-</div>  
+</div> 
+
+در کد اضافه شده به متد Filter گفته‌ایم که اگر مقدار FilterValue مخالف null و یا WhiteSpace بود، در کل FilterValue دارای مقدار بود در ادامه وارد بلاک مربوط به switch شود. 
  
 </div>
   
