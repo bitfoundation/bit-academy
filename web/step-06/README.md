@@ -845,7 +845,12 @@ private void HandleClear()
 </div>
 
 ``` 
-</div>  
+</div> 
+
+اضافه کردن این قسمت از کد باعث می‌شود خروجی به صورت زیر تغییر کند.
+
+<img src="images/img-8.png"/> 
+ 
 </div>
   
   
