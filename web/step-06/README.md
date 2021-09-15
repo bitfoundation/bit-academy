@@ -603,7 +603,7 @@ private void HandleTodoChange(TodoItem todo)
 
 <div class="container">
   <div class="searchbox">
-      <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear"></BitSearchBox>
+      <BitSearchBox Placeholder="Search"></BitSearchBox>
   </div>
   <div class="todo-add">
       <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
