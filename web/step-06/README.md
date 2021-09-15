@@ -782,7 +782,70 @@ private void HandleClear()
 
 همانطور که در کد بالا می‌بینید داخل متد HandleClear ما متد HandleSearch را صدا زده‌ایم و یک رشته خالی را به آن اختصاص داده‌ایم این رشته خالی داخل SearchTerm قرار گرفته و عملا چون هیچ واژه برای سرچ وجود ندارد، در کل سرچی انجام نمی‌شود.
 
+در ادامه می خواهیم علاوه بر سرچی که نوشتیم آیتم‌ها را براساس فعال بودن(هنوز تکمیل نشده) و تکمیل شده فیلتر کنیم.
+
+ بدین منظور از کامپوننت BitChoiceGroup و BitChoiceOption زیر استفاده کرده و کد قبلی را به صورت زیر می‌دهیم.
+
+<div dir="ltr">
   
+```razor
+<div class="container">
+    <div class="todo-count">
+        <span>Todos(@TodoList.Count(todo => !todo.IsDone))</span>
+    </div>
+    
+    <div class="searchbox">
+        <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear"></BitSearchBox>
+    </div>
+
+    <div class="todo-app">
+        <div class="todo-add">
+            <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
+        </div>
+
+        @if (FilteredTodoList.Count > 0)
+        {
+            <BitBasicList Items="FilteredTodoList" Virtualize="true" Class="todo-list">
+                <RowTemplate Context="TodoItem">
+                    <div Class="todo-item">
+                        <div class="todo-title">
+                            <BitCheckbox OnChange="() => HandleTodoChange(TodoItem)"/>
+                            @if (TodoItem.IsEdit)
+                            {
+                                <input @bind="@NewName" />
+                                <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
+                                <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                            }
+                            else
+                            {
+                                <span>
+                                    @TodoItem.Title
+                                </span>
+                            }
+
+                        </div>
+
+                        <div class="todo-action">
+                            <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
+                            <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                        </div>
+                    </div>
+
+                </RowTemplate>
+            </BitBasicList>
+        }
+    </div>
+    <div class="footer">
+        <BitChoiceGroup OnValueChange="HandleFilterChange">
+            <BitChoiceOption Text="All" Value="All" />
+            <BitChoiceOption Text="Active" Value="Active" />
+            <BitChoiceOption Text="Completed" Value="Completed" />
+        </BitChoiceGroup>
+    </div>
+</div>
+
+``` 
+</div>  
 </div>
   
   
