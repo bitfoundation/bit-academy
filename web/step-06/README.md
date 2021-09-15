@@ -875,6 +875,68 @@ private void HandleClear()
 
 ``` 
 </div>
+
+در ادامه برای تعریف متد HandleFilterChange به فایل TodoPage.razor.cs رفته و در ابتدا متغیری به نام FilterValue را در قسمت مربوط به تعریف پارامترها و متغیر تعریف می‌کنیم.
+
+<div dir="ltr">
+
+```c#
+
+private List<TodoItem> TodoList = new();
+private List<TodoItem> FilteredTodoList = new();
+private string TodoName { get; set; }
+public string NewName { get; set; }
+private string SearchTerm;
+private string FilterValue;
+  
+``` 
+</div>
+
+همانطور که در کد بالا می‌بینید ما value حاصل از انتخاب گزینه ها را به FilterValue اختصاص داده و مجدد متد فیلتر را صدا می‌زنیم.
+
+<div dir="ltr">
+
+```c#
+
+private void HandleFilterChange(string filter)
+{
+    FilterValue = filter;
+    Filter();
+}
+  
+``` 
+</div>
+
+در ادامه متد Filter را به صورت زیر تغییر می دهیم.
+
+<div dir="ltr">
+
+```c#
+
+private void Filter()
+{
+    FilteredTodoList = TodoList.Where(item =>
+    {
+        var result = string.IsNullOrWhiteSpace(SearchTerm) || item.Title.ToLower().Contains(SearchTerm.ToLower());
+        if (result is false) return false;
+        if (string.IsNullOrWhiteSpace(FilterValue) is false)
+        {
+            switch (FilterValue)
+          {
+              case "Active":
+                 return !item.IsDone;
+               case "Completed":
+                   return item.IsDone;
+            }
+
+        }
+        return true;
+    }).ToList();
+
+}
+  
+``` 
+</div>  
  
 </div>
   
