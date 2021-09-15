@@ -852,6 +852,8 @@ private void HandleClear()
 <img src="images/img-8.png"/> 
 
 طبق روال گذشته می توانیم در قسمت DeveloperTools کد کامپایل شده این کامپوننت را ببینیم.
+
+<img src="images/img-9.png"/> 
  
 </div>
   
