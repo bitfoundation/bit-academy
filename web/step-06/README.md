@@ -640,6 +640,25 @@ private void HandleTodoChange(TodoItem todo)
 
 ``` 
 </div>
+
+در ادامه به فایل TodoPage.razor.cs رفته و مجددا یک لیست جدید از روی کلاس TodoItem به نام FilteredTodoList به منظور نگه داشتن نتیجه سرچی که روی لیست اصلی انجام شده ایجاد می‌کنیم.
+
+همچنین متغیر جدیدی به نام SearchTerm را هم به منظور نگه داشتن نام Todo سرچ شده به این قسمت اضافه می کنیم.
+
+بدین ترتیب بخش اول کد این فایل که مربوط به تعریف پارامترها و متغیرها است به صورت زیر تغییر می‌کند.
+
+<div dir="ltr">
+
+```c#
+
+ private List<TodoItem> TodoList = new();
+ private List<TodoItem> FilteredTodoList = new();
+ private string TodoName { get; set; }
+ public string NewName { get; set; }
+ private string SearchTerm;
+
+``` 
+</div>
   
 </div>
   
