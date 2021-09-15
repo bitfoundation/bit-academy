@@ -659,6 +659,36 @@ private void HandleTodoChange(TodoItem todo)
 
 ``` 
 </div>
+
+به فایل Todopage.razor برمی‌گردیم، در کامپوننت BitSearchBox  پارامتری به نام OnSearch تعریف شده است که ما می توانیم با استفاده از این پارامتر تعیین کنیم، که زمانی که کاربر بر روی آیکن سرچ موجود در این کامپوننت کلیک می‌کند، چه اتفاقی بیفتد.
+ 
+پس پارامتر BitSearchBox را به این کامپوننت اضافه و متدی به نام HandleSearch را برای آن در نظر می‌گیریم.
+
+<div dir="ltr">
+  
+```razor
+<div class="searchbox">
+    <BitSearchBox Placeholder="Search" OnSearch="HandleSearch"></BitSearchBox>
+</div>
+
+``` 
+</div>
+
+در ادامه می خواهیم متد HandleSearch را تعریف و به متدهای موجود اضافه کنیم.
+
+در متد HandleSearch به صورت زیر، ابتدا واژه سرچ شده را به متغیر SearchTerm اختصاص داده و سپس متد Filter که در ادامه تعریف می کنیم را، فراخوانی می کنیم.
+
+<div dir="ltr">
+
+```c#
+private void HandleSearch(string searchTerm)
+{
+    SearchTerm = searchTerm;
+    Filter();
+}
+  
+``` 
+</div>
   
 </div>
   
