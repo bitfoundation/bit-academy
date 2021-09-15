@@ -689,6 +689,26 @@ private void HandleSearch(string searchTerm)
   
 ``` 
 </div>
+
+متد فیلتر را فعلا به صورت زیر تعریف می‌کنیم.
+
+<div dir="ltr">
+
+```c#
+
+private void Filter()
+{
+    FilteredTodoList = TodoList.Where(item =>
+    {
+        var result = string.IsNullOrWhiteSpace(SearchTerm) || item.Title.ToLower().Contains(SearchTerm.ToLower());
+        if (result is false) return false;
+        return true;
+    }).ToList();
+}
+  
+``` 
+</div>
+
   
 </div>
   
