@@ -709,6 +709,33 @@ private void Filter()
 ``` 
 </div>
 
+با استفاده از پارامتر OnClear این کامپوننت می‌توانیم متدی را برای زمانی که کاربر روی آیکن ( close ( X این کامپوننت کیلیک کرد اختصاص دهیم.
+ 
+پس ابتدا پارامتر OnClear را به این کامپوننت مطابض زیر اضافه کرده و سپس متد HandleClear را تعریف کرده و به متدهای قبلی اضافه می‌کنیم.
+
+
+<div dir="ltr">
+  
+```razor
+<div class="searchbox">
+    <BitSearchBox Placeholder="Search" OnSearch="HandleSearch"></BitSearchBox>
+</div>
+
+``` 
+</div>
+  
+
+<div dir="ltr">
+
+```c#
+
+private void HandleClear()
+{
+    HandleSearch("");
+}
+  
+``` 
+</div>
   
 </div>
   
