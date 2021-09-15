@@ -925,14 +925,13 @@ private void Filter()
           {
               case "Active":
                  return !item.IsDone;
-               case "Completed":
-                   return item.IsDone;
+              case "Completed":
+                 return item.IsDone;
             }
 
         }
         return true;
     }).ToList();
-
 }
   
 ``` 
