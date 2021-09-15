@@ -858,6 +858,23 @@ private void HandleClear()
 زمانی که می‌خواهیم مجموعه‌ای از گزینه‌های مرتبط را کنار هم داشته باشیم، می‌توانیم از input  با نوع radio و یا checkbox استفاده کنیم با این تفاوت که زمانی که شما از نوع checkbox برای input استفاده می‌کنید می‌توانید به صورت همزمان چندین گزینه را انتخاب کنید اما زمانی که از نوع radio برای input استفاده می‌کنید در هر لحظه فقط یه گزینه می تواند انتخاب شود.
 
 در مورد label هم در درس‌های گذشته به صورت کامل توضیح داده‌ایم.
+
+کامپوننت BitChoiceGroup پارامتری به نام OnValueChange دارد که با تغییر انتخاب بین گزینه‌ها، متدی که به آن اختصاص داده شده را فرا می‌خواند.
+ 
+پس در ادامه نیاز داریم این پارامتر ار به این کامپوننت اضافه و متدی را به آن اختصاص دهیم.
+
+<div dir="ltr">
+  
+```razor
+  
+<BitChoiceGroup OnValueChange="HandleFilterChange">
+    <BitChoiceOption Text="All" Value="All" />
+    <BitChoiceOption Text="Active" Value="Active" />
+    <BitChoiceOption Text="Completed" Value="Completed" />
+</BitChoiceGroup>
+
+``` 
+</div>
  
 </div>
   
