@@ -937,7 +937,13 @@ private void Filter()
 ``` 
 </div> 
 
-در کد اضافه شده به متد Filter گفته‌ایم که اگر مقدار FilterValue مخالف null و یا WhiteSpace بود، در کل FilterValue دارای مقدار بود در ادامه وارد بلاک مربوط به switch شود. 
+در کد اضافه شده به متد Filter گفته‌ایم که اگر مقدار FilterValue مخالف null و یا WhiteSpace بود، در کل FilterValue دارای مقدار بود در ادامه وارد بلاک مربوط به switch شود.
+
+از دستور switch case می توان به جای دستور if..else استفاده کرد، زمانی که بیش‌تر از یک گزینه برای انتخاب وجود دارد.
+
+دستور switch به طور کلی به صورت زیر تعریف می‌شود.
+
+<img src="images/img-10.png"/>  
  
 </div>
   
