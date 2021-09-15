@@ -709,16 +709,15 @@ private void Filter()
 ``` 
 </div>
 
-با استفاده از پارامتر OnClear این کامپوننت می‌توانیم متدی را برای زمانی که کاربر روی آیکن ( close ( X این کامپوننت کیلیک کرد اختصاص دهیم.
+با استفاده از پارامتر OnClear این کامپوننت می‌توانیم متدی را برای زمانی که کاربر بر روی آیکن ( close ( X این کامپوننت کلیک کرد اختصاص دهیم.
  
-پس ابتدا پارامتر OnClear را به این کامپوننت مطابض زیر اضافه کرده و سپس متد HandleClear را تعریف کرده و به متدهای قبلی اضافه می‌کنیم.
-
+پس ابتدا، پارامتر OnClear را به این کامپوننت مطابق زیر اضافه کرده و سپس متد HandleClear را تعریف و به متدهای قبلی اضافه می‌کنیم.
 
 <div dir="ltr">
   
 ```razor
 <div class="searchbox">
-    <BitSearchBox Placeholder="Search" OnSearch="HandleSearch"></BitSearchBox>
+    <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear"></BitSearchBox>
 </div>
 
 ``` 
@@ -736,6 +735,9 @@ private void HandleClear()
   
 ``` 
 </div>
+
+همانطور که در کد بالا می‌بینید داخل متد HandleClear ما متد HandleSearch را صدا زده‌ایم و یک رشته خالی را به آن اختصاص داده‌ایم این رشته خالی داخل SearchTerm قرار گرفته و عملا چون هیچ واژه برای سرچ وجود ندارد، در کل سرچی انجام نمی‌شود.
+
   
 </div>
   
