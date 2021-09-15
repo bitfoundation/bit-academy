@@ -709,6 +709,50 @@ private void Filter()
 ``` 
 </div>
 
+سپس باید در BitBasicList  تغییری ایجاد کنیم که به جای این که آیتم‌ها را از روی لیست اصلی بخواند آنها را از روی FilteredTodoList خوانده و لیست را بسازد در واقع FilteredTodoList همان لیست قبلی است با این تفاوت که اگر سرچی هم انجام شده نتیجه را هم داخل خودش دار.
+
+این قسمت از کد قبلی به صورت زیر تغییر می‌کند.
+
+
+<div dir="ltr">
+  
+```razor
+@if (FilteredTodoList.Count > 0)
+{
+    <BitBasicList Items="FilteredTodoList" Virtualize="true" Class="todo-list">
+        <RowTemplate Context="TodoItem">
+            <div Class="todo-item">
+                <div class="todo-title">
+                    <BitCheckbox OnChange="() => HandleTodoChange(TodoItem)"/>
+                    @if (TodoItem.IsEdit)
+                    {
+                        <input @bind="@NewName" />
+                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
+                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                    }
+                    else
+                    {
+                        <span>
+                            @TodoItem.Title
+                        </span>
+                    }
+
+                </div>
+
+                <div class="todo-action">
+                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
+                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                </div>
+            </div>
+
+        </RowTemplate>
+    </BitBasicList>
+}
+
+``` 
+</div>
+
+
 با استفاده از پارامتر OnClear این کامپوننت می‌توانیم متدی را برای زمانی که کاربر بر روی آیکن ( close ( X این کامپوننت کلیک کرد اختصاص دهیم.
  
 پس ابتدا، پارامتر OnClear را به این کامپوننت مطابق زیر اضافه کرده و سپس متد HandleClear را تعریف و به متدهای قبلی اضافه می‌کنیم.
