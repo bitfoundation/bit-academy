@@ -836,7 +836,7 @@ private void HandleClear()
         }
     </div>
     <div class="footer">
-        <BitChoiceGroup OnValueChange="HandleFilterChange">
+        <BitChoiceGroup>
             <BitChoiceOption Text="All" Value="All" />
             <BitChoiceOption Text="Active" Value="Active" />
             <BitChoiceOption Text="Completed" Value="Completed" />
