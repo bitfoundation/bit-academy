@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components.Web;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace ToDoApp.Pages
@@ -12,8 +11,6 @@ namespace ToDoApp.Pages
         public string NewName { get; set; }
         private string SearchTerm;
         private string FilterValue;
-
-        //public List<TodoItem> ResultSearch => TodoList.Where(item => item.Title.ToLower().Contains(SearchTerm.ToLower())).ToList();
 
         public void AddTodo()
         {
@@ -38,26 +35,6 @@ namespace ToDoApp.Pages
             TodoList.Remove(todo);
             Filter();
         }
-
-        //public void CompleteTodoItem(TodoItem todo)
-        //{
-        //    todo.IsDone = !todo.IsDone;
-        //}
-
-        //public void CheckAll()
-        //{
-        //    foreach (TodoItem todo in TodoList)
-        //    {
-        //        todo.IsDone = true;
-        //    }
-        //    Filter();
-        //}
-
-        //public void ClearCompleted()
-        //{
-        //    TodoList.RemoveAll(todo => todo.IsDone);
-        //    Filter();
-        //}
 
         public void EditTodoItem(TodoItem todo)
         {
@@ -109,23 +86,21 @@ namespace ToDoApp.Pages
             {
                 var result = string.IsNullOrWhiteSpace(SearchTerm) || item.Title.ToLower().Contains(SearchTerm.ToLower());
                 if (result is false) return false;
-                //if (string.IsNullOrWhiteSpace(FilterValue) is false)
-                //{
-                //    switch (FilterValue)
-                //    {
-                //        case "Active":
-                //            return !item.IsDone;
-                //        case "Completed":
-                //            return item.IsDone;
-                //    }
+                if (string.IsNullOrWhiteSpace(FilterValue) is false)
+                {
+                    switch (FilterValue)
+                    {
+                        case "Active":
+                            return !item.IsDone;
+                        case "Completed":
+                           return item.IsDone;
+                    }
 
-                //}
+                }
                 return true;
             }).ToList();
 
-
         }
-
     }
 }
 
