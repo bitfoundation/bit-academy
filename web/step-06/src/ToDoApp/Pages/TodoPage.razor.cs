@@ -6,10 +6,12 @@ namespace ToDoApp.Pages
 {
     public partial class TodoPage
     {
-        public List<TodoItem> TodoList = new();
-        public string TodoName { get; set; }
+        private List<TodoItem> TodoList = new();
+        private List<TodoItem> FilteredTodoList = new();
+        private string TodoName { get; set; }
         public string NewName { get; set; }
-        string SearchTerm { get; set; } = "";
+        private string SearchTerm;
+        private string FilterValue;
 
         //public List<TodoItem> ResultSearch => TodoList.Where(item => item.Title.ToLower().Contains(SearchTerm.ToLower())).ToList();
 
@@ -26,6 +28,7 @@ namespace ToDoApp.Pages
                 };
 
                 TodoList.Add(newTask);
+                Filter();
                 TodoName = null;
             }
         }
@@ -33,6 +36,7 @@ namespace ToDoApp.Pages
         public void DeleteTodoItem(TodoItem todo)
         {
             TodoList.Remove(todo);
+            Filter();
         }
 
         //public void CompleteTodoItem(TodoItem todo)
@@ -40,18 +44,20 @@ namespace ToDoApp.Pages
         //    todo.IsDone = !todo.IsDone;
         //}
 
-        public void CheckAll()
-        {
-            foreach (TodoItem todo in TodoList)
-            {
-                todo.IsDone = true;
-            }
-        }
+        //public void CheckAll()
+        //{
+        //    foreach (TodoItem todo in TodoList)
+        //    {
+        //        todo.IsDone = true;
+        //    }
+        //    Filter();
+        //}
 
-        public void ClearCompleted()
-        {
-            TodoList.RemoveAll(todo => todo.IsDone);
-        }
+        //public void ClearCompleted()
+        //{
+        //    TodoList.RemoveAll(todo => todo.IsDone);
+        //    Filter();
+        //}
 
         public void EditTodoItem(TodoItem todo)
         {
@@ -73,6 +79,53 @@ namespace ToDoApp.Pages
             todo.IsEdit = false;
             NewName = null;
         }
+
+        private void HandleTodoChange(TodoItem todo)
+        {
+            todo.IsDone = !todo.IsDone;
+            Filter();
+        }
+
+        private void HandleClear()
+        {
+            HandleSearch("");
+        }
+
+        private void HandleSearch(string searchTerm)
+        {
+            SearchTerm = searchTerm;
+            Filter();
+        }
+
+        private void HandleFilterChange(string filter)
+        {
+            FilterValue = filter;
+            Filter();
+        }
+
+        private void Filter()
+        {
+            FilteredTodoList = TodoList.Where(item =>
+            {
+                var result = string.IsNullOrWhiteSpace(SearchTerm) || item.Title.ToLower().Contains(SearchTerm.ToLower());
+                if (result is false) return false;
+                //if (string.IsNullOrWhiteSpace(FilterValue) is false)
+                //{
+                //    switch (FilterValue)
+                //    {
+                //        case "Active":
+                //            return !item.IsDone;
+                //        case "Completed":
+                //            return item.IsDone;
+                //    }
+
+                //}
+                return true;
+            }).ToList();
+
+
+        }
+
     }
 }
 

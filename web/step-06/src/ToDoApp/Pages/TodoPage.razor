@@ -6,7 +6,7 @@
     </div>
     
     <div class="searchbox">
-        <BitSearchBox Placeholder="Search"></BitSearchBox>
+        <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear"></BitSearchBox>
     </div>
 
     <div class="todo-app">
@@ -14,15 +14,13 @@
             <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
         </div>
 
-        @if (TodoList.Count > 0)
+        @if (FilteredTodoList.Count > 0)
         {
-           
-            
-            <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+            <BitBasicList Items="FilteredTodoList" Virtualize="true" Class="todo-list">
                 <RowTemplate Context="TodoItem">
                     <div Class="todo-item">
                         <div class="todo-title">
-                            <BitCheckbox @bind-IsChecked="TodoItem.IsDone" />
+                            <BitCheckbox OnChange="() => HandleTodoChange(TodoItem)"/>
                             @if (TodoItem.IsEdit)
                             {
                                 <input @bind="@NewName" />
@@ -46,26 +44,16 @@
 
                 </RowTemplate>
             </BitBasicList>
-
-
-
-
         }
     </div>
     <div class="footer">
-        <ul class="filters">
-            <li>
-                <BitButton ButtonStyle="ButtonStyle.Standard" IsEnabled="true">All</BitButton>
-            </li>
-            <li>
-                <BitButton ButtonStyle="ButtonStyle.Standard" IsEnabled="true">Active</BitButton>
-            </li>
-            <li>
-                <BitButton ButtonStyle="ButtonStyle.Standard" IsEnabled="true">Completed</BitButton>
-            </li>
-        </ul>
+        <BitChoiceGroup OnValueChange="HandleFilterChange">
+            <BitChoiceOption Text="All" Value="All" />
+            <BitChoiceOption Text="Active" Value="Active" />
+            <BitChoiceOption Text="Completed" Value="Completed" />
+        </BitChoiceGroup>
 
-        <div class="footer-action">
+        @*<div class="footer-action">
             @if (TodoList.Count > 0)
             {
                 <BitButton OnClick="CheckAll">
@@ -79,7 +67,7 @@
                     ClearCompleted
                 </BitButton>
             }
-        </div>
+        </div>*@
     </div>
 </div>
 
