@@ -333,7 +333,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```scss
-    .card {
+  .card {
     display: flex;
     flex-direction: column;
     padding: 0 40px 100px 40px;
