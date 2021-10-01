@@ -226,7 +226,7 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
         <title>TodoApp</title>
         <base href="/" />
         <link rel="stylesheet" href="_content/Bit.Client.Web.BlazorUI/styles/styles.min.css" />
-        <link href="ToDoApp.styles.css" rel="stylesheet" />
+        <link href="TodoApp.styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="main.css" />
     </head>
 
