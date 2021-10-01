@@ -480,36 +480,43 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```razor
-     @page "/login"
+    @page "/login";
+@inject NavigationManager NavigationManager;
 
-    <div class="container">
-        <div class="card product-description">
-            <img src="images/logo.png" alt="logo" class="logo" />
-            <p>
-                The TodoApp lets you write, organize, and prioritize your tasks.
-                This way you can be more productive by registering your tasks in the Todo App
-            </p>
-        </div>
-        <div class="card login-form">
-            <img src="images/logo-small.png" alt="logo" class="logo logo-small" />
-            <h1>
-                Welcome back!
-            </h1>
-            <form onsubmit="return false;">
-                @if (ShowLoginErrorMessage)
-                {
-                    <BitMessageBar MessageBarType="BitMessageBarType.Error">
-                        Username and password entered incorrectly.
-                    </BitMessageBar>
-                }
-                <BitTextField Type="TextFieldType.Text" @bind-Value="@UserName" Label="Username" Class="text-field" />
-                <BitTextField Type="TextFieldType.Password" @bind-Value="@Password" Label="Password" Class="text-field" />
-                <BitButton OnClick="Signin">
-                  Sign in
-                </BitButton>
-            </form>
-        </div>
+<div class="container">
+    <div class="card product-description">
+        <img src="images/logo.png" alt="logo" class="logo" />
+        <p>
+            The TodoApp lets you write, organize, and prioritize your tasks.
+            This way you can be more productive by registering your tasks in the ToDo App
+        </p>
     </div>
+    <div class="card login-form">
+        <img src="images/logo-small.png" alt="TodoApp" class="logo logo-small" />
+        <h1>
+            Welcome back!
+        </h1>
+        <form onsubmit="return false;">
+            @if (ShowLoginErrorMessage)
+            {
+                <BitMessageBar MessageBarType="BitMessageBarType.Error">
+                    Username and password entered incorrectly.
+                </BitMessageBar>
+            }
+
+            <div class="mb-10">
+                <BitTextField Type="TextFieldType.Text" @bind-Value="@UserName" Label="Username"/>
+            </div>
+            <div class="mb-10">
+                <BitTextField Type="TextFieldType.Password" @bind-Value="@Password" Label="Password"/>
+            </div>
+            <BitButton OnClick="Signin">
+                Sign in
+            </BitButton>
+        </form>
+    </div>
+</div>
+
 
   ``` 
   </div>
