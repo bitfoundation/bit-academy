@@ -609,8 +609,8 @@ private void HandleTodoChange(TodoItem todo)
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
-                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -620,8 +620,8 @@ private void HandleTodoChange(TodoItem todo)
                     }
                 </div>
                 <div class="todo-action">
-                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
-                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -720,8 +720,8 @@ private void Filter()
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
-                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -733,8 +733,8 @@ private void Filter()
                 </div>
 
                 <div class="todo-action">
-                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
-                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
 
@@ -861,7 +861,7 @@ private void HandleClear()
   
 ```razor
   
-<BitChoiceGroup OnValueChange="HandleFilterChange">
+<BitChoiceGroup OnValueChange="HandleFilterChange" Style="display: flex; flex-direction: row; gap: 20px">
     <BitChoiceOption Text="All" Value="All" />
     <BitChoiceOption Text="Active" Value="Active" />
     <BitChoiceOption Text="Completed" Value="Completed" />
@@ -1054,9 +1054,7 @@ namespace ToDoApp.Pages
                 }
                 return true;
             }).ToList();
-
         }
-
     }
 }
   
