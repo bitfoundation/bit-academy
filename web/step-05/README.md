@@ -480,8 +480,8 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```razor
-    @page "/login";
-@inject NavigationManager NavigationManager;
+
+@page "/login";
 
 <div class="container">
     <div class="card product-description">
@@ -516,7 +516,6 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
         </form>
     </div>
 </div>
-
 
   ``` 
   </div>
