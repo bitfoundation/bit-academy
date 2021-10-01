@@ -117,7 +117,7 @@ namespace ToDoApp.Pages
 
 <div class="container">
 
-  <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+  <BitBasicList Items="TodoList" Virtualize="true" Style="height: auto">
       <RowTemplate Context="TodoItem">
           <div Class="todo-item">
               <div class="todo-title">
@@ -156,7 +156,7 @@ namespace ToDoApp.Pages
 ```razor
 
 <div class="container">
-  <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+  <BitBasicList Items="TodoList" Virtualize="true" Style="height: auto">
       <RowTemplate Context="TodoItem">
           <div Class="todo-item">
               <div class="todo-title">
@@ -212,7 +212,7 @@ namespace ToDoApp.Pages
       <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
   </div>
 
-  <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+  <BitBasicList Items="TodoList" Virtualize="true" Style="height: auto">
       <RowTemplate Context="TodoItem">
           <div Class="todo-item">
               <div class="todo-title">
@@ -295,7 +295,7 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
   </div>
   @if (TodoList.Count > 0)
   {
-    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+    <BitBasicList Items="TodoList" Virtualize="true" Style="height: auto">
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
@@ -330,7 +330,7 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
   </div>
   @if (TodoList.Count > 0)
   {
-    <BitBasicList Items="TodoList" Virtualize="true">
+    <BitBasicList Items="TodoList" Virtualize="true" Style="height: auto">
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
@@ -448,7 +448,7 @@ private void EditTodoItem(TodoItem todo)
   </div>
   @if (TodoList.Count > 0)
   {
-    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+    <BitBasicList Items="TodoList" Virtualize="true" Style="height: auto">
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
@@ -594,14 +594,14 @@ private void HandleTodoChange(TodoItem todo)
 
 <div class="container">
   <div class="searchbox">
-      <BitSearchBox Placeholder="Search"></BitSearchBox>
+      <BitSearchBox Placeholder="Search" />
   </div>
   <div class="todo-add">
       <input @bind="@TodoName" @onkeyup="@AddTodo" placeholder="Add a new todo" />
   </div>
   @if (TodoList.Count > 0)
   {
-    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+    <BitBasicList Items="TodoList" Virtualize="true" Style="height: auto">
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
@@ -660,7 +660,7 @@ private void HandleTodoChange(TodoItem todo)
 ```razor
 
 <div class="searchbox">
-    <BitSearchBox Placeholder="Search" OnSearch="HandleSearch"></BitSearchBox>
+    <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" />
 </div>
 
 ``` 
@@ -712,7 +712,7 @@ private void Filter()
 ```razor
 @if (FilteredTodoList.Count > 0)
 {
-    <BitBasicList Items="FilteredTodoList" Virtualize="true" Class="todo-list">
+    <BitBasicList Items="FilteredTodoList" Virtualize="true" Style="height: auto">
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
@@ -755,7 +755,7 @@ private void Filter()
 ```razor
 
 <div class="searchbox">
-    <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear"></BitSearchBox>
+    <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear" />
 </div>
 
 ``` 
@@ -789,7 +789,7 @@ private void HandleClear()
     </div>
     
     <div class="searchbox">
-        <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear"></BitSearchBox>
+        <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear" />
     </div>
 
     <div class="todo-app">
@@ -799,7 +799,7 @@ private void HandleClear()
 
         @if (FilteredTodoList.Count > 0)
         {
-            <BitBasicList Items="FilteredTodoList" Virtualize="true" Class="todo-list">
+            <BitBasicList Items="FilteredTodoList" Virtualize="true" Style="height: auto">
                 <RowTemplate Context="TodoItem">
                     <div Class="todo-item">
                         <div class="todo-title">
@@ -807,8 +807,8 @@ private void HandleClear()
                             @if (TodoItem.IsEdit)
                             {
                                 <input @bind="@NewName" />
-                                <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
-                                <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                                <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" />
+                                <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                             }
                             else
                             {
@@ -820,8 +820,8 @@ private void HandleClear()
                         </div>
 
                         <div class="todo-action">
-                            <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
-                            <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                            <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                            <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                         </div>
                     </div>
 
