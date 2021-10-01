@@ -182,7 +182,6 @@ namespace ToDoApp.Pages
 
 ```c#
 
-using Microsoft.AspNetCore.Components.Web;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -237,7 +236,6 @@ namespace ToDoApp.Pages
 
 ```c#
 
-using Microsoft.AspNetCore.Components.Web;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -332,7 +330,7 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
   </div>
   @if (TodoList.Count > 0)
   {
-    <BitBasicList Items="TodoList" Virtualize="true" Class="todo-list">
+    <BitBasicList Items="TodoList" Virtualize="true">
         <RowTemplate Context="TodoItem">
             <div Class="todo-item">
                 <div class="todo-title">
@@ -343,8 +341,8 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
                 </div>
 
                 <div class="todo-action">
-                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
-                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -384,7 +382,6 @@ https://uifabricicons.azurewebsites.net
 
 ```c#
 
-using Microsoft.AspNetCore.Components.Web;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -459,8 +456,8 @@ private void EditTodoItem(TodoItem todo)
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
-                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -470,8 +467,8 @@ private void EditTodoItem(TodoItem todo)
                     }
                 </div>
                 <div class="todo-action">
-                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
-                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -491,7 +488,6 @@ private void EditTodoItem(TodoItem todo)
 
 ```c#
 
-using Microsoft.AspNetCore.Components.Web;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -563,6 +559,7 @@ namespace ToDoApp.Pages
 <div dir="ltr">
   
 ```razor
+
 <BitCheckbox OnChange="() => HandleTodoChange(TodoItem)" />
 
 ``` 
@@ -661,6 +658,7 @@ private void HandleTodoChange(TodoItem todo)
 <div dir="ltr">
   
 ```razor
+
 <div class="searchbox">
     <BitSearchBox Placeholder="Search" OnSearch="HandleSearch"></BitSearchBox>
 </div>
@@ -675,6 +673,7 @@ private void HandleTodoChange(TodoItem todo)
 <div dir="ltr">
 
 ```c#
+
 private void HandleSearch(string searchTerm)
 {
     SearchTerm = searchTerm;
@@ -754,6 +753,7 @@ private void Filter()
 <div dir="ltr">
   
 ```razor
+
 <div class="searchbox">
     <BitSearchBox Placeholder="Search" OnSearch="HandleSearch" OnClear="HandleClear"></BitSearchBox>
 </div>
