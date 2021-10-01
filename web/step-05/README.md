@@ -131,13 +131,17 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
             </p>
         </div>
         <div class="card login-form">
-            <img src="images/logo-small.png" alt="logo" class="logo logo-small" />
+            <img src="images/logo-small.png" alt="TodoApp" class="logo logo-small" />
             <h1>
                 Welcome back!
             </h1>
             <form>
-                <BitTextField Type="TextFieldType.Text" Label="Username" Class="text-field" />
-                <BitTextField Type="TextFieldType.Password" Label="Password" Class="text-field" />
+                <div class="mb-10">
+                  <BitTextField Type="TextFieldType.Text" @bind-Value="@UserName" Label="Username"/>
+                </div>
+                <div class="mb-10">
+                  <BitTextField Type="TextFieldType.Password" @bind-Value="@Password" Label="Password"/>
+                </div>
                 <BitButton OnClick="Signin">
                   Sign in
                 </BitButton>
