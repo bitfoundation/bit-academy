@@ -330,45 +330,50 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 
   ```scss
     .card {
-        display: flex;
-        flex-direction: column;
-        padding: 0 40px 100px 40px;
-        box-shadow: 1px 2px 10px 0 $light-gray;
-        width: 400px;
-        height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px 100px 40px;
+    box-shadow: 1px 2px 10px 0 $light-gray;
+    width: 400px;
+    height: 500px;
 
-        &.product-description {
-            justify-content: center;
-            align-items: center;
-            background-color: $purple;
-            color: $white;
-            text-align: center;
-            border-radius: 5px 0 0 5px;
-        }
-
-        &.login-form {
-            justify-content: center;
-            align-items: flex-start;
-            background-color: $white;
-            border-radius: 0 5px 5px 0;
-        }
-
-        .logo {
-            margin-bottom: 30px;
-        }
+    &.product-description {
+        justify-content: center;
+        align-items: center;
+        background-color: $purple;
+        color: $white;
+        text-align: center;
+        border-radius: 5px 0 0 5px;
     }
 
-    .login-form {
+    &.login-form {
+        justify-content: center;
+        align-items: flex-start;
+        background-color: $white;
+        border-radius: 0 5px 5px 0;
+
         h1 {
             margin-bottom: 30px;
             color: $dark-gray;
         }
+
+        form {
+            width: 300px;
+        }
     }
 
-    .logo-small {
-        display: none;
+    .logo {
+        margin-bottom: 30px;
     }
+}
 
+.logo-small {
+    display: none;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
   ```
 </div>  
 
