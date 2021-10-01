@@ -47,13 +47,12 @@ public class TodoItem
 
 برای نگهداری Todo ها باید از یک لیست استفاده کنیم. یک لیست مجموعه‌ای از object های قابل دسترسی است که قابلیت جستجو، مرتب کردن و تغییر دادن اعضای داخل آن را برای ما فراهم می کند.
 
-در این فایل، ابتدا یک متغیر به نام TodoList  ازنوع List برای TodoItem ها  به صورت زیر ایجاد می کنیم. در ادامه قرار است در فایل TodoPage.razor از این متغیر به منظور نگهداری وضعیت لیست Todo ها استفاده کنیم.
+در این فایل، ابتدا یک متغیر به نام TodoList  ازنوع List برای TodoItem ها  به صورت زیر ایجاد می‌کنیم. در ادامه قرار است در فایل TodoPage.razor از این متغیر به منظور نگهداری وضعیت لیست Todo ها استفاده کنیم.
 
 <div dir="ltr">
 
 ```c#
 
-using Microsoft.AspNetCore.Components.Web;
 using System.Collections.Generic;
 using System.Linq;
 
