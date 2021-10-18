@@ -188,7 +188,7 @@ input {
     width: 80px;
     height: 80px;
     border-radius: 5px;
-    border: 2px solid $light-gray;
+    background-color: $light-gray;
     line-height: 80px;
     color: $light-blue;
     font-size: 35px;
