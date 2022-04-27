@@ -24,8 +24,8 @@
                             @if (TodoItem.IsEdit)
                             {
                                 <input @bind="@NewName" />
-                                <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
-                                <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
+                                <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" Class="accept"/>
+                                <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" Class="cancel"/>
                             }
                             else
                             {
@@ -37,8 +37,8 @@
                         </div>
 
                         <div class="todo-action">
-                            <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
-                            <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
+                            <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" Class="edit"/>
+                            <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" Class="delete"/>
                         </div>
                     </div>
 
