@@ -24,7 +24,7 @@
 
  <img width="700px" src="images/img-3.png" />
  
- مطابق تصویر زیر، در این مرحله دقت کنید که Target Framework حتما روی (Net 5.0 (current قرار گرفته باشد.
+ مطابق تصویر زیر، در این مرحله دقت کنید که Target Framework حتما روی **NET 6.0** قرار گرفته باشد.
  
  <img width="500px" src="images/img-4.png" />
  
