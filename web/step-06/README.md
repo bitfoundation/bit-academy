@@ -266,7 +266,7 @@ namespace ToDoApp.Pages
 ``` 
 </div>
 
-IsNullOrWhiteSpace در #C یک string method است. برای بررسی این که رشته مشخص شده خالی یا فقط شامل کاراکترهای space است استفاده می شود. اگر به یک رشته مقداری اختصاص داده نشده باشد یا صراحتاً مقدار null به آن اختصاص داده شده باشد،آن رشته null خواهد بود.
+متد IsNullOrWhiteSpace در #C یک string method است. برای بررسی این که رشته مشخص شده خالی یا فقط شامل کاراکترهای space است استفاده می شود. اگر به یک رشته مقداری اختصاص داده نشده باشد یا صراحتاً مقدار null به آن اختصاص داده شده باشد،آن رشته null خواهد بود.
 
 در متد AddTodo در کد بالا، تعیین کرده‌ایم که اگر مقدار TodoName مخالف null بود، یک object جدید از کلاس TodoItem ساخته و مقادیر تعیین شده به فیلدهای todo جدید اختصاص داده شود.
 
@@ -340,8 +340,8 @@ IsNullOrWhiteSpace در #C یک string method است. برای بررسی این
                 </div>
 
                 <div class="todo-action">
-                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                    <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -455,8 +455,8 @@ private void EditTodoItem(TodoItem todo)
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" />
-                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
+                        <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -466,8 +466,8 @@ private void EditTodoItem(TodoItem todo)
                     }
                 </div>
                 <div class="todo-action">
-                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                    <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -608,8 +608,8 @@ private void HandleTodoChange(TodoItem todo)
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" />
-                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
+                        <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -619,8 +619,8 @@ private void HandleTodoChange(TodoItem todo)
                     }
                 </div>
                 <div class="todo-action">
-                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                    <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -719,8 +719,8 @@ private void Filter()
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" />
-                        <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
+                        <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -732,8 +732,8 @@ private void Filter()
                 </div>
 
                 <div class="todo-action">
-                    <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                    <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                    <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
 
@@ -806,8 +806,8 @@ private void HandleClear()
                             @if (TodoItem.IsEdit)
                             {
                                 <input @bind="@NewName" />
-                                <BitIconButton IconName="Accept" OnClick="(e => EditTodo(TodoItem))" />
-                                <BitIconButton IconName="Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
+                                <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
+                                <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                             }
                             else
                             {
@@ -819,8 +819,8 @@ private void HandleClear()
                         </div>
 
                         <div class="todo-action">
-                            <BitIconButton IconName="Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                            <BitIconButton IconName="Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                            <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                            <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                         </div>
                     </div>
 
