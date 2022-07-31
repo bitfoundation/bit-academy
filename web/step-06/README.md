@@ -17,6 +17,89 @@
 ``` 
 </div>
 
+سپس برای افزودن استایل‌ها فایل جدیدی به نام TodoPage.razor.scss با محتوای زیر ایجاد می کنیم.
+
+<div dir="ltr">
+
+```css
+
+  .container {
+    margin: 40px auto;
+    max-width: 500px;
+
+    .todo-count {
+        margin-bottom: 20px;
+        font-size: 80px;
+        font-weight: 100;
+        text-align: center;
+        color: rgba(175, 47, 47, 0.15);
+        text-rendering: optimizeLegibility;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .searchbox {
+        margin: 10px 0;
+    }
+
+    .todo-add {
+        display: flex;
+        padding: 10px;
+        border: none;
+        background: rgba(0, 0, 0, 0.003);
+        box-shadow: inset 0 -2px 1px #cecece;
+        font-size: 27px;
+    }
+
+    .todo-app {
+        background: #fff;
+        margin: 20px 0 40px 0;
+        position: relative;
+        box-shadow: 0 2px 4px 0 #ccc;
+    }
+
+    .todo-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #e6e6e6;
+        margin: 10px 0;
+    }
+
+    .todo-title {
+        display: flex;
+        align-items: center;
+        flex: auto;
+    }
+
+    .filters {
+        list-style: none;
+        display: flex;
+    }
+
+    .todo-action {
+        display: flex;
+        width: 120px;
+        justify-content: flex-end;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #777;
+        font-size: 14px;
+    }
+}
+
+
+``` 
+</div>
+
 در ادامه فایلی با نام TodoItem.cs به ریشه پروژه اضافه کنید.  
 
 <img src="images/img-2.png" />
@@ -406,11 +489,11 @@ namespace ToDoApp.Pages
             TodoList.Add(newTask);
             TodoName = null;
         }
-    }
-  
-    private void DeleteTodoItem(TodoItem todo)
-    {
-        TodoList.Remove(todo);
+
+        private void DeleteTodoItem(TodoItem todo)
+        {
+            TodoList.Remove(todo);
+        }
     }
 }
 
@@ -497,48 +580,48 @@ namespace ToDoApp.Pages
         public List<TodoItem> TodoList = new();
         public string TodoName { get; set; }
         public string NewName { get; set; }
-    }
 
-    private void AddTodo()
-    {
-        if (!string.IsNullOrWhiteSpace(TodoName))
+        private void AddTodo()
         {
-            var newTask = new TodoItem()
+            if (!string.IsNullOrWhiteSpace(TodoName))
             {
-                Id = TodoList.Count() + 1,
-                Title = TodoName,
-                IsDone = false
-            };
+                var newTask = new TodoItem()
+                {
+                    Id = TodoList.Count() + 1,
+                    Title = TodoName,
+                    IsDone = false
+                };
 
-            TodoList.Add(newTask);
-            TodoName = null;
+                TodoList.Add(newTask);
+                TodoName = null;
+            }
         }
-    }
-  
-    private void DeleteTodoItem(TodoItem todo)
-    {
-        TodoList.Remove(todo);
-    }
+    
+        private void DeleteTodoItem(TodoItem todo)
+        {
+            TodoList.Remove(todo);
+        }
 
-    private void EditTodoItem(TodoItem todo)
-    {
-        todo.IsEdit = true;
-    }
+        private void EditTodoItem(TodoItem todo)
+        {
+            todo.IsEdit = true;
+        }
 
-    private void EditTodo(TodoItem todo)
-    {
-        if (!string.IsNullOrWhiteSpace(NewName))
+        private void EditTodo(TodoItem todo)
+        {
+            if (!string.IsNullOrWhiteSpace(NewName))
+            {
+                todo.IsEdit = false;
+                todo.Title = NewName;
+                NewName = null;
+            }
+        }
+
+        private void CancelEditTodo(TodoItem todo)
         {
             todo.IsEdit = false;
-            todo.Title = NewName;
             NewName = null;
         }
-    }
-
-    private void CancelEditTodo(TodoItem todo)
-    {
-        todo.IsEdit = false;
-        NewName = null;
     }
 }
 
