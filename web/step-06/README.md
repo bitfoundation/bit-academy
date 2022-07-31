@@ -245,21 +245,20 @@ namespace ToDoApp.Pages
     {
         public List<TodoItem> TodoList = new();
         public string TodoName { get; set; }
-    }
-
-    private void AddTodo()
-    {
-        if (!string.IsNullOrWhiteSpace(TodoName))
+        private void AddTodo()
         {
-            var newTask = new TodoItem()
+            if (!string.IsNullOrWhiteSpace(TodoName))
             {
-                Id = TodoList.Count() + 1,
-                Title = TodoName,
-                IsDone = false
-            };
+                var newTask = new TodoItem()
+                {
+                    Id = TodoList.Count() + 1,
+                    Title = TodoName,
+                    IsDone = false
+                };
 
-            TodoList.Add(newTask);
-            TodoName = null;
+                TodoList.Add(newTask);
+                TodoName = null;
+            }
         }
     }
 }
