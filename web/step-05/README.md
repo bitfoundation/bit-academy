@@ -141,10 +141,10 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
             </h1>
             <form>
                 <div class="mb-10">
-                  <BitTextField Type="TextFieldType.Text" @bind-Value="@UserName" Label="Username"/>
+                  <BitTextField Type="BitTextFieldType.Text" @bind-Value="@UserName" Label="Username"/>
                 </div>
                 <div class="mb-10">
-                  <BitTextField Type="TextFieldType.Password" @bind-Value="@Password" Label="Password"/>
+                  <BitTextField Type="BitTextFieldType.Password" @bind-Value="@Password" Label="Password"/>
                 </div>
                 <BitButton OnClick="Signin">
                   Sign in
@@ -449,7 +449,7 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
   ```c#
     namespace TodoApp.Pages
     {
-        public partial class LoginPage
+        public partial class Login
         {
             public string UserName { get; set; }
             public string Password { get; set; }
@@ -509,10 +509,10 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
             }
 
             <div class="mb-10">
-                <BitTextField Type="TextFieldType.Text" @bind-Value="@UserName" Label="Username"/>
+                <BitTextField Type="BitTextFieldType.Text" @bind-Value="@UserName" Label="Username"/>
             </div>
             <div class="mb-10">
-                <BitTextField Type="TextFieldType.Password" @bind-Value="@Password" Label="Password"/>
+                <BitTextField Type="BitTextFieldType.Password" @bind-Value="@Password" Label="Password"/>
             </div>
             <BitButton OnClick="Signin">
                 Sign in
