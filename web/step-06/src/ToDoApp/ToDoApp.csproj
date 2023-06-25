@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -9,19 +9,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<_ContentIncludedByDefault Remove="compilerconfig.json" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<None Include="compilerconfig.json" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Bit.BlazorUI" Version="2.0.0" />
-		<PackageReference Include="Delegate.SassBuilder" Version="1.4.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.4" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.4" PrivateAssets="all" />
-		<PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+		<PackageReference Include="Bit.BlazorUI" Version="5.0.0" />
+		<PackageReference Include="DartSassBuilder" Version="1.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.8" PrivateAssets="all" />
+		<PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
 	</ItemGroup>
 
 </Project>

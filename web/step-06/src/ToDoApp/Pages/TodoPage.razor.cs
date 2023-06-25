@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Components;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ToDoApp.Pages
@@ -74,9 +75,9 @@ namespace ToDoApp.Pages
             Filter();
         }
 
-        private void HandleFilterChange(string filter)
+        private void HandleFilterChange(ChangeEventArgs e)
         {
-            FilterValue = filter;
+            FilterValue = (string)e.Value;
             Filter();
         }
 

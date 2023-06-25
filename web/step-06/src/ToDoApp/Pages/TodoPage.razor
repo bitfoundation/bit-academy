@@ -47,10 +47,10 @@
         }
     </div>
     <div class="footer">
-        <BitChoiceGroup OnValueChange="HandleFilterChange">
-            <BitChoiceOption Text="All" Value="All" />
-            <BitChoiceOption Text="Active" Value="Active" />
-            <BitChoiceOption Text="Completed" Value="Completed" />
+        <BitChoiceGroup TItem="BitChoiceGroupOption<string>" TValue="string" OnChange="HandleFilterChange">
+            <BitChoiceGroupOption Text="All" Value="@("All")" />
+            <BitChoiceGroupOption Text="Active" Value="@("Active")" />
+            <BitChoiceGroupOption Text="Completed" Value="@("Completed")" />
         </BitChoiceGroup>
     </div>
 </div>
