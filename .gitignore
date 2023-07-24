@@ -351,3 +351,8 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+/web/step-04/src/SimpleBlazorCalculator/Pages/Calculator.razor.css
+/web/step-05/src/ToDoApp/Pages/Login.razor.css
+/web/step-06/src/ToDoApp/Pages/Login.razor.css
+/web/step-06/src/ToDoApp/Pages/TodoPage.razor.css
