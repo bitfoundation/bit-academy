@@ -5,6 +5,8 @@
 
 برای دریافت آموزش‌ها به [این آدرس](https://github.com/bitfoundation/bit-academy/tree/develop/web) بروید و به هر مشکلی که خوردید با خیال راحت یک گزارش در [اینجا](https://github.com/bitfoundation/bit-academy/issues/new) قرار دهید!
 
+کد نهایی هر قسمت در کنار توضیحات آن قرار دارد، میتوانید از آن هم برای درک بهتر توضیحات استفاده کنید
+
 براتون آرزوی موفقیت داریم
 
 </div>
