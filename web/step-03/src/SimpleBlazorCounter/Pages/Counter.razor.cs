@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿namespace SimpleBlazorCounter.Pages;
 
-namespace SimpleBlazorCounter.Pages
+public partial class Counter
 {
-    public partial class Counter
+    public int CurrentCount { get; set; }
+
+    public void Increase()
     {
-        public int CurrentCount { get; set; }
+        CurrentCount++;
+    }
 
-        public void Increase()
-        {
-            CurrentCount++;
-        }
-
-        public void Decrease()
-        {
-            CurrentCount--;
-        }
+    public void Decrease()
+    {
+        CurrentCount--;
     }
 }

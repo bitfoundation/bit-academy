@@ -18,13 +18,13 @@
 
  در مرحله بعد مطابق تصویر زیر از لیست ارایه شده ‌Blazor WebAssembly App را انتخاب و با کلیک بر روی دکمه Next به مرحله بعدی می‌رویم.
   
-  <img width="500px" src="images/img-2.png" />
+  <img width="750px" src="images/img-2.png" />
   
    همان طور که در تصویر زیر می‌بینید در قسمت Project name می‌توانیم اسم پروژه را تعیین کنیم (در این قسمت اسم پروژه را SimpleBlazorCounter می‌گذاریم) و در قسمت Location محل قرار گیری پروژه را مشخص کنیم. مجددا برای رفتن به مرحله بعد بر روی دکمه Next کلیک می‌کنیم.
 
- <img width="700px" src="images/img-3.png" />
+ <img width="750px" src="images/img-3.png" />
  
- مطابق تصویر زیر، در این مرحله دقت کنید که Target Framework حتما روی **NET 6.0** قرار گرفته باشد.
+ مطابق تصویر زیر، در این مرحله دقت کنید که Framework حتما روی **NET 7.0** قرار گرفته باشد.
  
  <img width="500px" src="images/img-4.png" />
  
@@ -44,33 +44,11 @@
 
 پوشه Pages، در این پوشه صفحات پروژه  با پسوند razor قرار گرفته‌اند. فایل razor، شبیه به فایل html قسمت قبل است، با این تفاوت که امکاناتی از #C به آن اضافه شده است.
 
-پوشه Shared، با این پوشه، فعلا کاری نداریم، بنابراین حذفش می‌کنیم و در آینده به طور کامل در مورد این پوشه توضیح می‌دهیم.
+پوشه Shared، با این پوشه، فعلا کاری نداریم، بنابراین روی آن راست کلیک کرده و با گزینه Delete آن را حذف می‌کنیم. در آینده به طور کامل در مورد این پوشه توضیح می‌دهیم.
 
 توضیحات در مورد ساختار فایل‌های پروژه برای این جلسه کافی است. همان طور که گفتیم طبق نیاز تمرین این جلسه ساختار فعلی را تغییر می دهیم.
 
-ابتدا از پوشه Properties فایل launchSettings.json را انتخاب و کد زیر جایگزین کدهای موجود در این فایل می‌کنیم. اصلی‌ترین تغییر، launchUrl است که می‌گوید در زمان اجرای برنامه با ترکیب Ctrl + F5، صفحه counter که در ادامه آنرا خواهیم ساخت باز شود.
-
-<div dir="ltr">
-
-  ```json
-
-{
-  "profiles": {
-    "SimpleBlazorCounter": {
-      "commandName": "Project",
-      "dotnetRunMessages": "true",
-      "launchBrowser": true,
-      "launchUrl": "counter",
-      "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    }
-  }
-}
-  ```
-</div>
+هر زمان خواستید برنامه را اجرا کنید از ترکیب Ctrl + F5 استفاده کنید
 
 سپس از پوشه wwwroot پوشه های css ،sample-data و فایل favicon.ico رو حذف کرده به این صورت که روی نام فایل کلیک راست و از منوی باز شده گزینه Delete را انتخاب می‌کنیم. 
 
@@ -149,7 +127,7 @@
 
   ```razor
     
-    @page "/counter"
+    @page "/"
 
     <div class="card">
         <div class="counter">
@@ -160,7 +138,7 @@
                 Increase
             </button>
             <button class="decrease" onclick="Decrease()">
-                Deacrease
+                Decrease
             </button>
         </div>
     </div>
@@ -191,7 +169,7 @@
 مطابق تصویر زیر از لیست ارائه شده Style Sheet  را انتخاب و در قسمت Name نامی مشابه نام Component که در اینجا Counter.razor نام دارد با پسوند css. انتخاب می کنیم.
 اسم فایل Counter.razor.css می‌باشد. سپس روی دکمه Add کلیک نمایید.
 
-<img width="700px" src="images/img-10.png" />
+<img width="300px" src="images/img-10.png" />
 
 فایل Counter.razor.css مشابه تصویر زیر به پروژه اضافه می‌شود.
 
@@ -262,31 +240,25 @@ button {
 ## افزودن رفتار تعاملی با استفاده از #C <a name="AddCSharp"></a>
   
 در ادامه به جای افزودن کدهای Javascript برای تعیین عملکرد دکمه‌ها، از کدهای #C  استفاده می‌کنیم. 
-کدهای #C  را می‌توانیم داخل بلاک code@، فایل Counter.razor بنویسیم. اما بهتر است بلاک code@ را از این فایل حذف کرده و یک فایل جدید به نام Counter.razor.cs از طریق Add > Class  < راست کلیک روی پوشه Pages، ایجاد و کدهای زیر را وارد این فایل کنیم.
+کدهای #C  را می‌توانیم داخل بلاک code@، فایل Counter.razor بنویسیم. اما بهتر است بلاک code@ را از این فایل حذف کرده و یک فایل جدید به نام Counter.razor.cs از طریق Add > New Item  < راست کلیک روی پوشه Pages، ایجاد و کدهای زیر را وارد این فایل کنیم.
 
   <div dir="ltr">
 
   ```c#
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
+    namespace SimpleBlazorCounter.Pages;
 
-    namespace SimpleBlazorCounter.Pages
+    public partial class Counter
     {
-        public partial class Counter
+        public int CurrentCount { get; set; }
+
+        public void Increase()
         {
-            public int CurrentCount { get; set; }
+            CurrentCount++;
+        }
 
-            public void Increase()
-            {
-                CurrentCount++;
-            }
-
-            public void Decrease()
-            {
-                CurrentCount--;
-            }
+        public void Decrease()
+        {
+            CurrentCount--;
         }
     }
 
@@ -313,7 +285,7 @@ button {
               Increase
           </button>
           <button class="decrease" @onclick="Decrease">
-              Deacrease
+              Decrease
           </button>
       </div>
   </div>

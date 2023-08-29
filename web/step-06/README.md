@@ -6,7 +6,7 @@
 
 <img src="images/img-1-1.png" />
 
-ابتدا فایل جدیدی به نام TodoPage.razor در پوشه pages ایجاد کرده و کد زیر را به منظور تعیین آدرس این صفحه در ابتدای این فایل قرار می دهیم.
+ابتدا فایل جدیدی به نام TodoPage.razor, TodoPage.razor.scss, TodoPage.razor.cs در پوشه pages ایجاد کرده و کد زیر را به منظور تعیین آدرس این صفحه در ابتدای فایل TodoPage.razor قرار می دهیم.
 
 <div dir="ltr">
 
@@ -17,7 +17,7 @@
 ``` 
 </div>
 
-سپس برای افزودن استایل‌ها فایل جدیدی به نام TodoPage.razor.scss با محتوای زیر ایجاد می کنیم.
+سپس برای فایل Todo.razor.scss داریم:
 
 <div dir="ltr">
 
@@ -136,15 +136,15 @@ public class TodoItem
 
 ```c#
 
+using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoApp.Pages
+namespace ToDoApp.Pages;
+
+public partial class TodoPage
 {
-    public partial class TodoPage
-    {
-        public List<TodoItem> TodoList = new();
-    }
+    public List<TodoItem> TodoList = new();
 }
 
 ``` 
@@ -268,13 +268,12 @@ namespace ToDoApp.Pages
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoApp.Pages
+namespace ToDoApp.Pages;
+
+public partial class TodoPage
 {
-    public partial class TodoPage
-    {
-        public List<TodoItem> TodoList = new();
-        public string TodoName { get; set; }
-    }
+    public List<TodoItem> TodoList = new();
+    public string TodoName { get; set; }
 }
 
 ``` 
@@ -322,34 +321,35 @@ namespace ToDoApp.Pages
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoApp.Pages
-{
-    public partial class TodoPage
-    {
-        public List<TodoItem> TodoList = new();
-        public string TodoName { get; set; }
-        private void AddTodo()
-        {
-            if (!string.IsNullOrWhiteSpace(TodoName))
-            {
-                var newTask = new TodoItem()
-                {
-                    Id = TodoList.Count() + 1,
-                    Title = TodoName,
-                    IsDone = false
-                };
+namespace ToDoApp.Pages;
 
-                TodoList.Add(newTask);
-                TodoName = null;
-            }
+public partial class TodoPage
+{
+    public List<TodoItem> TodoList = new();
+    public string TodoName { get; set; }
+    private void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(TodoName))
+        {
+            var newTask = new TodoItem()
+            {
+                Id = TodoList.Count() + 1,
+                Title = TodoName,
+                IsDone = false
+            };
+
+            TodoList.Add(newTask);
+            TodoName = null;
         }
     }
 }
 
+
 ``` 
 </div>
 
-متد IsNullOrWhiteSpace در #C یک string method است. برای بررسی این که رشته مشخص شده خالی یا فقط شامل کاراکترهای space است استفاده می شود. اگر به یک رشته مقداری اختصاص داده نشده باشد یا صراحتاً مقدار null به آن اختصاص داده شده باشد،آن رشته null خواهد بود.
+متد IsNullOrWhiteSpace در #C برای بررسی این که رشته مشخص شده خالی یا فقط شامل کاراکترهای space است استفاده می شود. اگر به یک رشته مقداری اختصاص داده نشده باشد یا صراحتاً مقدار null به آن اختصاص داده شده باشد،آن رشته null خواهد بود.
+
 
 در متد AddTodo در کد بالا، تعیین کرده‌ایم که اگر مقدار TodoName مخالف null بود، یک object جدید از کلاس TodoItem ساخته و مقادیر تعیین شده به فیلدهای todo جدید اختصاص داده شود.
 
@@ -400,6 +400,10 @@ namespace ToDoApp.Pages
   
 بدین منظور از دو کامپوننت BitIconButton برای فراخوانی دو متد EditTodoItem و DeleteTodoItem داخل لیست استفاده می‌کنیم.
 
+برای این که خود آیکون‌ها نمایش داده شوند، پکیج Bit.BlazorUI.Icons را نصب کرده و style زیر را در index.html بعد از bit.blazorui.css قرار دهید:
+
+`<link href="_content/Bit.BlazorUI.Icons/styles/bit.blazorui.icons.css" rel="stylesheet" />`
+
 کد بالا به صورت زیر تغییر می‌کند.
 
 <div dir="ltr">
@@ -423,8 +427,8 @@ namespace ToDoApp.Pages
                 </div>
 
                 <div class="todo-action">
-                    <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                    <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                    <BitIconButton IconName="@BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="@BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -444,7 +448,7 @@ namespace ToDoApp.Pages
 
 شما می‌توانید لیست کامل این فونت آیکن‌ها را در لینک زیر ببینید. 
 
-https://uifabricicons.azurewebsites.net
+https://components.bitplatform.dev/iconography
 
 اگر نام هر کدام از فونت آیکن‌های موجود در این لیست را به پارامتر IconName کامپوننت BitIconButton اختصاص دهید، button شما شکل آن آیکن را به خود می‌گیرد.
 
@@ -467,33 +471,32 @@ https://uifabricicons.azurewebsites.net
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoApp.Pages
+namespace ToDoApp.Pages;
+
+public partial class TodoPage
 {
-    public partial class TodoPage
+    public List<TodoItem> TodoList = new();
+    public string TodoName { get; set; }
+}
+
+private void AddTodo()
+{
+    if (!string.IsNullOrWhiteSpace(TodoName))
     {
-        public List<TodoItem> TodoList = new();
-        public string TodoName { get; set; }
+        var newTask = new TodoItem()
+        {
+            Id = TodoList.Count() + 1,
+            Title = TodoName,
+            IsDone = false
+        };
+
+        TodoList.Add(newTask);
+        TodoName = null;
     }
 
-    private void AddTodo()
+    private void DeleteTodoItem(TodoItem todo)
     {
-        if (!string.IsNullOrWhiteSpace(TodoName))
-        {
-            var newTask = new TodoItem()
-            {
-                Id = TodoList.Count() + 1,
-                Title = TodoName,
-                IsDone = false
-            };
-
-            TodoList.Add(newTask);
-            TodoName = null;
-        }
-
-        private void DeleteTodoItem(TodoItem todo)
-        {
-            TodoList.Remove(todo);
-        }
+        TodoList.Remove(todo);
     }
 }
 
@@ -538,8 +541,8 @@ private void EditTodoItem(TodoItem todo)
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
-                        <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
+                        <BitIconButton IconName="@BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="@BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -549,8 +552,8 @@ private void EditTodoItem(TodoItem todo)
                     }
                 </div>
                 <div class="todo-action">
-                    <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                    <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                    <BitIconButton IconName="@BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="@BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -573,55 +576,54 @@ private void EditTodoItem(TodoItem todo)
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoApp.Pages
+namespace ToDoApp.Pages;
+
+public partial class TodoPage
 {
-    public partial class TodoPage
+    public List<TodoItem> TodoList = new();
+    public string TodoName { get; set; }
+    public string NewName { get; set; }
+
+    private void AddTodo()
     {
-        public List<TodoItem> TodoList = new();
-        public string TodoName { get; set; }
-        public string NewName { get; set; }
-
-        private void AddTodo()
+        if (!string.IsNullOrWhiteSpace(TodoName))
         {
-            if (!string.IsNullOrWhiteSpace(TodoName))
+            var newTask = new TodoItem()
             {
-                var newTask = new TodoItem()
-                {
-                    Id = TodoList.Count() + 1,
-                    Title = TodoName,
-                    IsDone = false
-                };
+                Id = TodoList.Count() + 1,
+                Title = TodoName,
+                IsDone = false
+            };
 
-                TodoList.Add(newTask);
-                TodoName = null;
-            }
+            TodoList.Add(newTask);
+            TodoName = null;
         }
-    
-        private void DeleteTodoItem(TodoItem todo)
-        {
-            TodoList.Remove(todo);
-        }
+    }
 
-        private void EditTodoItem(TodoItem todo)
-        {
-            todo.IsEdit = true;
-        }
+    private void DeleteTodoItem(TodoItem todo)
+    {
+        TodoList.Remove(todo);
+    }
 
-        private void EditTodo(TodoItem todo)
-        {
-            if (!string.IsNullOrWhiteSpace(NewName))
-            {
-                todo.IsEdit = false;
-                todo.Title = NewName;
-                NewName = null;
-            }
-        }
+    private void EditTodoItem(TodoItem todo)
+    {
+        todo.IsEdit = true;
+    }
 
-        private void CancelEditTodo(TodoItem todo)
+    private void EditTodo(TodoItem todo)
+    {
+        if (!string.IsNullOrWhiteSpace(NewName))
         {
             todo.IsEdit = false;
+            todo.Title = NewName;
             NewName = null;
         }
+    }
+
+    private void CancelEditTodo(TodoItem todo)
+    {
+        todo.IsEdit = false;
+        NewName = null;
     }
 }
 
@@ -691,8 +693,8 @@ private void HandleTodoChange(TodoItem todo)
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
-                        <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
+                        <BitIconButton IconName="@BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="@BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -702,8 +704,8 @@ private void HandleTodoChange(TodoItem todo)
                     }
                 </div>
                 <div class="todo-action">
-                    <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                    <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                    <BitIconButton IconName="@BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="@BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
        </RowTemplate>
@@ -802,8 +804,8 @@ private void Filter()
                     @if (TodoItem.IsEdit)
                     {
                         <input @bind="@NewName" />
-                        <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
-                        <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
+                        <BitIconButton IconName="@BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
+                        <BitIconButton IconName="@BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                     }
                     else
                     {
@@ -815,8 +817,8 @@ private void Filter()
                 </div>
 
                 <div class="todo-action">
-                    <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                    <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                    <BitIconButton IconName="@BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                    <BitIconButton IconName="@BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                 </div>
             </div>
 
@@ -889,8 +891,8 @@ private void HandleClear()
                             @if (TodoItem.IsEdit)
                             {
                                 <input @bind="@NewName" />
-                                <BitIconButton IconName="BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
-                                <BitIconButton IconName="BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
+                                <BitIconButton IconName="@BitIconName.Accept" OnClick="(e => EditTodo(TodoItem))" />
+                                <BitIconButton IconName="@BitIconName.Cancel" OnClick="(e => CancelEditTodo(TodoItem))" />
                             }
                             else
                             {
@@ -902,8 +904,8 @@ private void HandleClear()
                         </div>
 
                         <div class="todo-action">
-                            <BitIconButton IconName="BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
-                            <BitIconButton IconName="BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
+                            <BitIconButton IconName="@BitIconName.Edit" OnClick="(e => EditTodoItem(TodoItem))" />
+                            <BitIconButton IconName="@BitIconName.Delete" OnClick="(e => DeleteTodoItem(TodoItem))" />
                         </div>
                     </div>
 
@@ -943,10 +945,10 @@ private void HandleClear()
   
 ```razor
   
-<BitChoiceGroup OnValueChange="HandleFilterChange" Style="display: flex; flex-direction: row; gap: 20px">
-    <BitChoiceOption Text="All" Value="All" />
-    <BitChoiceOption Text="Active" Value="Active" />
-    <BitChoiceOption Text="Completed" Value="Completed" />
+<BitChoiceGroup TItem="BitChoiceGroupOption<string>" TValue="string" OnChange="HandleFilterChange" DefaultValue="@("All")">
+    <BitChoiceGroupOption Text="All" Value="@("All")" />
+    <BitChoiceGroupOption Text="Active" Value="@("Active")" />
+    <BitChoiceGroupOption Text="Completed" Value="@("Completed")" />
 </BitChoiceGroup>
 
 ``` 
@@ -1038,105 +1040,104 @@ private void Filter()
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoApp.Pages
+namespace ToDoApp.Pages;
+
+public partial class TodoPage
 {
-    public partial class TodoPage
+    private List<TodoItem> TodoList = new();
+    private List<TodoItem> FilteredTodoList = new();
+    private string TodoName { get; set; }
+    private string NewName { get; set; }
+    private string SearchTerm;
+    private string FilterValue;
+
+    private void AddTodo()
     {
-        private List<TodoItem> TodoList = new();
-        private List<TodoItem> FilteredTodoList = new();
-        private string TodoName { get; set; }
-        private string NewName { get; set; }
-        private string SearchTerm;
-        private string FilterValue;
-
-        private void AddTodo()
+        if (!string.IsNullOrWhiteSpace(TodoName))
         {
-            if (!string.IsNullOrWhiteSpace(TodoName))
+            var newTask = new TodoItem()
             {
-                var newTask = new TodoItem()
-                {
-                    Id = TodoList.Count() + 1,
-                    Title = TodoName,
+                Id = TodoList.Count() + 1,
+                Title = TodoName,
 
-                    IsDone = false
-                };
+                IsDone = false
+            };
 
-                TodoList.Add(newTask);
-                Filter();
-                TodoName = null;
-            }
-        }
-
-        private void DeleteTodoItem(TodoItem todo)
-        {
-            TodoList.Remove(todo);
+            TodoList.Add(newTask);
             Filter();
+            TodoName = null;
         }
+    }
 
-        private void EditTodoItem(TodoItem todo)
-        {
-            todo.IsEdit = true;
-        }
+    private void DeleteTodoItem(TodoItem todo)
+    {
+        TodoList.Remove(todo);
+        Filter();
+    }
 
-        private void EditTodo(TodoItem todo)
-        {
-            if (!string.IsNullOrWhiteSpace(NewName))
-            {
-                todo.IsEdit = false;
-                todo.Title = NewName;
-                NewName = null;
-            }
-        }
+    private void EditTodoItem(TodoItem todo)
+    {
+        todo.IsEdit = true;
+    }
 
-        private void CancelEditTodo(TodoItem todo)
+    private void EditTodo(TodoItem todo)
+    {
+        if (!string.IsNullOrWhiteSpace(NewName))
         {
             todo.IsEdit = false;
+            todo.Title = NewName;
             NewName = null;
         }
+    }
 
-        private void HandleTodoChange(TodoItem todo)
-        {
-            todo.IsDone = !todo.IsDone;
-            Filter();
-        }
+    private void CancelEditTodo(TodoItem todo)
+    {
+        todo.IsEdit = false;
+        NewName = null;
+    }
 
-        private void HandleClear()
-        {
-            HandleSearch("");
-        }
+    private void HandleTodoChange(TodoItem todo)
+    {
+        todo.IsDone = !todo.IsDone;
+        Filter();
+    }
 
-        private void HandleSearch(string searchTerm)
-        {
-            SearchTerm = searchTerm;
-            Filter();
-        }
+    private void HandleClear()
+    {
+        HandleSearch("");
+    }
 
-        private void HandleFilterChange(string filter)
-        {
-            FilterValue = filter;
-            Filter();
-        }
+    private void HandleSearch(string searchTerm)
+    {
+        SearchTerm = searchTerm;
+        Filter();
+    }
 
-        private void Filter()
+    private void HandleFilterChange(string filter)
+    {
+        FilterValue = filter;
+        Filter();
+    }
+
+    private void Filter()
+    {
+        FilteredTodoList = TodoList.Where(item =>
         {
-            FilteredTodoList = TodoList.Where(item =>
+            var result = string.IsNullOrWhiteSpace(SearchTerm) || item.Title.ToLower().Contains(SearchTerm.ToLower());
+            if (result is false) return false;
+            if (string.IsNullOrWhiteSpace(FilterValue) is false)
             {
-                var result = string.IsNullOrWhiteSpace(SearchTerm) || item.Title.ToLower().Contains(SearchTerm.ToLower());
-                if (result is false) return false;
-                if (string.IsNullOrWhiteSpace(FilterValue) is false)
+                switch (FilterValue)
                 {
-                    switch (FilterValue)
-                  {
-                      case "Active":
-                         return !item.IsDone;
-                       case "Completed":
-                           return item.IsDone;
-                    }
-
+                    case "Active":
+                        return !item.IsDone;
+                    case "Completed":
+                        return item.IsDone;
                 }
-                return true;
-            }).ToList();
-        }
+
+            }
+            return true;
+        }).ToList();
     }
 }
   

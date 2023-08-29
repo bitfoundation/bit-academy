@@ -13,10 +13,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Bit.BlazorUI" Version="5.2.0-pre-03" />
+		<PackageReference Include="Bit.BlazorUI" Version="5.4.0" />
+		<PackageReference Include="Bit.BlazorUI.Icons" Version="5.4.0" />
 		<PackageReference Include="DartSassBuilder" Version="1.0.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.9" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.9" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.10" PrivateAssets="all" />
 		<PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
 	</ItemGroup>
 

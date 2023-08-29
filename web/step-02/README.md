@@ -307,7 +307,7 @@ button {
                     Increase
                 </button>
                 <button class="decrease" onclick="decrease()">
-                    Deacrease
+                    Decrease
                 </button>
             </div>
         </div>

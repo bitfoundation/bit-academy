@@ -42,13 +42,13 @@
 
 https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
 
-## استفاده از Bit Components برای ایجاد المنت ها <a name ="BitComponents"></a>
+## استفاده از Bit BlazorUI Components برای ایجاد المنت ها <a name ="BitComponents"></a>
 
 در ادامه پروژه‌ای به نام TodoApp ایجاد کرده و همانند [جلسات گذشته](https://github.com/bitfoundation/virtual-academy/tree/main/web/step-03) پوشه‌ها، فایل‌ها و کدهای اضافی را حذف می‌کنیم.
   
 از این جلسه به بعد می‌خواهیم از کامپوننت‌های ‌Bit برای ایجاد سریع‌تر و آسان‌تر المنت‌ها استفاده کنیم.
   
-برای نصب Bit، همانند [نصب Delegate.SassBuilder در جلسه گذشته](https://github.com/bitfoundation/virtual-academy/tree/main/web/step-04#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%A7%D8%B3%D8%AA%D8%A7%DB%8C%D9%84-%D8%A8%D8%A7%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-scss-) از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌Browse در قسمت سرچ باکس Bit.BlazorUI را جستجو و نصب کنید.
+برای نصب Bit، همانند [نصب DartSassBuilder در جلسه گذشته](https://github.com/bitfoundation/virtual-academy/tree/main/web/step-04#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%A7%D8%B3%D8%AA%D8%A7%DB%8C%D9%84-%D8%A8%D8%A7%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-scss-) از بخش Solution Explorer بر روی Dependencies کلیک راست کرده و از منوی باز شده گزینه Manage NuGet Packages را انتخاب و در تب ‌Browse در قسمت سرچ باکس Bit.BlazorUI را جستجو و نصب کنید.
 
 <img src="images/img-3-1.png" />
 
@@ -58,7 +58,7 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
 
   ```razor
     
-    <link rel="stylesheet" href="_content/Bit.BlazorUI/styles/bit.blazorui.min.css"/>
+    <link rel="stylesheet" href="_content/Bit.BlazorUI/styles/bit.blazorui.css"/>
     
   ``` 
   </div>
@@ -69,7 +69,7 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
 
   ```razor
     
-    <script src="_content/Bit.BlazorUI/scripts/bit.blazorui.min.js"></script>
+    <script src="_content/Bit.BlazorUI/scripts/bit.blazorui.js"></script>
     
   ``` 
   </div>
@@ -88,7 +88,7 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <title>TodoApp</title>
           <base href="/" />
-          <link rel="stylesheet" href="_content/Bit.BlazorUI/styles/bit.blazorui.min.css"/>
+          <link rel="stylesheet" href="_content/Bit.BlazorUI/styles/bit.blazorui.css"/>
           <link href="TodoApp.styles.css" rel="stylesheet"/>
       </head>
 
@@ -96,7 +96,7 @@ https://www.figma.com/file/q0ldEdrilGhZMs7Nj2vZe3/ToDoApp
           <div id="app">Loading...</div>
 
           <script src="_framework/blazor.webassembly.js"></script>
-          <script src="_content/Bit.BlazorUI/scripts/bit.blazorui.min.js"></script>
+          <script src="_content/Bit.BlazorUI/scripts/bit.blazorui.js"></script>
       </body>
 
     </html>
@@ -447,25 +447,24 @@ Flexbox پراپرتی به نام flex-direction دارد که مشخص می ک
 <div dir="ltr">
 
   ```c#
-    namespace TodoApp.Pages
+    namespace TodoApp.Pages;
+    
+    public partial class Login
     {
-        public partial class Login
+        public string UserName { get; set; }
+        public string Password { get; set; }
+
+        public bool ShowLoginErrorMessage = false;
+
+        public void Signin()
         {
-            public string UserName { get; set; }
-            public string Password { get; set; }
-
-            public bool ShowLoginErrorMessage = false;
-
-            public void Signin()
+            if (UserName != "test" || Password != "test") 
             {
-                if (UserName != "test" || Password != "test") 
-                {
-                    ShowLoginErrorMessage = true;
-                } 
-                else
-                {
-                    ShowLoginErrorMessage = false;
-                }
+                ShowLoginErrorMessage = true;
+            } 
+            else
+            {
+                ShowLoginErrorMessage = false;
             }
         }
     }

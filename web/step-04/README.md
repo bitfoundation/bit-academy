@@ -18,9 +18,13 @@
 اگر از کدهای جلسه قبل استفاده می‌کنید، SimpleBlazorCounter را در هر جایی که کد را کپی کردید، با SimpleBlazorCalculator جایگزین کنید.
 
   
-داخل پوشه Pages راست کلیک نموده و از منوی Add، گزینه New Itemو بعد گزینه Razor Component را زده و اسم آن را Calculator.razor بگذارید.
+داخل پوشه Pages راست کلیک نموده و از منوی Add، گزینه New Item و نام آن را 
 
+`Calculator.razor, Calculator.razor.cs, Calculator.razor.scss`
+
+بگذارید، با این کار در یک حرکت هر سه فایل لازم برای کار شما به پروژه اضافه میشود.
   
+
 وارد فایل Calculator.razor شده و در ابتدای این فایل کد زیر را برای تعیین مسیر این صفحه در مرورگر وارد کنید و در launchSettings.json نیز مقدار launchUrl را برابر با calculator قرار دهید.
 
 <div dir="ltr">
@@ -102,26 +106,17 @@
 
 <img width="400px" src="images/img-6.png" />
 
-در فایل باز شده تب ‌‌Browse را انتخاب و در قسمت سرچ باکس Delegate.SassBuilder را جستجو می‌کنیم.
+در فایل باز شده تب ‌‌Browse را انتخاب و در قسمت سرچ باکس `DartSassBuilder` را جستجو می‌کنیم.
 
 <img src="images/img-7.png" />
 
-و سپس از لیست ارائه شده Delegate.SassBuilder را انتخاب و از سمت راست بر روی دکمه Install  کلیک می‌کنیم.
-  
-  
-<img src="images/img-8.png" />
+و سپس از لیست ارائه شده `DartSassBuilder` را انتخاب و از سمت راست بر روی دکمه Install  کلیک می‌کنیم.
   
 
 در نهایت بر روی دکمه Ok کلیک می‌کنیم تا این Package نصب شود.
-   
-
-بعد از نصب  Delegate.SassBuilder بر روی پوشه Pages در بخش Solution Explorer کلیک راست کرده و فایل جدیدی به نام Calculator.razor.scss ایجاد می‌کنیم.
 
 
- <img width="600" src="images/img-10.png" /> 
-
-
-در همین مرحله اگر پروژه را اجرا کنیم، می‌بینیم که فایل کامپایل شده با پسوند CSS به فایل‌های مربوط به کامپوننت Calculator اضافه می‌شود. 
+با هر بار اجرای برنامه، فایل Calculator.razor.css از روی Calculator.razor.css ساخته میشود.
 
 
 <img width="400" src="images/img-11.png" /> 
@@ -210,47 +205,42 @@ input {
 <div dir="ltr">
 
   ```c#
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace SimpleBlazorCalculator.Pages
+namespace SimpleBlazorCalculator.Pages;
+
+public partial class Calculator
 {
-    public partial class Calculator
+    public decimal Num1 { get; set; }
+
+    public decimal Num2 { get; set; }
+
+    public string FinalResult { get; set; }
+
+
+    public void AddNumbers()
     {
-        public decimal Num1 { get; set; }
+        FinalResult = (Num1 + Num2).ToString("0.##");
+    }
 
-        public decimal Num2 { get; set; }
+    public void SubtractNumbers()
+    {
+        FinalResult = (Num1 - Num2).ToString("0.##");
+    }
 
-        public string FinalResult { get; set; }
-  
+    public void MultiplyNumbers()
+    {
+        FinalResult = (Num1 * Num2).ToString("0.##");
+    }
 
-        public void AddNumbers()
+    public void DivideNumbers()
+    {
+        if (Num2 != 0)
         {
-            FinalResult = (Num1 + Num2).ToString("0.##");
+            FinalResult = (Num1 / Num2).ToString("0.##");
         }
-
-        public void SubtractNumbers()
+        else
         {
-            FinalResult = (Num1 - Num2).ToString("0.##");
-        }
-
-        public void MultiplyNumbers()
-        {
-            FinalResult = (Num1 * Num2).ToString("0.##");
-        }
-
-        public void DivideNumbers()
-        {
-            if (Num2 != 0)
-            {
-                FinalResult = (Num1 / Num2).ToString("0.##");
-            }
-            else
-            {
-                FinalResult = "Cannot Divide by Zero";
-            }
+            FinalResult = "Cannot Divide by Zero";
         }
     }
 }
@@ -264,7 +254,7 @@ namespace SimpleBlazorCalculator.Pages
 
 نوع decimal و یا ده‌دهی زمانی مناسب است که درجه دقت مورد نیاز، توسط تعداد ارقام سمت راست نقطه اعشاری تعیین شود. این اعداد معمولاً در برنامه های مالی ، برای مبالغ ارزی (به عنوان مثال ، 1.00 دلار) ، نرخ بهره (به عنوان مثال ، 2.625٪) و غیره استفاده می شود.
 
-چهار متد هم به نام‌های AddNumbers، SubtractNumbers، MultiplyNumbers، DivideNumbers برای  چهار عمل اصلی داریم.
+چهار متد هم به نام‌های `AddNumbers`، `SubtractNumbers`، `MultiplyNumbers`، `DivideNumbers` برای  چهار عمل اصلی داریم.
 
 در داخل هر متد بعد از اعمال عملگر بر روی دو عدد، از متد ()ToStrin برای تبدیل نتیجه که به صورت decimal می‌باشد به string استفاده می کنیم و در نهایت داخل پارامتر FinalResult  قرار می‌دهیم.
 
@@ -354,4 +344,4 @@ namespace SimpleBlazorCalculator.Pages
   
 </div>
 
-در پایان توجه داشته باشید که برای عمده تغییرات، نیازی به زدن‫ Ctrl + F5 نیست، و کمی بعد از ذخیره سازی تغییرات با Ctrl + S، در همان مرورگری که در حال تست بودید، می‌توانید تغییرات را مشاهده کنید. البته اگر تغییر مدنظرتان را مشاهده نکردید، از Ctrl + F5 استفاده کنید.
+بعد از هر تغییر در کد میتوانید با Ctrl + F5 تاثیر آن را ببینید.

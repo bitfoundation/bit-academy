@@ -1,43 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿namespace SimpleBlazorCalculator.Pages;
 
-namespace SimpleBlazorCalculator.Pages
+public partial class Calculator
 {
-    public partial class Calculator
+    public decimal Num1 { get; set; }
+
+    public decimal Num2 { get; set; }
+
+    public string FinalResult { get; set; }
+
+    public void AddNumbers()
     {
-        public decimal Num1 { get; set; }
+        FinalResult = (Num1 + Num2).ToString("0.##");
+    }
 
-        public decimal Num2 { get; set; }
+    public void SubtractNumbers()
+    {
+        FinalResult = (Num1 - Num2).ToString("0.##");
+    }
 
-        public string FinalResult { get; set; }
+    public void MultiplyNumbers()
+    {
+        FinalResult = (Num1 * Num2).ToString("0.##");
+    }
 
-        public void AddNumbers()
+    public void DivideNumbers()
+    {
+        if (Num2 != 0)
         {
-            FinalResult = (Num1 + Num2).ToString("0.##");
+            FinalResult = (Num1 / Num2).ToString("0.##");
         }
-
-        public void SubtractNumbers()
+        else
         {
-            FinalResult = (Num1 - Num2).ToString("0.##");
-        }
-
-        public void MultiplyNumbers()
-        {
-            FinalResult = (Num1 * Num2).ToString("0.##");
-        }
-
-        public void DivideNumbers()
-        {
-            if (Num2 != 0)
-            {
-                FinalResult = (Num1 / Num2).ToString("0.##");
-            }
-            else
-            {
-                FinalResult = "Cannot Divide by Zero";
-            }
+            FinalResult = "Cannot Divide by Zero";
         }
     }
 }
