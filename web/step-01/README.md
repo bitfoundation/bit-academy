@@ -9,7 +9,9 @@
 	
 	
 ## آموزش نصب Visual Studio <a name="InstallVisualStudio"></a>  
-	
+
+در صورتی که Visual studio را نصب دارید میتوانید از این مرحله عبور کنید، ولی حتما از آپدیت بودن آن مطمئن شوید. برای این کار از منوی Help، گزینه Check updates را بزنید و در نهایت باید عبارت Visual Studio is up to date را مشاهده کنید.
+
 در ابتدا به آدرس https://visualstudio.microsoft.com/downloads می‌رویم و گزینه Visual Studio Community را انتخاب می‌کنیم که رایگان است.
 
 <img width="400px" src="images/img-1.png" />
