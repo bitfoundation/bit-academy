@@ -18,11 +18,11 @@
 
  در مرحله بعد مطابق تصویر زیر از لیست ارایه شده ‌Blazor WebAssembly App را انتخاب و با کلیک بر روی دکمه Next به مرحله بعدی می‌رویم.
   
-  <img width="500px" src="images/img-2.png" />
+  <img width="550px" src="images/img-2.png" />
   
    همان طور که در تصویر زیر می‌بینید در قسمت Project name می‌توانیم اسم پروژه را تعیین کنیم (در این قسمت اسم پروژه را SimpleBlazorCounter می‌گذاریم) و در قسمت Location محل قرار گیری پروژه را مشخص کنیم. مجددا برای رفتن به مرحله بعد بر روی دکمه Next کلیک می‌کنیم.
 
- <img width="700px" src="images/img-3.png" />
+ <img width="750px" src="images/img-3.png" />
  
  مطابق تصویر زیر، در این مرحله دقت کنید که Framework حتما روی **NET 7.0** قرار گرفته باشد.
  
